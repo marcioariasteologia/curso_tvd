@@ -356,6 +356,20 @@
         flex-direction: column;
         justify-content: center;
       }
+
+      /* ── AJUSTES DE TAMANHO POR SEÇÃO ── */
+      /* s1 hero: -10% */
+      .hero { padding-top: clamp(36px, 7.2vh, 72px); padding-bottom: clamp(36px, 7.2vh, 72px); }
+      /* s2 funciona: +10% */
+      #s-funciona { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
+      /* s3 encontros: +10% */
+      #s-encontros { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
+      /* s4 exercicios: sem alteração */
+      /* s5 paginas: -10% */
+      #s-paginas { padding-top: clamp(36px, 7.2vh, 72px); padding-bottom: clamp(36px, 7.2vh, 72px); }
+      /* s6 oracoes: sem alteração */
+      /* s7 apendices: -10% */
+      #s-apendices { padding-top: clamp(36px, 7.2vh, 72px); padding-bottom: clamp(36px, 7.2vh, 72px); }
       .container {
         max-width: 1100px;
         margin: 0 auto;
@@ -1328,7 +1342,7 @@
       @media (max-height: 600px) {
         section { padding: 20px 16px; }
         .hero-title { font-size: clamp(1.8rem, 4vw, 2.5rem); }
-        .hero-quote { display: none; } /* Ocultar citação em telas muito baixas para priorizar título e data */
+        /* .hero-quote mantida visível em todas as alturas */
         .hero-ornament { margin-bottom: 10px; }
         .divider-diamond { margin-bottom: 16px; }
       }

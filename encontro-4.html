@@ -47,6 +47,24 @@ section {
   box-sizing: border-box;
   justify-content: center;
 }
+
+/* ── AJUSTES DE TAMANHO POR SEÇÃO ── */
+/* s1 hero: +20% */
+.hero { padding-top: clamp(48px, 9.6vh, 96px) !important; padding-bottom: clamp(48px, 9.6vh, 96px) !important; }
+/* s2 sintese: +20% */
+#s-sintese { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s3 molde: sem alteração */
+/* s4 jaco: +10% */
+#s-jaco { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
+/* s5 jaco-2: +10% */
+#s-jaco-2 { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
+/* s6 deveres: +10% */
+#s-deveres { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
+/* s7 deveres-2: sem alteração */
+/* s8 vest: +10% */
+#s-vest { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
+/* s9 vest-2: EXCLUÍDA */
+#s-vest-2 { display: none !important; }
 .container { max-width:1060px; margin: auto; width:100%; }
 .section-label { font-family:'Cinzel',serif;font-size: 1.216rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:10px; }
 .section-title { font-family:'Cormorant Garamond',serif;font-size:clamp(2.304rem, 3.8vw, 3.84rem);font-weight:400;text-align:center;color:var(--white);line-height:1.2;margin-bottom: 16px; }
@@ -449,8 +467,8 @@ section {
   const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
   reveals.forEach(el=>obs.observe(el));
   document.querySelectorAll('.sintese-item,.jaco-card,.dever-card,.vest-card').forEach((el,i)=>{el.style.transitionDelay=i*0.06+'s';});
-  const _ids=['s-hero','s-sintese','s-molde','s-jaco','s-jaco-2','s-deveres','s-deveres-2','s-vest','s-vest-2'];
-  const _labels=['Início','Síntese','O Molde','Jacó I','Jacó II','Deveres','O Molde Dei','Vestimento','Transição'];
+  const _ids=['s-hero','s-sintese','s-molde','s-jaco','s-jaco-2','s-deveres','s-deveres-2','s-vest'];
+  const _labels=['Início','Síntese','O Molde','Jacó I','Jacó II','Deveres','O Molde Dei','Vestimento'];
   let _cur=0,_scrolling=false;
   const _dots=document.getElementById('sideNavDots'),_btnUp=document.getElementById('btnUp'),_btnDown=document.getElementById('btnDown');
   _ids.forEach((id,i)=>{const d=document.createElement('span');d.className='side-dot'+(i===0?' active':'');d.title=_labels[i];d.addEventListener('click',()=>sideNavGoto(i));_dots.appendChild(d);});
