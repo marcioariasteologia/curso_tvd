@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orações — Consagração</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;--gold:#C9A84C;--gold-light:#E8C97A;
+  --white:#F5EFE0;--cream:#E8DEC4;--text-body:rgba(232,222,196,.9);
+  --nav-h:56px;
+}
+html,body{height:100%;overflow:hidden}
+body{background:var(--navy);color:var(--text-body);font-family:'EB Garamond',Georgia,serif}
+
+.bg-layer{
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse at 15% 50%,rgba(201,168,76,.05) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 20%,rgba(201,168,76,.04) 0%,transparent 50%);
+}
+
+/* TOP NAV */
+nav.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  height:var(--nav-h);display:flex;align-items:center;gap:16px;padding:0 32px;
+  background:rgba(13,27,42,.95);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,168,76,.1);
+}
+.nav-back{font-family:'Cinzel',serif;font-size:.875rem;letter-spacing:.2em;color:rgba(201,168,76,.7);text-decoration:none;transition:color .3s}
+.nav-back:hover{color:var(--gold)}
+.nav-label{font-family:'Cinzel',serif;font-size:.95rem;letter-spacing:.3em;color:var(--white);margin-left:auto}
+.nav-type{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.2em;color:rgba(201,168,76,.45)}
+
+/* SIDE NAV — navega entre orações (↑↓) */
+.side-nav{
+  position:fixed;right:16px;top:50%;transform:translateY(-50%);
+  z-index:400;display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.snb{
+  width:32px;height:32px;border-radius:50%;
+  border:1px solid rgba(201,168,76,.4);background:rgba(13,27,42,.85);
+  color:var(--gold);cursor:pointer;font-size:.95rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .25s,border-color .25s;
+}
+.snb:hover{background:rgba(201,168,76,.18);border-color:rgba(201,168,76,.7)}
+.snb.hidden{opacity:0;pointer-events:none}
+.side-dots{display:flex;flex-direction:column;gap:7px;align-items:center}
+.sd{width:5px;height:5px;border-radius:50%;background:rgba(201,168,76,.2);cursor:pointer;transition:background .3s,transform .3s}
+.sd.active{background:rgba(201,168,76,.8);transform:scale(1.5)}
+.sd:hover{background:rgba(201,168,76,.5)}
+@media(max-width:700px){.side-nav{display:none}}
+
+/* SCROLL CONTAINER — vertical entre seções */
+#sw{
+  position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;
+  overflow-y:scroll;overflow-x:hidden;
+  scroll-snap-type:y mandatory;
+}
+#sw::-webkit-scrollbar{width:4px}
+#sw::-webkit-scrollbar-track{background:var(--navy)}
+#sw::-webkit-scrollbar-thumb{background:rgba(201,168,76,.25);border-radius:2px}
+
+/* SEÇÃO — 1 tela */
+.os{
+  height:calc(100vh - var(--nav-h));
+  scroll-snap-align:start;scroll-snap-stop:always;
+  display:grid;
+  grid-template-columns:220px 1fr;
+  overflow:hidden;
+  border-top:1px solid rgba(201,168,76,.07);
+  position:relative;
+}
+.os:first-of-type{border-top:none}
+
+/* painel esquerdo */
+.lp{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:36px 24px 36px 40px;
+  border-right:1px solid rgba(201,168,76,.1);
+  background:rgba(201,168,76,.01);
+  position:relative;flex-shrink:0;z-index:2;
+}
+.lp::after{
+  content:'';position:absolute;right:-1px;top:15%;bottom:15%;width:1px;
+  background:linear-gradient(180deg,transparent,rgba(201,168,76,.35),transparent);
+}
+.o-num{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.5em;color:rgba(201,168,76,.35);text-transform:uppercase;margin-bottom:8px}
+.o-ref{font-family:'Cinzel',serif;font-size:.82rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;line-height:1.5}
+.o-tit{font-family:'Cinzel',serif;font-size:clamp(1.05rem,1.7vw,1.65rem);font-weight:400;color:var(--white);line-height:1.35}
+.o-tit em{font-style:italic;color:var(--gold-light);font-family:'EB Garamond',serif;font-size:1.08em}
+.o-div{width:36px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin-top:14px}
+.l-orn{position:absolute;bottom:24px;left:40px;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.38em;color:rgba(201,168,76,.18);text-transform:uppercase}
+
+/* indicador de página dentro da seção */
+.page-ind{
+  position:absolute;bottom:14px;left:40px;
+  font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.3em;
+  color:rgba(201,168,76,.35);text-transform:uppercase;
+  display:none;
+}
+.page-ind.visible{display:block}
+
+/* PAINEL DIREITO — carrossel horizontal interno */
+.rp{
+  display:flex;
+  overflow-x:scroll;overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  position:relative;
+}
+.rp::-webkit-scrollbar{display:none}
+
+/* cada página do carrossel */
+.rp-page{
+  flex:none;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:28px 52px 28px 32px;
+  overflow:hidden;
+  scroll-snap-align:start;
+}
+
+/* botões ←→ dentro da seção */
+.inner-nav{
+  position:absolute;bottom:16px;right:56px;
+  z-index:10;
+  display:flex;align-items:center;gap:8px;
+}
+.inb{
+  width:28px;height:28px;border-radius:50%;
+  border:1px solid rgba(201,168,76,.35);background:rgba(13,27,42,.8);
+  color:var(--gold);cursor:pointer;font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .25s,border-color .25s;
+}
+.inb:hover{background:rgba(201,168,76,.18);border-color:rgba(201,168,76,.6)}
+.inb.hidden{opacity:0;pointer-events:none}
+.inner-dots{display:flex;gap:5px;align-items:center}
+.isd{width:4px;height:4px;border-radius:50%;background:rgba(201,168,76,.2);cursor:pointer;transition:background .3s,transform .3s}
+.isd.active{background:rgba(201,168,76,.7);transform:scale(1.4)}
+
+/* estrofes em 2 colunas */
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:0 4px;width:100%}
+.eg.solo{grid-template-columns:1fr;max-width:560px}
+
+.est{
+  padding:11px 15px 11px 13px;
+  border-left:2px solid rgba(201,168,76,.15);
+  border-bottom:1px solid rgba(201,168,76,.05);
+  transition:border-color .25s,background .25s;
+}
+.est:hover{border-left-color:rgba(201,168,76,.5);background:rgba(201,168,76,.03)}
+.est:last-child{border-bottom:none}
+.eg:not(.solo) .est:nth-child(odd){margin-right:2px}
+.est p{font-size:clamp(.83rem,1.05vw,1.02rem);font-weight:300;color:var(--cream);line-height:1.7;font-style:italic}
+
+/* ladainha em 2 colunas */
+.lg{display:grid;grid-template-columns:1fr 1fr;gap:0;width:100%}
+.lt{
+  grid-column:1/-1;
+  font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;
+  padding:7px 14px 5px;background:rgba(201,168,76,.04);
+  border-bottom:1px solid rgba(201,168,76,.1);border-left:3px solid rgba(201,168,76,.35);
+  margin-top:8px;
+}
+.lt:first-child{margin-top:0}
+.li{
+  display:flex;align-items:baseline;justify-content:space-between;
+  padding:5px 11px;
+  border-bottom:1px solid rgba(201,168,76,.05);
+  border-left:2px solid rgba(201,168,76,.1);
+  transition:background .2s;
+}
+.li:hover{background:rgba(201,168,76,.04)}
+.linv{font-size:clamp(.74rem,.98vw,.95rem);font-weight:300;color:var(--cream);font-style:italic;flex:1;line-height:1.48}
+.lres{font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.13em;color:rgba(201,168,76,.55);text-transform:uppercase;margin-left:8px;white-space:nowrap;flex-shrink:0}
+
+.r-sep{height:1px;background:linear-gradient(90deg,rgba(201,168,76,.12),transparent);margin:12px 0;flex-shrink:0}
+
+/* FOOTER */
+.pf{
+  height:calc(100vh - var(--nav-h));
+  scroll-snap-align:start;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border-top:1px solid rgba(201,168,76,.1);
+}
+.pf-cross{color:var(--gold);font-size:1.1rem;display:block;margin-bottom:16px}
+.pf-nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+.pf-link{font-family:'Cinzel',serif;font-size:.875rem;letter-spacing:.2em;color:rgba(201,168,76,.7);text-decoration:none;transition:color .3s}
+.pf-link:hover{color:var(--gold)}
+.pf-sep{color:rgba(201,168,76,.4)}
+
+.reveal{opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  .os{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .lp{padding:16px 20px 10px;border-right:none;border-bottom:1px solid rgba(201,168,76,.1);justify-content:flex-start}
+  .lp::after{display:none}
+  .rp-page{padding:10px 16px 40px}
+  .l-orn,.page-ind{display:none!important}
+}
+@media(max-width:480px){
+  .eg{grid-template-columns:1fr}
+  .lg{grid-template-columns:1fr}
+  .lt{grid-column:1}
+}
+</style>
+</head>
+<body>
+<div class="bg-layer"></div>
+
+<nav class="site-nav">
+  <a class="nav-back" href="index.html">← Início</a>
+  <span class="nav-label">Orações</span>
+  <span class="nav-type">Consagração</span>
+</nav>
+
+<nav class="side-nav" id="sideNav">
+  <button class="snb" id="btnUp" onclick="goSection(-1)">↑</button>
+  <div class="side-dots" id="dots"></div>
+  <button class="snb" id="btnDown" onclick="goSection(1)">↓</button>
+</nav>
+
+<div id="sw">
+
+<!-- ══ I ══ -->
+<section class="os" id="s0">
+  <div class="lp reveal">
+    <p class="o-num">Oração I</p>
+    <p class="o-ref">São Luís de Montfort</p>
+    <h2 class="o-tit">Consagração a Jesus<br><em>pelas Mãos de Maria</em></h2>
+    <div class="o-div"></div>
+    <span class="l-orn">Montfort</span>
+    <span class="page-ind" id="pi0"></span>
+  </div>
+  <div class="rp" id="rp0">
+    <div class="rp-page">
+      <div class="eg">
+        <div class="est"><p>Ó Sabedoria eterna e encarnada!</p><p>Ó amabilíssimo e adorável Jesus!</p><p>Verdadeiro Deus e verdadeiro Homem,</p><p>Filho Unigênito do Eterno Pai e de Maria sempre Virgem!</p></div>
+        <div class="est"><p>Prostro-me profundamente diante de Vós</p><p>e adoro-Vos no seio e no esplendor do vosso Pai durante a eternidade,</p><p>e no seio virginal de Maria, vossa digníssima Mãe,</p><p>no tempo da vossa encarnação.</p></div>
+        <div class="est"><p>Reconheço que sou incapaz por mim mesmo,</p><p>sem o favor especial de vossa Misericórdia,</p><p>de fazer coisa alguma que Vos seja agradável.</p><p>Por isso, ó Senhor, me entrego a Vós totalmente, como escravo de amor.</p></div>
+        <div class="est"><p>Escolho-Vos hoje, ó Maria Santíssima,</p><p>na presença de toda a corte celestial,</p><p>para minha Mãe e minha Senhora.</p><p>Entrego e consagro a Vós, como escravo vosso, meu corpo e minha alma.</p></div>
+      </div>
+    </div>
+    <div class="rp-page">
+      <div class="eg">
+        <div class="est"><p>Dou-Vos e consagro-Vos o bem interior de minha alma e o bem exterior de meu corpo,</p><p>e ainda o valor de minhas boas ações, passadas, presentes e futuras.</p><p>Deixo-Vos o pleno e inteiro direito de dispor de mim e de tudo quanto me pertence,</p><p>segundo vossa vontade, para a maior glória de Deus, no tempo e na eternidade.</p></div>
+        <div class="est"><p>Recebei, ó Virgem benigna, esta pequena oferta de minha escravidão,</p><p>em honra e em união da sujeição</p><p>que a Eterna Sabedoria quis pagar à vossa maternidade.</p><p>Em memória da sujeição que quis pagar à vossa maternidade. Amém.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-nav" id="in0">
+    <button class="inb" id="in0-l" onclick="goPage('rp0','in0',-1)">←</button>
+    <div class="inner-dots" id="in0-dots"></div>
+    <button class="inb" id="in0-r" onclick="goPage('rp0','in0',1)">→</button>
+  </div>
+</section>
+
+<!-- ══ II ══ -->
+<section class="os" id="s1">
+  <div class="lp reveal">
+    <p class="o-num">Oração II</p>
+    <p class="o-ref">Litaniae Lauretanae</p>
+    <h2 class="o-tit">Ladainha de<br><em>Nossa Senhora</em></h2>
+    <div class="o-div"></div>
+    <span class="l-orn">Loreto</span>
+    <span class="page-ind" id="pi1"></span>
+  </div>
+  <div class="rp" id="rp1">
+    <div class="rp-page">
+      <div class="lg">
+        <div class="lt">Invocação inicial</div>
+        <div class="li"><span class="linv">Senhor, tende piedade de nós</span><span class="lres">Kyrie eleison</span></div>
+        <div class="li"><span class="linv">Cristo, tende piedade de nós</span><span class="lres">Christe eleison</span></div>
+        <div class="li"><span class="linv">Deus Pai do Céu</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Deus Filho, Redentor do mundo</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Deus Espírito Santo</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Santíssima Trindade, um só Deus</span><span class="lres">misericórdia</span></div>
+        <div class="lt">Mãe de Deus</div>
+        <div class="li"><span class="linv">Santa Maria</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Santa Mãe de Deus</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Santa Virgem das virgens</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe de Jesus Cristo</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe da divina graça</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe puríssima</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe castíssima</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe inviolada</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe imaculada</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe amável</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe admirável</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe do bom conselho</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe do Criador</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Mãe do Salvador</span><span class="lres">rogai por nós</span></div>
+      </div>
+    </div>
+    <div class="rp-page">
+      <div class="lg">
+        <div class="lt">Virgem e Rainha</div>
+        <div class="li"><span class="linv">Virgem prudentíssima</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Virgem venerável</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Virgem louvável</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Virgem poderosa</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Virgem clemente</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Virgem fiel</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Espelho da justiça</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Sede da sabedoria</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Causa da nossa alegria</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Rosa mística</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Torre de David</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Arca da aliança</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Porta do céu</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Estrela da manhã</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Saúde dos enfermos</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Refúgio dos pecadores</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Consoladora dos aflitos</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Rainha dos anjos</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Rainha dos patriarcas</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Rainha dos mártires</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Rainha concebida sem pecado original</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Rainha assunta ao céu</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Rainha do santíssimo rosário</span><span class="lres">rogai por nós</span></div>
+        <div class="li"><span class="linv">Rainha da paz</span><span class="lres">rogai por nós</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-nav" id="in1">
+    <button class="inb" id="in1-l" onclick="goPage('rp1','in1',-1)">←</button>
+    <div class="inner-dots" id="in1-dots"></div>
+    <button class="inb" id="in1-r" onclick="goPage('rp1','in1',1)">→</button>
+  </div>
+</section>
+
+<!-- ══ III ══ -->
+<section class="os" id="s2">
+  <div class="lp reveal">
+    <p class="o-num">Oração III</p>
+    <p class="o-ref">Aprovada por Leão XIII, 1899</p>
+    <h2 class="o-tit">Ladainha do<br><em>Sagrado Coração</em></h2>
+    <div class="o-div"></div>
+    <span class="l-orn">Sagrado Coração</span>
+    <span class="page-ind" id="pi2"></span>
+  </div>
+  <div class="rp" id="rp2">
+    <div class="rp-page">
+      <div class="lg">
+        <div class="lt">Invocação</div>
+        <div class="li"><span class="linv">Senhor, tende piedade de nós</span><span class="lres">Kyrie eleison</span></div>
+        <div class="li"><span class="linv">Cristo, tende piedade de nós</span><span class="lres">Christe eleison</span></div>
+        <div class="li"><span class="linv">Deus Pai do Céu</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Deus Filho, Redentor do mundo</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Deus Espírito Santo</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Santíssima Trindade, um só Deus</span><span class="lres">misericórdia</span></div>
+        <div class="lt">Coração de Jesus</div>
+        <div class="li"><span class="linv">Coração de Jesus, Filho do Pai Eterno</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, formado pelo Espírito Santo</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, de majestade infinita</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, templo sagrado de Deus</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, tabernáculo do Altíssimo</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, casa de Deus e porta do céu</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, fornalha ardente de caridade</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, repositório da justiça e do amor</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, cheio de bondade e de amor</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, abismo de todas as virtudes</span><span class="lres">tende piedade</span></div>
+      </div>
+    </div>
+    <div class="rp-page">
+      <div class="lg">
+        <div class="lt">Coração de Jesus (cont.)</div>
+        <div class="li"><span class="linv">Coração de Jesus, fonte de vida e de santidade</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, propiciação pelos nossos pecados</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, esmagado pelas nossas iniquidades</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, obediente até à morte</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, trespassado por uma lança</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, fonte de toda a consolação</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, nossa vida e ressurreição</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, nossa paz e reconciliação</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, salvação dos que em Vós esperam</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, esperança dos que em Vós morrem</span><span class="lres">tende piedade</span></div>
+        <div class="li"><span class="linv">Coração de Jesus, delícias de todos os santos</span><span class="lres">tende piedade</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-nav" id="in2">
+    <button class="inb" id="in2-l" onclick="goPage('rp2','in2',-1)">←</button>
+    <div class="inner-dots" id="in2-dots"></div>
+    <button class="inb" id="in2-r" onclick="goPage('rp2','in2',1)">→</button>
+  </div>
+</section>
+
+<!-- ══ IV ══ -->
+<section class="os" id="s3">
+  <div class="lp reveal">
+    <p class="o-num">Oração IV</p>
+    <p class="o-ref">Pelos Apóstolos dos Últimos Tempos</p>
+    <h2 class="o-tit">Oração <em>Abrasada</em></h2>
+    <div class="o-div"></div>
+    <span class="l-orn">Montfort</span>
+    <span class="page-ind" id="pi3"></span>
+  </div>
+  <div class="rp" id="rp3">
+    <div class="rp-page" style="justify-content:center">
+      <div class="eg solo">
+        <div class="est"><p>Fogo, fogo, fogo!</p><p>Socorro, socorro, socorro!</p><p>Fogo na casa de Deus, fogo nas almas, fogo até no santuário!</p></div>
+        <div class="est"><p>Senhor, dai-me apóstolos!</p><p>Apóstolos dos últimos tempos,</p><p>pobres e desprendidos, humildes e obedientes, cheios do vosso Espírito.</p></div>
+        <div class="est"><p>Homens segundo o vosso Coração, sem ouro nem prata, sem apego às coisas deste mundo.</p><p>Flechas pontiagudas na mão da poderosa Maria para transpassar os vossos inimigos.</p></div>
+        <div class="est"><p>Que na boca deles esteja a vossa palavra, nos ombros deles a vossa Cruz,</p><p>no coração deles os nomes de Jesus e de Maria.</p><p>Fogo ardente — ministros que ateiem o divino amor por toda parte.</p></div>
+        <div class="est"><p>Quando e como isso acontecerá? Só Deus o sabe.</p><p>Nós, calar, rezar, suspirar e esperar. Vós, ó Senhor, não tardeis. Amém.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-nav" id="in3">
+    <button class="inb" id="in3-l" onclick="goPage('rp3','in3',-1)">←</button>
+    <div class="inner-dots" id="in3-dots"></div>
+    <button class="inb" id="in3-r" onclick="goPage('rp3','in3',1)">→</button>
+  </div>
+</section>
+
+<!-- ══ V ══ -->
+<section class="os" id="s4">
+  <div class="lp reveal">
+    <p class="o-num">Oração V</p>
+    <p class="o-ref">Veni Creator Spiritus</p>
+    <h2 class="o-tit">Vem, ó <em>Espírito Criador</em></h2>
+    <div class="o-div"></div>
+    <span class="l-orn">Hino + Ladainha</span>
+    <span class="page-ind" id="pi4"></span>
+  </div>
+  <div class="rp" id="rp4">
+    <div class="rp-page">
+      <div class="eg">
+        <div class="est"><p>Vem, ó criador Espírito,</p><p>as almas dos teus visita;</p><p>os corações que criaste,</p><p>enche de graça infinita.</p></div>
+        <div class="est"><p>Tu és chamado Paráclito,</p><p>dom do Deus Altíssimo,</p><p>fonte viva, fogo, amor,</p><p>unção do Espírito Santíssimo.</p></div>
+        <div class="est"><p>Tu, que és sétiforme em dons,</p><p>dedo da mão de Deus Pai,</p><p>tu, que a língua prometeste,</p><p>enriquece nosso ânimo.</p></div>
+        <div class="est"><p>Inflama com tua luz os sentidos do coração;</p><p>infunde em nós o teu amor,</p><p>fortalece nossa fraqueza.</p></div>
+        <div class="est"><p>Afasta de nós o inimigo, e dá-nos logo a tua paz;</p><p>sendo tu o guia que nos precede, evitemos todo o mal.</p></div>
+        <div class="est"><p>Faze-nos ao Pai conhecer,</p><p>e ao Filho também conhecer;</p><p>e a ti, Espírito de ambos,</p><p>que creiamos em todo o tempo.</p></div>
+      </div>
+    </div>
+    <div class="rp-page">
+      <div class="lg">
+        <div class="lt">Ladainha do Espírito Santo</div>
+        <div class="li"><span class="linv">Espírito Santo, que do Pai e do Filho procedes</span><span class="lres">vem a nós</span></div>
+        <div class="li"><span class="linv">Promessa do Pai Eterno</span><span class="lres">vem a nós</span></div>
+        <div class="li"><span class="linv">Dom de Deus Altíssimo</span><span class="lres">vem a nós</span></div>
+        <div class="li"><span class="linv">Raio da luz celestial</span><span class="lres">vem a nós</span></div>
+        <div class="li"><span class="linv">Fonte da água viva</span><span class="lres">vem a nós</span></div>
+        <div class="li"><span class="linv">Fogo consumidor</span><span class="lres">vem a nós</span></div>
+        <div class="li"><span class="linv">Espírito de sabedoria e de entendimento</span><span class="lres">santifica-nos</span></div>
+        <div class="li"><span class="linv">Espírito de conselho e de fortaleza</span><span class="lres">santifica-nos</span></div>
+        <div class="li"><span class="linv">Espírito de ciência e de piedade</span><span class="lres">santifica-nos</span></div>
+        <div class="li"><span class="linv">Espírito do temor do Senhor</span><span class="lres">santifica-nos</span></div>
+        <div class="li"><span class="linv">Espírito de graça e de oração</span><span class="lres">santifica-nos</span></div>
+        <div class="li"><span class="linv">Espírito de paz e de mansidão</span><span class="lres">santifica-nos</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-nav" id="in4">
+    <button class="inb" id="in4-l" onclick="goPage('rp4','in4',-1)">←</button>
+    <div class="inner-dots" id="in4-dots"></div>
+    <button class="inb" id="in4-r" onclick="goPage('rp4','in4',1)">→</button>
+  </div>
+</section>
+
+<!-- ══ VI ══ -->
+<section class="os" id="s5">
+  <div class="lp reveal">
+    <p class="o-num">Oração VI</p>
+    <p class="o-ref">Ave Maris Stella</p>
+    <h2 class="o-tit">Ave, <em>Estrela do Mar</em></h2>
+    <div class="o-div"></div>
+    <span class="l-orn">Hino mariano</span>
+    <span class="page-ind" id="pi5"></span>
+  </div>
+  <div class="rp" id="rp5">
+    <div class="rp-page" style="justify-content:center">
+      <div class="eg">
+        <div class="est"><p>Ave do mar Estrela,</p><p>de Deus Mãe bela,</p><p>sempre Virgem pura,</p><p>da morada celeste feliz entrada.</p></div>
+        <div class="est"><p>Recebendo aquele Ave da boca de Gabriel,</p><p>fundai-nos em paz, mudando o nome de Eva.</p></div>
+        <div class="est"><p>Soltai as cadeias dos cativos,</p><p>lançai a luz aos cegos,</p><p>afugentai os nossos males,</p><p>rogai todos os bens para nós.</p></div>
+        <div class="est"><p>Mostrai ser nossa Mãe,</p><p>Aquele que por vós nasceu receba,</p><p>ao ouvir os nossos votos,</p><p>o tributo de nossas preces.</p></div>
+        <div class="est"><p>Virgem única entre todas,</p><p>suave entre todas,</p><p>libertos de culpas</p><p>tornai-nos mansos e castos.</p></div>
+        <div class="est"><p>Conservai-nos vida pura,</p><p>tornai seguro o nosso caminho,</p><p>para que vendo a Jesus,</p><p>nos alegremos sempre juntos.</p></div>
+        <div class="est"><p>Glória ao Pai seja dada,</p><p>e ao alto Cristo,</p><p>ao Espírito Santo igual honra,</p><p>aos três Uma honra. Amém.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-nav" id="in5">
+    <button class="inb" id="in5-l" onclick="goPage('rp5','in5',-1)">←</button>
+    <div class="inner-dots" id="in5-dots"></div>
+    <button class="inb" id="in5-r" onclick="goPage('rp5','in5',1)">→</button>
+  </div>
+</section>
+
+<!-- ══ VII ══ -->
+<section class="os" id="s6">
+  <div class="lp reveal">
+    <p class="o-num">Oração VII</p>
+    <p class="o-ref">Para antes do estudo</p>
+    <h2 class="o-tit">Oração de<br><em>Santo Tomás de Aquino</em></h2>
+    <div class="o-div"></div>
+    <span class="l-orn">Sto Tomás</span>
+    <span class="page-ind" id="pi6"></span>
+  </div>
+  <div class="rp" id="rp6">
+    <div class="rp-page" style="justify-content:center">
+      <div class="eg solo">
+        <div class="est"><p>Criador Inefável, Vós que sois a fonte verdadeira da luz e da ciência,</p><p>derramai sobre as trevas da minha inteligência um raio da vossa claridade.</p></div>
+        <div class="est"><p>Tirai de mim a dupla escuridão em que nasci: o pecado e a ignorância.</p></div>
+        <div class="est"><p>Vós que tornais eloquente a língua dos mudos e ensinais as crianças a falar,</p><p>instruí a minha língua e derramai sobre os meus lábios a vossa bênção.</p></div>
+        <div class="est"><p>Dai-me penetração para compreender, capacidade para reter,</p><p>método e facilidade para aprender, sutileza para interpretar e graça abundante para falar.</p></div>
+        <div class="est"><p>Guiai o início de minha obra, dirigí o seu progresso e levai-a a feliz conclusão.</p><p>Vós que sois o verdadeiro Deus e o verdadeiro Homem,</p><p>que viveis e reinais pelos séculos dos séculos. Amém.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-nav" id="in6">
+    <button class="inb" id="in6-l" onclick="goPage('rp6','in6',-1)">←</button>
+    <div class="inner-dots" id="in6-dots"></div>
+    <button class="inb" id="in6-r" onclick="goPage('rp6','in6',1)">→</button>
+  </div>
+</section>
+
+<!-- ══ VIII ══ -->
+<section class="os" id="s7">
+  <div class="lp reveal">
+    <p class="o-num">Oração VIII</p>
+    <p class="o-ref">Com Ladainha do Santíssimo Nome</p>
+    <h2 class="o-tit">Oração de<br><em>Santo Agostinho</em></h2>
+    <div class="o-div"></div>
+    <span class="l-orn">Sto Agostinho</span>
+    <span class="page-ind" id="pi7"></span>
+  </div>
+  <div class="rp" id="rp7">
+    <div class="rp-page">
+      <div class="eg">
+        <div class="est"><p>Vós sois, ó Jesus, o Cristo,</p><p>meu Pai santo, meu Deus misericordioso,</p><p>meu Rei infinitamente grande,</p><p>meu bom Pastor, meu único Mestre.</p></div>
+        <div class="est"><p>Vós sois minha Fortaleza e minha Salvação,</p><p>minha Esperança e minha Riqueza,</p><p>minha Sabedoria e minha Luz, meu Sumo Bem.</p></div>
+        <div class="est"><p>Sede sempre louvado, bendito e glorificado, Senhor Jesus Cristo.</p><p>Que eu não me esqueça jamais de quanto Vós me amais.</p></div>
+        <div class="est"><p>Consagro-Vos, Senhor, todo o meu ser:</p><p>minha memória, meu entendimento e minha vontade.</p><p>Tomai posse de mim totalmente, pois sou vosso. Amém.</p></div>
+      </div>
+    </div>
+    <div class="rp-page">
+      <div class="lg">
+        <div class="lt">Ladainha do Santíssimo Nome de Jesus</div>
+        <div class="li"><span class="linv">Jesus, Filho de Deus vivo</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, esplendor do Pai</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, claridade da luz eterna</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, rei da glória</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, sol da justiça</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, Filho da Virgem Maria</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, admirável</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, Deus forte</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, príncipe da paz</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, manso e humilde de coração</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, nosso refúgio</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, bom Pastor</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, luz verdadeira</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, sabedoria eterna</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, nossa via e nossa vida</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, força dos mártires</span><span class="lres">misericórdia</span></div>
+        <div class="li"><span class="linv">Jesus, coroa de todos os santos</span><span class="lres">misericórdia</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="inner-nav" id="in7">
+    <button class="inb" id="in7-l" onclick="goPage('rp7','in7',-1)">←</button>
+    <div class="inner-dots" id="in7-dots"></div>
+    <button class="inb" id="in7-r" onclick="goPage('rp7','in7',1)">→</button>
+  </div>
+</section>
+
+<footer class="pf">
+  <span class="pf-cross">✝</span>
+  <div class="pf-nav">
+    <a class="pf-link" href="index.html">← Início</a>
+  </div>
+</footer>
+
+</div><!-- #sw -->
+
+<script>
+/* ── NAVEGAÇÃO ENTRE SEÇÕES (↑↓) ── */
+const SEC_IDS = ['s0','s1','s2','s3','s4','s5','s6','s7'];
+const SEC_LABELS = ['Consagração','Ladainha N.Sra.','Sagrado Coração','Abrasada','Espírito Criador','Ave Estrela','Sto Tomás','Sto Agostinho'];
+const sw = document.getElementById('sw');
+let curSec = 0, busySec = false;
+
+function updateSecNav(){
+  document.querySelectorAll('.sd').forEach((d,i)=>d.classList.toggle('active',i===curSec));
+  document.getElementById('btnUp').classList.toggle('hidden', curSec===0);
+  document.getElementById('btnDown').classList.toggle('hidden', curSec>=SEC_IDS.length-1);
+}
+function goSection(dir){
+  const next = curSec+dir;
+  if(next<0||next>=SEC_IDS.length) return;
+  curSec=next; busySec=true;
+  sw.scrollTo({top:document.getElementById(SEC_IDS[curSec]).offsetTop,behavior:'smooth'});
+  setTimeout(()=>{busySec=false},900);
+  updateSecNav();
+}
+
+/* ── NAVEGAÇÃO DENTRO DA SEÇÃO (←→) ── */
+const pageState = {}; // rpId -> { cur, total }
+
+function initInnerNav(rpId, inId){
+  const rp = document.getElementById(rpId);
+  const pages = rp.querySelectorAll('.rp-page');
+  const total = pages.length;
+  pageState[rpId] = { cur:0, total };
+
+  const dotsEl = document.getElementById(inId+'-dots');
+  dotsEl.innerHTML = '';
+  for(let i=0;i<total;i++){
+    const d = document.createElement('span');
+    d.className = 'isd'+(i===0?' active':'');
+    d.onclick = ()=>jumpPage(rpId, inId, i);
+    dotsEl.appendChild(d);
+  }
+
+  // só mostra inner-nav se tiver mais de 1 página
+  const nav = document.getElementById(inId);
+  nav.style.display = total > 1 ? 'flex' : 'none';
+
+  updateInnerNav(rpId, inId);
+}
+
+function updateInnerNav(rpId, inId){
+  const {cur, total} = pageState[rpId];
+  const dotsEl = document.getElementById(inId+'-dots');
+  dotsEl.querySelectorAll('.isd').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  document.getElementById(inId+'-l').classList.toggle('hidden', cur===0);
+  document.getElementById(inId+'-r').classList.toggle('hidden', cur>=total-1);
+
+  // atualiza indicador de página no painel esquerdo
+  const piId = 'pi'+rpId.replace('rp','');
+  const pi = document.getElementById(piId);
+  if(pi && total>1){
+    pi.textContent = (cur+1)+' / '+total;
+    pi.classList.add('visible');
+  }
+}
+
+function jumpPage(rpId, inId, idx){
+  const rp = document.getElementById(rpId);
+  pageState[rpId].cur = idx;
+  rp.scrollTo({left: rp.clientWidth * idx, behavior:'smooth'});
+  updateInnerNav(rpId, inId);
+}
+
+function goPage(rpId, inId, dir){
+  const st = pageState[rpId];
+  jumpPage(rpId, inId, st.cur+dir);
+}
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded',()=>{
+  // dots seção
+  const dotsEl = document.getElementById('dots');
+  SEC_IDS.forEach((_,i)=>{
+    const d = document.createElement('span');
+    d.className = 'sd'+(i===0?' active':'');
+    d.title = SEC_LABELS[i];
+    d.onclick = ()=>{
+      curSec=i; busySec=true;
+      sw.scrollTo({top:document.getElementById(SEC_IDS[i]).offsetTop,behavior:'smooth'});
+      setTimeout(()=>{busySec=false},900);
+      updateSecNav();
+    };
+    dotsEl.appendChild(d);
+  });
+
+  // detecta seção ativa pelo scroll
+  sw.addEventListener('scroll',()=>{
+    if(busySec) return;
+    const h = sw.clientHeight;
+    SEC_IDS.forEach((id,i)=>{
+      const el = document.getElementById(id);
+      if(!el) return;
+      const top = el.offsetTop - sw.scrollTop;
+      if(top>=-h*0.5&&top<=h*0.5){ curSec=i; updateSecNav(); }
+    });
+  },{passive:true});
+
+  // init inner navs
+  for(let i=0;i<SEC_IDS.length;i++){
+    initInnerNav('rp'+i, 'in'+i);
+  }
+
+  // sync inner scroll → dots
+  for(let i=0;i<SEC_IDS.length;i++){
+    const rpId='rp'+i, inId='in'+i;
+    const rp=document.getElementById(rpId);
+    rp.addEventListener('scroll',()=>{
+      const idx = Math.round(rp.scrollLeft / rp.clientWidth);
+      pageState[rpId].cur = idx;
+      updateInnerNav(rpId, inId);
+    },{passive:true});
+  }
+
+  // reveal
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+  },{root:sw,threshold:.05});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // teclado: ↑↓ entre seções, ←→ dentro da seção atual
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();goSection(1)}
+    if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();goSection(-1)}
+    if(e.key==='ArrowRight'){e.preventDefault();goPage('rp'+curSec,'in'+curSec,1)}
+    if(e.key==='ArrowLeft'){e.preventDefault();goPage('rp'+curSec,'in'+curSec,-1)}
+  });
+
+  updateSecNav();
+});
+</script>
+</body>
+</html>

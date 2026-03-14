@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encontro 4 — Como Maria nos Transforma · Consagração a Jesus por Maria</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Cinzel:wght@400;500;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0;padding:0;box-sizing:border-box; }
+:root { --gold:#C9A84C;--gold-light:#E8C97A;--navy:#0D1B2A;--navy-card:#111f30;--text-body:#D4C8AE;--text-muted:rgba(200,187,160,0.85);--white:#FFFFFF;--cream:#FAF5EB; }
+html { scroll-behavior:smooth; }
+body { background:var(--navy);color:var(--text-body);font-family:'Cormorant Garamond',serif;overflow-x:hidden;line-height:1.75; }
+.bg-layer { position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 70% 40% at 5% 0%,rgba(201,168,76,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 35% at 95% 100%,rgba(201,168,76,.04) 0%,transparent 60%),var(--navy); }
+.bg-layer::after { content:'';position:absolute;inset:0;background-image:radial-gradient(1px 1px at 12% 18%,rgba(232,201,122,.4) 0%,transparent 100%),radial-gradient(1px 1px at 70% 14%,rgba(232,201,122,.5) 0%,transparent 100%),radial-gradient(1px 1px at 95% 62%,rgba(232,201,122,.4) 0%,transparent 100%); }
+.site-nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:15px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,27,42,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.1); }
+.nav-back { display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--gold);font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.3em;text-transform:uppercase;transition:opacity .3s; }
+.nav-back:hover { opacity:.65; }
+.nav-encounter { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.25em;color:rgba(201,168,76,0.75);text-transform:uppercase; }
+.nav-date { font-family:'Cinzel',serif;font-size: 1.024rem;letter-spacing:.2em;color:rgba(201,168,76,.4); }
+.page { position:relative;z-index:1;padding-top:64px; }
+.hero { min-height: 100dvh;display:flex;flex-direction:column;align-items:center;text-align:center;padding: clamp(40px, 8vh, 80px) 24px;position:relative;background-image:url('img/hero/hero-enc4.jpg');background-size:cover;background-position:center center;isolation:isolate; }
+.hero::before { content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(to bottom,rgba(13,27,42,0.70) 0%,rgba(13,27,42,0.80) 50%,rgba(13,27,42,0.92) 100%); }
+.hero > * { position:relative;z-index:1; }
+.hero-ornament { display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:28px;animation:fadeIn 1s ease both; }
+.hero-ornament .line { width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold)); }
+.hero-ornament .line:last-child { background:linear-gradient(90deg,var(--gold),transparent); }
+.hero-ornament .cross { color:var(--gold);font-size: 1.242rem;letter-spacing:.2em; }
+.enc-label { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.45em;color:var(--gold);text-transform:uppercase;margin-bottom:18px;animation:fadeSlideUp .9s ease .2s both; }
+.hero h1 { font-family:'Cinzel',serif;font-size:clamp(2.304rem, 5vw, 4.864rem);font-weight:500;color:var(--white);line-height:1.15;margin-bottom:10px;animation:fadeSlideUp .9s ease .35s both; }
+.hero-sub { font-size:clamp(1.408rem, 2.5vw, 2.048rem);font-style:italic;font-weight:300;color:var(--gold-light);margin-bottom:36px;animation:fadeSlideUp .9s ease .5s both; }
+.hero-divider { display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:36px;animation:fadeIn 1s ease .65s both; }
+.hero-divider .hline { width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--gold)); }
+.hero-divider .hline:last-child { background:linear-gradient(90deg,var(--gold),transparent); }
+.hero-divider .dia { width:7px;height:7px;background:var(--gold);transform:rotate(45deg); }
+.hero-verse { max-width:640px;margin:0 auto;padding:28px 36px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.03);position:relative;animation:fadeSlideUp 1s ease .8s both; }
+.hero-verse::before,.hero-verse::after { content:'';position:absolute;width:20px;height:20px;border-color:var(--gold);border-style:solid; }
+.hero-verse::before { top:-1px;left:-1px;border-width:2px 0 0 2px; }
+.hero-verse::after { bottom:-1px;right:-1px;border-width:0 2px 2px 0; }
+.hero-verse p { font-size:clamp(1.28rem, 2vw, 1.536rem);font-style:italic;font-weight:300;color:var(--cream);line-height:1.7;margin-bottom:12px; }
+.hero-verse cite { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;font-style:normal; }
+section {
+  min-height: 100dvh;
+  padding: clamp(40px, 8vh, 80px) 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.container { max-width:1060px; margin: auto; width:100%; }
+.section-label { font-family:'Cinzel',serif;font-size: 1.216rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:10px; }
+.section-title { font-family:'Cormorant Garamond',serif;font-size:clamp(2.304rem, 3.8vw, 3.84rem);font-weight:400;text-align:center;color:var(--white);line-height:1.2;margin-bottom: 16px; }
+.section-title em { font-style:italic;color:var(--gold-light); }
+.sintese-section { border-top:1px solid rgba(201,168,76,.08);background:rgba(201,168,76,.02); }
+.sintese-grid { display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.1);overflow:hidden; }
+.sintese-item:nth-child(1),.sintese-item:nth-child(2),.sintese-item:nth-child(3) { grid-column:span 2; }
+.sintese-item:nth-child(4),.sintese-item:nth-child(5) { grid-column:span 3; }
+.sintese-item { background:var(--navy);padding: 14px 14px;transition:background .3s;position:relative;overflow:hidden; }
+.sintese-item::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s; }
+.sintese-item:hover::before { opacity:1; }
+.sintese-item:hover { background:rgba(201,168,76,.05); }
+.si-num { font-family:'Cinzel',serif;font-size: 1.92rem;color:rgba(201,168,76,.85);margin-bottom: 6px;display:block; }
+.si-text { font-size: 1.408rem;font-weight:300;color:var(--text-body);line-height:1.55; }
+.si-text strong { color:var(--gold-light);font-weight:500; }
+.content-section { border-top:1px solid rgba(201,168,76,0.08); }
+.content-block { max-width:780px;margin: 0 auto 10px; }
+.content-block h3 { font-family:'Cinzel',serif;font-size: 1.126rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid rgba(201,168,76,.15); }
+.content-block p { font-size:clamp(1.28rem, 1.7vw, 1.536rem);font-weight:300;color:var(--text-body);line-height:1.75;margin-bottom:14px; }
+.content-block p:last-child { margin-bottom:0; }
+.highlight-para { padding: 10px 18px;border-left:3px solid var(--gold);background:rgba(201,168,76,.04);font-style:italic;color:var(--cream);margin:12px 0;line-height:1.65;font-size:clamp(1.28rem, 1.6vw, 1.472rem); }
+.cite-block { max-width:700px;margin:0 auto 18px;padding: 14px 22px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.03);text-align:center;position:relative; }
+.cite-block::before,.cite-block::after { content:'';position:absolute;width:18px;height:18px;border-color:var(--gold);border-style:solid; }
+.cite-block::before { top:-1px;left:-1px;border-width:2px 0 0 2px; }
+.cite-block::after { bottom:-1px;right:-1px;border-width:0 2px 2px 0; }
+.guillemet { font-family:'Cormorant Garamond',serif;font-size: 3.072rem;line-height:1;color:rgba(201,168,76,.25);margin-bottom:-4px;display:block; }
+.cite-block blockquote { font-size:clamp(1.28rem, 1.7vw, 1.536rem);font-style:italic;font-weight:300;color:var(--cream);line-height:1.65;margin-bottom:12px; }
+.cite-block cite { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;font-style:normal; }
+/* JACÓ GRID */
+.jaco-grid { display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.12);overflow:hidden;max-width:960px;margin:0 auto 18px; }
+.jaco-card { background:var(--navy-card);padding: 14px 16px;transition:background .3s; }
+.jaco-card:hover { background:rgba(201,168,76,.05); }
+.jc-label { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;display:block; }
+.jc-title { font-size: 1.1rem;font-weight:500;color:var(--white);margin-bottom:10px; }
+.jc-list { list-style:none;padding:0; }
+.jc-list li { font-size: 1.05rem;font-weight:300;color:var(--text-body);line-height:1.5;padding:5px 0 5px 16px;position:relative;border-bottom:1px solid rgba(201,168,76,.06); }
+.jc-list li:last-child { border-bottom:none; }
+.jc-list li::before { content:'·';position:absolute;left:0;color:var(--gold);font-size: 1.536rem;line-height:1.3; }
+/* DEVERES GRID */
+.deveres-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.12);overflow:hidden;max-width:960px;margin:0 auto 18px; }
+.dever-card { background:var(--navy-card);padding: 12px 14px;transition:background .3s; }
+.dever-card:hover { background:rgba(201,168,76,.05); }
+.dv-num { font-family:'Cinzel',serif;font-size: 1.536rem;color:rgba(201,168,76,.85);display:block;margin-bottom:6px; }
+.dv-label { font-family:'Cinzel',serif;font-size: 1.18rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;display:block; }
+.dv-title { font-size: 1.1rem;font-weight:500;color:var(--white);margin-bottom:6px; }
+.dv-text { font-size: 1.05rem;font-weight:300;color:var(--text-body);line-height:1.55; }
+/* VESTIMENTO */
+.vest-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.12);overflow:hidden;max-width:960px;margin:0 auto 18px; }
+.vest-card { background:var(--navy-card);padding: 12px 14px;transition:background .3s; }
+.vest-card:hover { background:rgba(201,168,76,.05); }
+.vc-layer { font-family:'Cinzel',serif;font-size: 1.18rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;display:block; }
+.vc-title { font-size: 1.1rem;font-weight:500;color:var(--white);margin-bottom:8px; }
+.vc-text { font-size: 1.05rem;font-weight:300;color:var(--text-body);line-height:1.55; }
+.closing-quote { max-width:680px;margin:0 auto;text-align:center;padding:14px 18px; }
+.closing-quote .cq-cross { color:var(--gold);font-size: 1.536rem;margin-bottom:12px;display:block; }
+.closing-quote blockquote { font-size:clamp(1.344rem, 1.9vw, 1.664rem);font-style:italic;font-weight:300;color:var(--cream);line-height:1.7;margin-bottom:10px; }
+.closing-quote .cq-ref { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase; }
+.page-footer { border-top:1px solid rgba(201,168,76,.12);padding:40px 24px;text-align:center; }
+.pf-cross { color:var(--gold);font-size: 1.178rem;display:block;margin-bottom:20px; }
+.pf-nav { display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap; }
+.pf-link { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,0.75);text-decoration:none;transition:color .3s; }
+.pf-link:hover { color:var(--gold); }
+.pf-sep { color:rgba(201,168,76,.2); }
+@keyframes fadeIn { from{opacity:0}to{opacity:1} }
+@keyframes fadeSlideUp { from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)} }
+.reveal { opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease; }
+.reveal.visible { opacity:1;transform:translateY(0); }
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:var(--navy); }
+::-webkit-scrollbar-thumb { background:rgba(201,168,76,.3);border-radius:3px; }
+.side-nav { position:fixed;right:28px;top:50%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;align-items:center;gap:10px; }
+.side-nav-btn { width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:rgba(201,168,76,0.3);font-size: 1.065rem;cursor:pointer;transition:color .3s,opacity .3s,border-color .3s;border:1px solid rgba(201,168,76,0.12);background:rgba(13,27,42,0.55);backdrop-filter:blur(6px); }
+.side-nav-btn:hover { color:rgba(201,168,76,0.85);border-color:rgba(201,168,76,0.4); }
+.side-nav-btn.hidden { opacity:0;pointer-events:none; }
+.side-nav-dots { display:flex;flex-direction:column;gap:9px;align-items:center;padding:4px 0; }
+.side-dot { width:5px;height:5px;border-radius:50%;background:rgba(201,168,76,0.18);transition:background .3s,transform .3s;cursor:pointer; }
+.side-dot.active { background:rgba(201,168,76,0.7);transform:scale(1.5); }
+@media(max-width:640px){ .side-nav { right:10px; } }
+
+  /* ── COMPACT MODE (HEIGHT < 900px) ── */
+  @media (max-height: 900px) {
+    /* Hero Compact */
+    .hero { justify-content: center; }
+    .hero-ornament { margin-bottom: 6px !important; }
+    .hero h1, .hero-title { margin-bottom: 4px !important; line-height: 1.05 !important; font-size: clamp(2rem, 4vw, 3rem) !important; }
+    .hero-sub { margin-bottom: 10px !important; font-size: clamp(1.1rem, 2vw, 1.4rem) !important; }
+    .hero-divider { margin-bottom: 10px !important; margin-top: 4px !important; }
+    .hero-verse { padding: 10px 16px !important; margin-bottom: 0 !important; }
+    .hero-verse p { margin-bottom: 2px !important; line-height: 1.3 !important; font-size: 0.95rem !important; }
+    .enc-label { margin-bottom: 8px !important; font-size: 0.9rem !important; }
+
+    /* General Sections Compact */
+    section, .musica-section, .consagracao-section { padding: 24px 16px !important; }
+    .section-title { margin-bottom: 12px !important; line-height: 1.1 !important; font-size: clamp(1.6rem, 3vw, 2.2rem) !important; }
+    .section-label { margin-bottom: 4px !important; font-size: 0.9rem !important; }
+    
+    /* Elements Compact */
+    .cite-block { padding: 10px 14px !important; margin-bottom: 10px !important; }
+    .guillemet { font-size: 1.6rem !important; margin-bottom: -4px !important; }
+    
+    /* Grids Compact */
+    .trindade-grid, .fact-grid, .sintese-grid, .exercicios-grid { margin-bottom: 10px !important; }
+    .trindade-card, .fact-item, .sintese-item, .exercicio-card { padding: 8px 10px !important; }
+    
+    /* Text Compact */
+    p, .tc-text, .paradox-side p, .si-text { line-height: 1.35 !important; font-size: 1rem !important; }
+    .si-num { font-size: 1.4rem !important; margin-bottom: 2px !important; }
+    .si-text { font-size: 1.05rem !important; }
+    
+    .tc-icon, .pf-cross { margin-bottom: 4px !important; font-size:1.0rem !important; }
+    .tc-persona, .paradox-tag { margin-bottom: 2px !important; font-size: 0.85rem !important; }
+    .tc-title, .paradox-side h3 { margin-bottom: 2px !important; font-size: 0.95rem !important; }
+    
+    /* Footer */
+    .page-footer { padding: 12px 12px !important; }
+    .pf-nav { gap: 12px; }
+    .pf-link { font-size: 0.9rem !important; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-layer"></div>
+<nav class="site-nav">
+  <a class="nav-back" href="index.html">← Início</a>
+  <span class="nav-encounter">Encontro · 04</span>
+  <span class="nav-date">04 de Maio · 20h30</span>
+</nav>
+<div class="page">
+
+  <section class="hero" id="s-hero">
+    <div class="hero-content" style="width: 100%; max-width: 1100px; margin: auto; display: flex; flex-direction: column; align-items: center;">
+
+    <div class="hero-ornament"><span class="line"></span><span class="cross">✦ ✝ ✦</span><span class="line"></span></div>
+    <p class="enc-label">Encontro 04 · 04 de Maio</p>
+    <h1>Como Maria nos<br>Transforma à Imagem de Cristo</h1>
+    <p class="hero-sub">O molde, Jacó e os deveres de amor</p>
+    <div class="hero-divider"><span class="hline"></span><span class="dia"></span><span class="hline"></span></div>
+    <div class="hero-verse">
+      <p>"Quando Ela vos sustenta, não caís; quando vos protege, não temeis; quando vos conduz, não cansais; quando vos é favorável, chegais."</p>
+      <cite>— São Bernardo, citado por São Luís, § 201</cite>
+    </div>
+  
+    </div>
+</section>
+
+      <section class="content-section sintese-section" id="s-sintese">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin:0 auto 20px;text-align:center;">
+        <p style="font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;">O que esperar</p>
+        <p style="font-size:clamp(1.4rem,2vw,1.8rem);color:var(--cream);font-style:italic;margin-top:6px;font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.3;">Conformação: Deixar-se Transformar</p>
+      </div>
+      <div class="sintese-grid">
+        <div class="sintese-item reveal">
+          <span class="si-num">I</span>
+          <p class="si-text">O tesouro deve ser depositado em Maria — não guardado em nós mesmos</p>
+        </div>
+        <div class="sintese-item reveal">
+          <span class="si-num">II</span>
+          <p class="si-text">Jacó e Rebeca: a figura bíblica mais completa da consagração</p>
+        </div>
+        <div class="sintese-item reveal">
+          <span class="si-num">III</span>
+          <p class="si-text">Os réprobos confiam nas próprias forças — os predestinados confiam em Maria</p>
+        </div>
+        <div class="sintese-item reveal">
+          <span class="si-num">IV</span>
+          <p class="si-text">Maria tem cinco deveres de amor para com seus filhos consagrados</p>
+        </div>
+        <div class="sintese-item reveal">
+          <span class="si-num">V</span>
+          <p class="si-text">O vestimento triplo de Rebeca: méritos de Cristo, virtudes de Maria, pecados transformados</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="content-section" id="s-molde">
+    <div class="container">
+      <p class="section-label reveal">§§ 173 – 182</p>
+      <h2 class="section-title reveal">O Problema da Perseverança: Mudar o Cofre</h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div class="cite-block" style="margin:0;max-width:100%;">
+            <span class="guillemet">"</span>
+            <blockquote>O molde próprio a formar e moldar deuses. Aquele que é lançado nesse molde divino é logo formado em Jesus Cristo, e Jesus Cristo nele.</blockquote>
+            <cite>— Santo Agostinho, citado por São Luís — forma Dei · § 219</cite>
+          </div>
+          <div class="highlight-para" style="margin:0;">A solução não é reforçar o cofre frágil que somos — é <strong style="color:var(--gold-light)">mudar o cofre</strong>. Depositar tudo em Maria. Ela é inexpugnável — o que está nela não se perde. E ela não apenas guarda: ela transforma.</div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">O diagnóstico honesto</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">O problema mais comum entre cristãos sinceros não é falta de boa vontade inicial — é a incapacidade de perseverar. O fervor que se desfaz, as conversões que não duram.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">A causa</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Guardamos as graças em nós mesmos — num cofre frágil, arrombável, manchado. Os demônios espreitam. O mundo nos mancha pelo contato constante.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">A solução: o molde</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Quem se lança no molde de Maria sai formado à imagem de Cristo — sem precisar esculpir-se por conta própria. A um pequeno custo, em pouco tempo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="content-section" id="s-jaco">
+    <div class="container">
+      <p class="section-label reveal">§§ 183 – 200</p>
+      <h2 class="section-title reveal">Jacó e Rebeca: A Figura Bíblica da Consagração</h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Isaac → Deus Pai</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Distribui as bênçãos eternas da predestinação.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Rebeca → Maria</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Instrui, prepara e aconselha o filho amado.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Jacó → O consagrado</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Amado da mãe, dócil à sua instrução — recebe todas as bênçãos.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Esaú → O réprobo</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Confia nas próprias forças — perde a bênção que era sua por direito.</p>
+          </div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">O que Rebeca fez por Jacó</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Preparou as roupas e os alimentos. Ensinou o que dizer e como agir diante do pai. Carregou sobre si a possível maldição: <em>"Caia sobre mim a tua maldição."</em></p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">O que Maria faz por nós</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Prepara-nos, reveste-nos, apresenta-nos ao Pai. Carrega sobre si o que não merecemos. E o Pai vê Jacó — não Esaú.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="content-section" id="s-jaco-2">
+    <div class="container">
+      <p class="section-label reveal">Os Dois Filhos</p>
+      <h2 class="section-title reveal">Dois Modos de Viver — Esaú e Jacó</h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Esaú · Os réprobos</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Forte no mundo, fraco na salvação. Raramente fica em casa — foge do silêncio interior. Devoção de fachada: cerimônias sem interior. Confia nas próprias forças e nos próprios méritos.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Quando falha</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Culpa os outros ou desanima de vez. Sem Maria, cada queda é definitiva — porque não tem a quem recorrer além de si mesmo.</p>
+          </div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Jacó · Os predestinados</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Simples, interior, dócil a Maria. Fica em casa — cultiva a vida interior e a oração. Devoção real: parte do coração, não das mãos. Depende de Maria — e por isso nunca fica sem recurso.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Quando falha</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Recorre imediatamente a Maria, sem angústia nem agitação. Cada queda se torna humildade — e a humildade vence o demônio mais do que qualquer força própria.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="max-width:1060px;margin:12px auto 0;padding:12px 24px;border-left:3px solid var(--gold);background:rgba(201,168,76,0.04);">
+        <p style="font-size:1.0rem;font-style:italic;color:var(--cream);line-height:1.65;margin:0;">A distinção não é entre santos e pecadores. É entre os que dependem de si mesmos e os que se entregam a Maria. Esaú tinha mais dons naturais — Jacó herdou as bênçãos.</p>
+      </div>
+    </div>
+  </section>
+
+    <section class="content-section" id="s-deveres">
+    <div class="container">
+      <p class="section-label reveal">§§ 201 – 212</p>
+      <h2 class="section-title reveal">Os Cinco Deveres de Caridade de Maria pelos seus Filhos</h2>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto 10px;">
+        <div style="background:var(--navy-card);padding:16px 18px;"><span style="font-family:'Cinzel',serif;font-size:1.0rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:4px;">I · § 202</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Ela os ama</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.5;font-style:italic;">"Reuni todo o amor de todas as mães do mundo num único coração — ainda seria nada em comparação com o amor de Maria."</p></div>
+        <div style="background:var(--navy-card);padding:16px 18px;"><span style="font-family:'Cinzel',serif;font-size:1.0rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:4px;">II · § 203</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Ela os ilumina</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.5;">Dissipa as trevas da ignorância. Ninguém está nas mãos dela e caminha às cegas.</p></div>
+        <div style="background:var(--navy-card);padding:16px 18px;"><span style="font-family:'Cinzel',serif;font-size:1.0rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:4px;">III · §§ 205–207</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Ela os alimenta</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.5;">Com o próprio Jesus Cristo — que ela formou em si mesma e continua a formar nos seus.</p></div>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy-card);padding:16px 18px;"><span style="font-family:'Cinzel',serif;font-size:1.0rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:4px;">IV · §§ 208–209</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Ela os conduz e protege</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.5;">Como Estrela do Mar — guia ao porto. Cercada de legiões de anjos que comanda à vontade para socorrer seus filhos.</p></div>
+        <div style="background:var(--navy-card);padding:16px 18px;"><span style="font-family:'Cinzel',serif;font-size:1.0rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:4px;">V · §§ 210–212</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Ela intercede</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.5;">Junto ao Pai, ao Filho e ao Espírito Santo — sem cessar. Uma advogada que nunca perde uma causa que aceita defender.</p></div>
+      </div>
+    </div>
+  </section>
+
+    <section class="content-section" id="s-deveres-2">
+    <div class="container">
+      <p class="section-label reveal">§§ 218 – 221</p>
+      <h2 class="section-title reveal">O Molde de Deus: <em>forma Dei</em></h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div class="cite-block" style="margin:0;max-width:100%;">
+            <span class="guillemet">"</span>
+            <blockquote>Aquele que é lançado nesse molde divino é logo formado em Jesus Cristo, e Jesus Cristo nele. A um pequeno custo e em pouco tempo, ficará deificado.</blockquote>
+            <cite>— Santo Agostinho, citado por São Luís — § 219</cite>
+          </div>
+          <div class="highlight-para" style="margin:0;">A matéria não esculpe a si mesma — ela se entrega ao molde. <strong style="color:var(--gold-light)">Maria é o molde de Deus:</strong> quem se lança nela recebe a forma de Cristo, sem precisar esculpir-se por conta própria.</div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">A distinção de São Luís</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Há dois modos de formar uma estátua: esculpindo (lento, doloroso, com risco de errar) ou pelo molde (rápido, seguro, perfeito). São Luís propõe o molde.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O pequeno custo</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Não é nenhum custo em termos de esforço de escultura — mas exige a única coisa difícil: <em>largar</em> o controle. Confiar inteiramente a Maria o que somos.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">A deificação</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Não é metáfora. São Luís cita os Padres: o fim do ser humano é ser participante da natureza divina. Maria é o caminho mais seguro para chegar lá.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="content-section" id="s-vest">
+    <div class="container">
+      <p class="section-label reveal">§§ 206 – 217</p>
+      <h2 class="section-title reveal">O Vestimento Triplo de Rebeca</h2>
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr 1fr ;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy-card);padding:16px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Primeira camada</span>
+          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Os méritos de Cristo</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">Maria empresta os méritos infinitos de Cristo ao consagrado. Não os próprios méritos chegam ao Pai — chegam os de Cristo, pelo consagrado.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:16px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Segunda camada</span>
+          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">As virtudes de Maria</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">Humildade, pureza, caridade, obediência — acumuladas por Maria — são colocadas sobre o consagrado como uma segunda pele.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:16px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Terceira camada</span>
+          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">A miséria transformada</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">Até os pecados passados podem ser transformados em títulos de misericórdia. Maria não ignora a miséria — ela a reveste de graça.</p>
+        </div>
+      </div>
+      <div class="reveal" style="max-width:1060px;margin:14px auto 0;padding:14px 24px;border-left:3px solid var(--gold);background:rgba(201,168,76,0.04);">
+        <p style="font-size:1.0rem;font-style:italic;color:var(--cream);line-height:1.65;">O consagrado chega ao Pai revestido de três camadas: os méritos de Cristo, as virtudes de Maria, e a própria miséria transformada em humildade. Isaac — Deus Pai — não vê Esaú. Vê Jacó.</p>
+      </div>
+    </div>
+  </section>
+
+    <section class="content-section" id="s-vest-2">
+    <div class="container">
+      <p class="section-label reveal">Transição · Encontro 5</p>
+      <h2 class="section-title reveal">Conformado a Cristo — o que Vem Depois</h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O que foi estabelecido</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">São Luís mostrou como a consagração funciona do lado de Maria: ela ama, ilumina, alimenta, conduz e intercede. E mostrou o mecanismo da transformação: o molde de Deus, o vestimento triplo.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">A pergunta que fica</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">A consagração foi feita. O molde foi escolhido. A entrega foi dada. E agora — o que muda de fato? Quais são os frutos concretos?</p>
+          </div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div class="cite-block" style="margin:0;max-width:100%;">
+            <span class="guillemet">"</span>
+            <blockquote>Se fordes fiel às práticas desta devoção, vereis os efeitos que ela produz em vossa alma, que vos surpreenderão agradavelmente.</blockquote>
+            <cite>— São Luís de Montfort, § 213</cite>
+          </div>
+          <div class="highlight-para" style="margin:0;">No Encontro 5: os sete efeitos reais na alma — e como viver a consagração no cotidiano, nas ações pequenas, na atitude interior de cada dia.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span class="pf-cross">✝</span>
+    <div class="pf-nav">
+      <a class="pf-link" href="encontro-3.html">← Encontro 3</a>
+      <span class="pf-sep">✦</span>
+      <a class="pf-link" href="encontro-5.html">Encontro 5 →</a>
+    </div>
+  </footer>
+</div>
+
+<nav class="side-nav" id="sideNav">
+  <button class="side-nav-btn" id="btnUp" onclick="sideNavGo(-1)">&#8593;</button>
+  <div class="side-nav-dots" id="sideNavDots"></div>
+  <button class="side-nav-btn" id="btnDown" onclick="sideNavGo(1)">&#8595;</button>
+</nav>
+<script>
+  const reveals=document.querySelectorAll('.reveal');
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+  reveals.forEach(el=>obs.observe(el));
+  document.querySelectorAll('.sintese-item,.jaco-card,.dever-card,.vest-card').forEach((el,i)=>{el.style.transitionDelay=i*0.06+'s';});
+  const _ids=['s-hero','s-sintese','s-molde','s-jaco','s-jaco-2','s-deveres','s-deveres-2','s-vest','s-vest-2'];
+  const _labels=['Início','Síntese','O Molde','Jacó I','Jacó II','Deveres','O Molde Dei','Vestimento','Transição'];
+  let _cur=0,_scrolling=false;
+  const _dots=document.getElementById('sideNavDots'),_btnUp=document.getElementById('btnUp'),_btnDown=document.getElementById('btnDown');
+  _ids.forEach((id,i)=>{const d=document.createElement('span');d.className='side-dot'+(i===0?' active':'');d.title=_labels[i];d.addEventListener('click',()=>sideNavGoto(i));_dots.appendChild(d);});
+  function _updateNav(){_dots.querySelectorAll('.side-dot').forEach((d,i)=>d.classList.toggle('active',i===_cur));_btnUp.classList.toggle('hidden',_cur===0);_btnDown.classList.toggle('hidden',_cur>=_ids.length-1);}
+  function sideNavGoto(i){if(i<0||i>=_ids.length)return;_cur=i;const el=document.getElementById(_ids[i]);if(el){_scrolling=true;el.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>{_scrolling=false;},900)}_updateNav();}
+  function sideNavGo(dir){sideNavGoto(_cur+dir);}
+  _ids.map(id=>document.getElementById(id)).filter(Boolean).forEach(el=>new IntersectionObserver((entries)=>{if(_scrolling)return;entries.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>=0.4){const idx=_ids.indexOf(e.target.id);if(idx!==-1){_cur=idx;_updateNav();}}});},{threshold:0.05,rootMargin:'0px 0px -5% 0px'}).observe(el));
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();sideNavGo(1);}if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();sideNavGo(-1);}});
+  _updateNav();
+</script>
+</body>
+</html>

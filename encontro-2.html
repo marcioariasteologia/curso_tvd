@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encontro 2 — Verdades Fundamentais · Consagração a Jesus por Maria</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Cinzel:wght@400;500;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --gold: #C9A84C; --gold-light: #E8C97A; --navy: #0D1B2A;
+  --navy-card: #111f30; --text-body: #D4C8AE;
+  --text-muted:rgba(200,187,160,0.85); --white: #FFFFFF; --cream: #FAF5EB;
+}
+html { scroll-behavior: smooth; }
+body { background:var(--navy); color:var(--text-body); font-family:'Cormorant Garamond',serif; overflow-x:hidden; line-height:1.75; }
+.bg-layer { position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 40% at 5% 0%,rgba(201,168,76,.06) 0%,transparent 60%),radial-gradient(ellipse 50% 35% at 95% 100%,rgba(201,168,76,.04) 0%,transparent 60%),var(--navy); }
+.bg-layer::after { content:'';position:absolute;inset:0;
+  background-image:radial-gradient(1px 1px at 12% 18%,rgba(232,201,122,.4) 0%,transparent 100%),radial-gradient(1px 1px at 28% 6%,rgba(232,201,122,.3) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 70% 14%,rgba(232,201,122,.5) 0%,transparent 100%),radial-gradient(1px 1px at 88% 30%,rgba(232,201,122,.3) 0%,transparent 100%),radial-gradient(1px 1px at 4% 58%,rgba(232,201,122,.3) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 95% 62%,rgba(232,201,122,.4) 0%,transparent 100%),radial-gradient(1px 1px at 50% 85%,rgba(232,201,122,.25) 0%,transparent 100%); }
+.site-nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:15px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,27,42,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.1); }
+.nav-back { display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--gold);font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.3em;text-transform:uppercase;transition:opacity .3s; }
+.nav-back:hover { opacity:.65; }
+.nav-encounter { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.25em;color:rgba(201,168,76,0.75);text-transform:uppercase; }
+.nav-date { font-family:'Cinzel',serif;font-size: 1.024rem;letter-spacing:.2em;color:rgba(201,168,76,.4); }
+.page { position:relative;z-index:1;padding-top:64px; }
+
+/* HERO */
+.hero { min-height: 100dvh;display:flex;flex-direction:column;align-items:center;text-align:center;padding: clamp(40px, 8vh, 80px) 24px;
+  position:relative; background-image:url('img/hero/hero-enc2.jpg'); background-size:cover; background-position:center center; isolation:isolate; }
+.hero::before { content:'';position:absolute;inset:0;z-index:0;
+  background:linear-gradient(to bottom,rgba(13,27,42,0.70) 0%,rgba(13,27,42,0.80) 50%,rgba(13,27,42,0.92) 100%); }
+.hero > * { position:relative;z-index:1; }
+.hero-ornament { display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:28px;animation:fadeIn 1s ease both; }
+.hero-ornament .line { width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold)); }
+.hero-ornament .line:last-child { background:linear-gradient(90deg,var(--gold),transparent); }
+.hero-ornament .cross { color:var(--gold);font-size: 1.242rem;letter-spacing:.2em; }
+.enc-label { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.45em;color:var(--gold);text-transform:uppercase;margin-bottom:18px;animation:fadeSlideUp .9s ease .2s both; }
+.hero h1 { font-family:'Cinzel',serif;font-size:clamp(2.304rem, 5vw, 4.864rem);font-weight:500;color:var(--white);line-height:1.15;margin-bottom:10px;animation:fadeSlideUp .9s ease .35s both; }
+.hero-sub { font-size:clamp(1.408rem, 2.5vw, 2.048rem);font-style:italic;font-weight:300;color:var(--gold-light);margin-bottom:36px;animation:fadeSlideUp .9s ease .5s both; }
+.hero-divider { display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:36px;animation:fadeIn 1s ease .65s both; }
+.hero-divider .hline { width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--gold)); }
+.hero-divider .hline:last-child { background:linear-gradient(90deg,var(--gold),transparent); }
+.hero-divider .dia { width:7px;height:7px;background:var(--gold);transform:rotate(45deg); }
+.hero-verse { max-width:640px;margin:0 auto;padding:28px 36px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.03);position:relative;animation:fadeSlideUp 1s ease .8s both; }
+.hero-verse::before,.hero-verse::after { content:'';position:absolute;width:20px;height:20px;border-color:var(--gold);border-style:solid; }
+.hero-verse::before { top:-1px;left:-1px;border-width:2px 0 0 2px; }
+.hero-verse::after { bottom:-1px;right:-1px;border-width:0 2px 2px 0; }
+.hero-verse p { font-size:clamp(1.28rem, 2vw, 1.536rem);font-style:italic;font-weight:300;color:var(--cream);line-height:1.7;margin-bottom:12px; }
+.hero-verse cite { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;font-style:normal; }
+
+/* SECTION BASE */
+section {
+  min-height: 100dvh;
+  padding: clamp(40px, 8vh, 80px) 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.container { max-width:1060px; margin: auto; width:100%; }
+.section-label { font-family:'Cinzel',serif;font-size: 1.216rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:10px; }
+.section-title { font-family:'Cormorant Garamond',serif;font-size:clamp(2.304rem, 3.8vw, 3.84rem);font-weight:400;text-align:center;color:var(--white);line-height:1.2;margin-bottom: 16px; }
+.section-title em { font-style:italic;color:var(--gold-light); }
+
+/* SÍNTESE */
+.sintese-section { border-top:1px solid rgba(201,168,76,.08);background:rgba(201,168,76,.02); }
+.sintese-grid { display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.1);overflow:hidden; }
+.sintese-item:nth-child(1),.sintese-item:nth-child(2),.sintese-item:nth-child(3) { grid-column:span 2; }
+.sintese-item:nth-child(4),.sintese-item:nth-child(5) { grid-column:span 3; }
+.sintese-item { background:var(--navy);padding: 14px 14px;transition:background .3s;position:relative;overflow:hidden; }
+.sintese-item::before { content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s; }
+.sintese-item:hover::before { opacity:1; }
+.sintese-item:hover { background:rgba(201,168,76,.05); }
+.si-num { font-family:'Cinzel',serif;font-size: 1.92rem;color:rgba(201,168,76,.85);margin-bottom: 6px;display:block; }
+.si-text { font-size: 1.408rem;font-weight:300;color:var(--text-body);line-height:1.55; }
+.si-text strong { color:var(--gold-light);font-weight:500; }
+
+/* CONTENT */
+.content-section { border-top:1px solid rgba(201,168,76,0.08); }
+.content-block { max-width:780px;margin: 0 auto 10px; }
+.content-block h3 { font-family:'Cinzel',serif;font-size: 1.126rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid rgba(201,168,76,.15); }
+.content-block p { font-size:clamp(1.28rem, 1.7vw, 1.536rem);font-weight:300;color:var(--text-body);line-height:1.75;margin-bottom:14px; }
+.content-block p:last-child { margin-bottom:0; }
+.content-p { font-size:clamp(1.28rem, 1.6vw, 1.472rem);font-weight:300;color:var(--text-body);line-height:1.7;margin-bottom:12px; }
+.highlight-para { padding: 10px 18px;border-left:3px solid var(--gold);background:rgba(201,168,76,.04);font-style:italic;color:var(--cream);margin:12px 0;line-height:1.65;font-size:clamp(1.28rem, 1.6vw, 1.472rem); }
+
+/* CITE BLOCK */
+.cite-block { max-width:700px;margin:0 auto 18px;padding: 14px 22px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.03);text-align:center;position:relative; }
+.cite-block::before,.cite-block::after { content:'';position:absolute;width:18px;height:18px;border-color:var(--gold);border-style:solid; }
+.cite-block::before { top:-1px;left:-1px;border-width:2px 0 0 2px; }
+.cite-block::after { bottom:-1px;right:-1px;border-width:0 2px 2px 0; }
+.guillemet { font-family:'Cormorant Garamond',serif;font-size: 3.072rem;line-height:1;color:rgba(201,168,76,.25);margin-bottom:-4px;display:block; }
+.cite-block blockquote { font-size:clamp(1.28rem, 1.7vw, 1.536rem);font-style:italic;font-weight:300;color:var(--cream);line-height:1.65;margin-bottom:12px; }
+.cite-block cite { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;font-style:normal; }
+
+/* VERDADES GRID */
+.verdades-grid { display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.12);overflow:hidden;max-width:960px;margin:0 auto 16px; }
+.verdade-card:nth-child(1),.verdade-card:nth-child(2),.verdade-card:nth-child(3) { grid-column:span 2; }
+.verdade-card:nth-child(4),.verdade-card:nth-child(5) { grid-column:span 3; }
+.verdade-card { background:var(--navy-card);padding: 14px 14px;transition:background .3s;position:relative; }
+.verdade-card:hover { background:rgba(201,168,76,.05); }
+.vc-num { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.3em;color:rgba(201,168,76,.5);text-transform:uppercase;margin-bottom:8px;display:block; }
+.vc-title { font-size: 1.408rem;font-weight:500;color:var(--white);margin-bottom:8px;line-height:1.2; }
+.vc-text { font-size: 1.28rem;font-weight:300;color:var(--text-body);line-height:1.5;font-style:italic; }
+
+/* FALSOS GRID */
+.falsos-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.1);overflow:hidden;max-width:1060px;margin:0 auto; }
+.falso-item { background:var(--navy-card);padding: 12px 14px;transition:background .3s; }
+.falso-item:hover { background:rgba(201,168,76,.05); }
+.fi-num { font-family:'Cinzel',serif;font-size: 1.408rem;color:rgba(201,168,76,.4);display:block;margin-bottom:6px; }
+.fi-title { font-size: 1.28rem;font-weight:500;color:var(--gold-light);margin-bottom:6px;display:block; }
+.fi-text { font-size: 1.05rem;font-weight:300;color:var(--text-body);line-height:1.55; }
+@media(max-width:700px){ .falsos-grid { grid-template-columns:1fr 1fr; } }
+
+/* DEVOÇÃO GRID */
+.devocao-grid { display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.1);overflow:hidden;max-width:1060px;margin:0 auto 16px; }
+.devocao-card { background:var(--navy);padding: 14px 12px;transition:background .3s; }
+.devocao-card:hover { background:rgba(201,168,76,.05); }
+.dc-num { font-family:'Cinzel',serif;font-size: 1.92rem;color:rgba(201,168,76,.85);margin-bottom:10px;display:block; }
+.dc-title { font-size: 1.28rem;font-weight:500;color:var(--white);margin-bottom:8px;font-family:'Cinzel',serif;letter-spacing:0.05em; }
+.dc-text { font-size: 1.0rem;font-weight:300;color:var(--text-body);line-height:1.55; }
+@media(max-width:900px){ .devocao-grid { grid-template-columns:1fr 1fr; } }
+
+/* APOSTOLOS / TRAITS */
+.apostolos-card { max-width:720px;margin:0 auto 16px;border:1px solid rgba(201,168,76,.25);background:rgba(201,168,76,.04);padding: 16px 20px;position:relative; }
+.apostolos-card::before { content:'✦';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--navy);padding:0 12px;color:var(--gold);font-size: 1.152rem; }
+.apostolos-card h3 { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:16px; }
+.apostolos-traits { display:grid;grid-template-columns:1fr 1fr;gap:10px; }
+.at-trait { display:flex;gap:10px;align-items:flex-start; }
+.at-dot { width:5px;height:5px;background:var(--gold);transform:rotate(45deg);margin-top:7px;flex-shrink:0; }
+.at-text { font-size: 1.05rem;font-weight:300;color:var(--text-body);line-height:1.55; }
+
+/* SEGREDO */
+.segredo-section { border-top:1px solid rgba(201,168,76,.08); }
+.segredo-box { max-width:820px;margin:0 auto 18px;border:1px solid rgba(201,168,76,.3);background:rgba(201,168,76,.04);padding: 18px 28px;position:relative;text-align:center; }
+.segredo-box::before { content:'✦';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--navy);padding:0 12px;color:var(--gold);font-size: 1.152rem; }
+.segredo-box h3 { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:18px; }
+.segredo-box blockquote { font-size:clamp(1.28rem, 1.7vw, 1.536rem);font-style:italic;font-weight:300;color:var(--cream);line-height:1.7;margin-bottom:14px; }
+.segredo-box cite { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;font-style:normal; }
+.segredo-levels { display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.12);overflow:hidden;margin-top:20px; }
+.sl-card { background:var(--navy);padding: 12px 12px;text-align:center;transition:background .3s; }
+.sl-card:hover { background:rgba(201,168,76,.05); }
+.sl-label { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.25em;color:rgba(201,168,76,.4);text-transform:uppercase;margin-bottom:6px; }
+.sl-text { font-size: 1.05rem;font-weight:300;color:var(--text-body);font-style:italic;line-height:1.5; }
+
+/* CLOSING QUOTE */
+.closing-quote { max-width:680px;margin:0 auto;text-align:center;padding:14px 18px; }
+.closing-quote .cq-cross { color:var(--gold);font-size: 1.536rem;margin-bottom:12px;display:block; }
+.closing-quote blockquote { font-size:clamp(1.344rem, 1.9vw, 1.664rem);font-style:italic;font-weight:300;color:var(--cream);line-height:1.7;margin-bottom:10px; }
+.closing-quote .cq-ref { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase; }
+
+/* TWO COL */
+.two-col-text { max-width:960px;margin:0 auto 16px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.1);overflow:hidden; }
+.two-col-text > div { background:var(--navy);padding:18px 22px; }
+.col-label { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;display:block; }
+@media(max-width:700px){ .two-col-text { grid-template-columns:1fr; } }
+
+/* FOOTER */
+.page-footer { border-top:1px solid rgba(201,168,76,.12);padding:40px 24px;text-align:center; }
+.pf-cross { color:var(--gold);font-size: 1.178rem;display:block;margin-bottom:20px; }
+.pf-nav { display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap; }
+.pf-link { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,0.75);text-decoration:none;transition:color .3s; }
+.pf-link:hover { color:var(--gold); }
+.pf-sep { color:rgba(201,168,76,.2); }
+
+@keyframes fadeIn { from{opacity:0}to{opacity:1} }
+@keyframes fadeSlideUp { from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)} }
+.reveal { opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease; }
+.reveal.visible { opacity:1;transform:translateY(0); }
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:var(--navy); }
+::-webkit-scrollbar-thumb { background:rgba(201,168,76,.3);border-radius:3px; }
+
+/* SIDE NAV */
+.side-nav { position:fixed;right:28px;top:50%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;align-items:center;gap:10px; }
+.side-nav-btn { width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:rgba(201,168,76,0.3);font-size: 0.832rem;cursor:pointer;transition:color .3s,opacity .3s,border-color .3s;border:1px solid rgba(201,168,76,0.12);background:rgba(13,27,42,0.55);backdrop-filter:blur(6px);text-decoration:none; }
+.side-nav-btn:hover { color:rgba(201,168,76,0.85);border-color:rgba(201,168,76,0.4); }
+.side-nav-btn.hidden { opacity:0;pointer-events:none; }
+.side-nav-dots { display:flex;flex-direction:column;gap:9px;align-items:center;padding:4px 0; }
+.side-dot { width:5px;height:5px;border-radius:50%;background:rgba(201,168,76,0.18);transition:background .3s,transform .3s;cursor:pointer; }
+.side-dot.active { background:rgba(201,168,76,0.7);transform:scale(1.5); }
+@media(max-width:640px){ .side-nav { right:10px; } }
+
+  /* ── COMPACT MODE (HEIGHT < 900px) ── */
+  @media (max-height: 900px) {
+    /* Hero Compact */
+    .hero { justify-content: center; }
+    .hero-ornament { margin-bottom: 6px !important; }
+    .hero h1, .hero-title { margin-bottom: 4px !important; line-height: 1.05 !important; font-size: clamp(2rem, 4vw, 3rem) !important; }
+    .hero-sub { margin-bottom: 10px !important; font-size: clamp(1.1rem, 2vw, 1.4rem) !important; }
+    .hero-divider { margin-bottom: 10px !important; margin-top: 4px !important; }
+    .hero-verse { padding: 10px 16px !important; margin-bottom: 0 !important; }
+    .hero-verse p { margin-bottom: 2px !important; line-height: 1.3 !important; font-size: 0.95rem !important; }
+    .enc-label { margin-bottom: 8px !important; font-size: 0.9rem !important; }
+
+    /* General Sections Compact */
+    section, .musica-section, .consagracao-section { padding: 24px 16px !important; }
+    .section-title { margin-bottom: 12px !important; line-height: 1.1 !important; font-size: clamp(1.6rem, 3vw, 2.2rem) !important; }
+    .section-label { margin-bottom: 4px !important; font-size: 0.9rem !important; }
+    
+    /* Elements Compact */
+    .cite-block { padding: 10px 14px !important; margin-bottom: 10px !important; }
+    .guillemet { font-size: 1.6rem !important; margin-bottom: -4px !important; }
+    
+    /* Grids Compact */
+    .trindade-grid, .fact-grid, .sintese-grid, .exercicios-grid { margin-bottom: 10px !important; }
+    .trindade-card, .fact-item, .sintese-item, .exercicio-card { padding: 8px 10px !important; }
+    
+    /* Text Compact */
+    p, .tc-text, .paradox-side p, .si-text { line-height: 1.35 !important; font-size: 1rem !important; }
+    .si-num { font-size: 1.4rem !important; margin-bottom: 2px !important; }
+    .si-text { font-size: 1.05rem !important; }
+    
+    .tc-icon, .pf-cross { margin-bottom: 4px !important; font-size:1.0rem !important; }
+    .tc-persona, .paradox-tag { margin-bottom: 2px !important; font-size: 0.85rem !important; }
+    .tc-title, .paradox-side h3 { margin-bottom: 2px !important; font-size: 0.95rem !important; }
+    
+    /* Footer */
+    .page-footer { padding: 12px 12px !important; }
+    .pf-nav { gap: 12px; }
+    .pf-link { font-size: 0.9rem !important; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-layer"></div>
+<nav class="site-nav">
+  <a class="nav-back" href="index.html">← Início</a>
+  <span class="nav-encounter">Encontro · 02</span>
+  <span class="nav-date">20 de Abril · 20h30</span>
+</nav>
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero" id="s-hero">
+    <div class="hero-content" style="width: 100%; max-width: 1100px; margin: auto; display: flex; flex-direction: column; align-items: center;">
+
+    <div class="hero-ornament"><span class="line"></span><span class="cross">✦ ✝ ✦</span><span class="line"></span></div>
+    <p class="enc-label">Encontro 02 · 20 de Abril</p>
+    <h1>Verdades e Devoção</h1>
+    <p class="hero-sub">As cinco verdades, os sete falsos devotos e o segredo</p>
+    <div class="hero-divider"><span class="hline"></span><span class="dia"></span><span class="hline"></span></div>
+    <div class="hero-verse">
+      <p>"Vós estais, Senhor, sempre com Maria, e Maria está sempre convosco e não pode estar sem Vós."</p>
+      <cite>— São Luís de Montfort, § 63</cite>
+    </div>
+  
+    </div>
+</section>
+
+  <!-- SÍNTESE -->
+      <section class="content-section sintese-section" id="s-sintese">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin:0 auto 20px;text-align:center;">
+        <p style="font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;">O que esperar</p>
+        <p style="font-size:clamp(1.4rem,2vw,1.8rem);color:var(--cream);font-style:italic;margin-top:6px;font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.3;">Verdade antes de Devoção</p>
+      </div>
+      <div class="sintese-grid">
+        <div class="sintese-item reveal">
+          <span class="si-num">I</span>
+          <p class="si-text">Cristo é o fim de tudo — Maria conduz a Ele, nunca afasta d'Ele</p>
+        </div>
+        <div class="sintese-item reveal">
+          <span class="si-num">II</span>
+          <p class="si-text">Somos escravos por amor — a escravidão voluntária é a mais perfeita liberdade</p>
+        </div>
+        <div class="sintese-item reveal">
+          <span class="si-num">III</span>
+          <p class="si-text">Somos vasilhas estragadas — precisamos de um cofre que não seja nós mesmos</p>
+        </div>
+        <div class="sintese-item reveal">
+          <span class="si-num">IV</span>
+          <p class="si-text">O demônio falsifica o ouro — sete tipos de devoção falsa, cinco sinais da verdadeira</p>
+        </div>
+        <div class="sintese-item reveal">
+          <span class="si-num">V</span>
+          <p class="si-text">Existe um segredo que o Altíssimo ensinou a São Luís — e que o demônio vai perseguir</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERDADES I e II -->
+    <section class="content-section" id="s-verdades">
+    <div class="container">
+      <p class="section-label reveal">§§ 60 – 77 · Verdades 1 e 2</p>
+      <h2 class="section-title reveal">Cristo é o Fim de Tudo — e Somos Escravos por Amor</h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div class="cite-block" style="margin:0;max-width:100%;">
+            <span class="guillemet">"</span>
+            <blockquote>Se a devoção a Nossa Senhora afastasse de Jesus Cristo, seria preciso rejeitá-la como uma ilusão do demônio.</blockquote>
+            <cite>— São Luís de Montfort, § 62</cite>
+          </div>
+          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">1ª Verdade (§§ 61–64):</strong> São Luís começa com Cristo, não com Maria. Os dois são inseparáveis: honrá-la é honrá-Lo. O perigo oposto: saber muito sobre Deus sem ser transformado por nada disso.</div>
+          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">§ 64 · O aviso:</strong> Um conhecimento teológico seco, estéril, indiferente — que não muda nada — é mais perigoso do que a ignorância.</div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">2ª Verdade · §§ 68–74</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">São Luís usa uma palavra radical: escravidão. Mas distingue: há escravidão de natureza (todo ser criado depende de Deus), de força (o pecador), e de <strong style="color:var(--gold-light)">amor e vontade livre</strong> — a mais perfeita.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">A lógica</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Amor perfeito quer dar tudo. Quem ama sem reservas escolhe dar-se inteiramente. A escravidão de amor é a mais alta liberdade porque é a mais completa entrega.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">§ 73 · A marca</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Os santos usavam correntes como sinal exterior. Não por masoquismo — por afirmação pública: <em>"Pertenço a ela. Libremente."</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERDADES III, IV e V -->
+    <section class="content-section" id="s-verdades-2">
+    <div class="container">
+      <p class="section-label reveal">§§ 78 – 89 · Verdades 3, 4 e 5</p>
+      <h2 class="section-title reveal">A Vasilha Estragada, a Lua e o Cofre</h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div class="cite-block" style="margin:0;max-width:100%;">
+            <span class="guillemet">"</span>
+            <blockquote>Quando se põe água limpa numa vasilha que cheira mal, a água fica estragada. Assim acontece quando se colocam em nós as graças de Deus.</blockquote>
+            <cite>— São Luís de Montfort, § 78</cite>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">3ª Verdade · §§ 78–82</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">"Mais orgulhosos que pavões, mais apegados à terra que sapos, mais invejosos que serpentes…" São Luís não está a insultar — está diagnosticando. A descrição da condição humana caída, honestamente.</p>
+          </div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">4ª Verdade · §§ 83–86</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Ir direto a Deus sem mediador não é humildade — é presunção. Maria não é obstáculo ao Filho: ela é o único caminho que o Filho escolheu para vir, e pelo qual o Pai quer que voltemos.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">5ª Verdade · §§ 87–89</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Maria é a lua: não brilha por si — reflete a luz do Sol. Ela não retém as graças: as multiplica e as distribui. Dá a seus filhos o que recebe do Filho — sem perder nada, aumentando tudo.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Conclusão</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Depender de Maria não é fraqueza espiritual — é sabedoria da criatura que conhece sua própria fragilidade e escolhe o cofre certo para guardar o tesouro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OS FALSOS DEVOTOS -->
+    <section class="content-section" id="s-falsos">
+    <div class="container">
+      <p class="section-label reveal">§§ 90 – 103 · As Falsificações</p>
+      <h2 class="section-title reveal">Os Sete Falsos Devotos de Nossa Senhora</h2>
+      <div class="reveal" style="max-width:1060px;margin:0 auto 14px;">
+        <p style="font-size:1.0rem;font-style:italic;color:var(--cream);text-align:center;line-height:1.5;"><em>"O demônio não falsifica ordinariamente senão o ouro e a prata — não falsifica o que não tem valor."</em> — § 90</p>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto 10px;">
+        <div style="background:var(--navy-card);padding:10px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.05rem;color:rgba(201,168,76,0.5);display:block;margin-bottom:4px;">01</span><span style="font-size:1.0rem;font-weight:500;color:var(--gold-light);display:block;margin-bottom:4px;">O Crítico · § 93</span><p style="font-size:0.98rem;color:var(--text-body);line-height:1.5;font-weight:300;">Duvida dos milagres, acha ingênuos os devotos. A crítica racional pode ser orgulho disfarçado de discernimento.</p></div>
+        <div style="background:var(--navy-card);padding:10px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.05rem;color:rgba(201,168,76,0.5);display:block;margin-bottom:4px;">02</span><span style="font-size:1.0rem;font-weight:500;color:var(--gold-light);display:block;margin-bottom:4px;">O Escrupuloso · § 94</span><p style="font-size:0.98rem;color:var(--text-body);line-height:1.5;font-weight:300;">Teme honrar demais Maria e desonrar Cristo. Nunca se honra mais a Cristo do que quando se honra Maria.</p></div>
+        <div style="background:var(--navy-card);padding:10px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.05rem;color:rgba(201,168,76,0.5);display:block;margin-bottom:4px;">03</span><span style="font-size:1.0rem;font-weight:500;color:var(--gold-light);display:block;margin-bottom:4px;">O Exterior · § 96</span><p style="font-size:0.98rem;color:var(--text-body);line-height:1.5;font-weight:300;">Reza terços às pressas, vai a procissões sem interior. Sem o interior, o exterior é insuficiente.</p></div>
+        <div style="background:var(--navy-card);padding:10px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.05rem;color:rgba(201,168,76,0.5);display:block;margin-bottom:4px;">04</span><span style="font-size:1.0rem;font-weight:500;color:var(--gold-light);display:block;margin-bottom:4px;">O Presunçoso · §§ 97–100</span><p style="font-size:0.98rem;color:var(--text-body);line-height:1.5;font-weight:300;">Vive nos vícios mas dorme tranquilo com o terço. <em>"Pode alguém dizer que ama Maria quando crucifica impiedosamente seu Filho?"</em></p></div>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy-card);padding:10px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.05rem;color:rgba(201,168,76,0.5);display:block;margin-bottom:4px;">05</span><span style="font-size:1.0rem;font-weight:500;color:var(--gold-light);display:block;margin-bottom:4px;">O Inconstante · § 101</span><p style="font-size:0.98rem;color:var(--text-body);line-height:1.5;font-weight:300;">Fervoroso hoje, tíbio amanhã. A devoção flutua com o humor — sem raízes no interior.</p></div>
+        <div style="background:var(--navy-card);padding:10px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.05rem;color:rgba(201,168,76,0.5);display:block;margin-bottom:4px;">06</span><span style="font-size:1.0rem;font-weight:500;color:var(--gold-light);display:block;margin-bottom:4px;">O Hipócrita · § 102</span><p style="font-size:0.98rem;color:var(--text-body);line-height:1.5;font-weight:300;">Esconde seus vícios sob o manto de Maria. Usa a devoção como máscara social.</p></div>
+        <div style="background:var(--navy-card);padding:10px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.05rem;color:rgba(201,168,76,0.5);display:block;margin-bottom:4px;">07</span><span style="font-size:1.0rem;font-weight:500;color:var(--gold-light);display:block;margin-bottom:4px;">O Interesseiro · § 103</span><p style="font-size:0.98rem;color:var(--text-body);line-height:1.5;font-weight:300;">Recorre a Nossa Senhora só quando precisa de algo. Maria como meio para fins temporários — não como Mãe a ser amada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OS CINCO SINAIS -->
+    <section class="content-section" id="s-falsos-2">
+    <div class="container">
+      <p class="section-label reveal">§§ 104 – 110 · A Devoção Verdadeira</p>
+      <h2 class="section-title reveal">Os Cinco Sinais da Devoção Verdadeira</h2>
+      <div class="reveal" style="text-align:center;margin:0 auto 16px;max-width:700px;">
+        <p style="font-size:1.1rem;font-style:italic;color:var(--cream);line-height:1.7;">A devoção verdadeira não é uma das cinco — é a que as possui <em>todas ao mesmo tempo</em>.</p>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:16px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:8px;">I</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:8px;font-family:'Cinzel',serif;">Interior · § 106</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.55;">Parte da mente e do coração. Da estima real pela grandeza de Maria — não de hábito ou pressão social.</p></div>
+        <div style="background:var(--navy);padding:16px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:8px;">II</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:8px;font-family:'Cinzel',serif;">Terna · § 107</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.55;">Confiança filial concreta — recorrer a ela em todas as necessidades, sem medo de ser rejeitado.</p></div>
+        <div style="background:var(--navy);padding:16px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:8px;">III</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:8px;font-family:'Cinzel',serif;">Santa · § 108</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.55;">Leva a evitar o pecado e a imitar Maria: humildade profunda, fé viva, obediência, pureza, caridade.</p></div>
+        <div style="background:var(--navy);padding:16px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:8px;">IV</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:8px;font-family:'Cinzel',serif;">Constante · § 109</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.55;">Fidelidade mesmo nas quedas e na secura. Não serve Maria pelos sentimentos — serve pela fé.</p></div>
+        <div style="background:var(--navy);padding:16px 14px;"><span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.85);display:block;margin-bottom:8px;">V</span><p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:8px;font-family:'Cinzel',serif;">Desinteressada · § 110</p><p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.55;">Não busca Maria pelo que ela dá — mas porque ela é digna de amor em si mesma.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O ANÚNCIO -->
+    <section class="content-section" id="s-devoção-verdadeira">
+    <div class="container">
+      <p class="section-label reveal">§§ 111 – 114 · O Anúncio</p>
+      <h2 class="section-title reveal">Um Segredo que o Altíssimo Ensinou a São Luís</h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div class="cite-block" style="margin:0;max-width:100%;">
+            <span class="guillemet">"</span>
+            <blockquote>Descobrirei a vós, em confiança, um segredo que o Altíssimo me ensinou e que não encontrei em nenhum livro antigo ou moderno.</blockquote>
+            <cite>— São Luís de Montfort, § 111</cite>
+          </div>
+          <div class="cite-block" style="margin:0;max-width:100%;">
+            <span class="guillemet">"</span>
+            <blockquote>Soubesse eu que meu sangue criminoso podia servir para fazer entrar no coração as verdades que escrevo, em lugar de tinta eu me serviria desse sangue.</blockquote>
+            <cite>— São Luís de Montfort, § 112</cite>
+          </div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O que é esse segredo</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Não é uma revelação nova. É uma síntese — um modo de viver o Evangelho que São Luís recebeu por oração, sofrimento e iluminação do Espírito Santo.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Por que o demônio persegue</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">São Luís adverte: quem quiser viver essa devoção será perseguido — não pelos de fora, mas pelos de dentro. O demônio não falsifica o que não tem valor.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O que vem no Encontro 3</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">O segredo finalmente nomeado: a perfeita consagração a Jesus por Maria — que entrega tudo, sem reserva, para toda a eternidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O SEGREDO -->
+    <section class="content-section" id="s-segredo">
+    <div class="container">
+      <p class="section-label reveal">§ 119 · A Profundidade</p>
+      <h2 class="section-title reveal">Nem Todos Vão Compreendê-la — Só a Quem o Espírito Revelar</h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div class="cite-block" style="margin:0;max-width:100%;">
+            <span class="guillemet">"</span>
+            <blockquote>Como o essencial desta devoção consiste no interior que ela deve formar, não será igualmente compreendida por todos. Uns se deterão no que ela tem de exterior, e não passarão além, e estes serão a maioria.</blockquote>
+            <cite>— São Luís de Montfort, § 119</cite>
+          </div>
+          <div class="highlight-para" style="margin:0;">São Luís não está desmotivando. Está sendo honesto: esse caminho tem profundidade — e cada um entra no nível que o Espírito Santo permite. O que nos cabe é querer entrar.</div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Os degraus</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">"Outros, em pequeno número, entrarão em seu interior, mas subirão apenas um degrau. Quem subirá ao segundo? Quem chegará até o terceiro?"</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">A chave</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><strong style="color:var(--gold-light)">Só aquele a quem o Espírito de Jesus Cristo revelar este segredo.</strong> Não é conquista — é dom. O que nos cabe: pedir ao Espírito Santo que nos leve mais fundo.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Resumo da devoção verdadeira</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><strong style="color:var(--gold-light)">Interior</strong> · <strong style="color:var(--gold-light)">Terna</strong> · <strong style="color:var(--gold-light)">Santa</strong> · <strong style="color:var(--gold-light)">Constante</strong> · <strong style="color:var(--gold-light)">Desinteressada</strong> — as cinco marcas que distinguem o real do falsificado.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSIÇÃO -->
+    <section class="content-section" id="s-segredo-2">
+    <div class="container">
+      <p class="section-label reveal">Transição · Encontro 3</p>
+      <h2 class="section-title reveal">A Devoção Mais Perfeita Ainda Não Foi Nomeada</h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O que foi estabelecido</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">São Luís construiu o fundamento: Deus age por Maria. Somos vasilhas estragadas. Há sete falsificações da devoção. A verdadeira tem cinco sinais. E existe um segredo.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O que falta</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">O nome. A forma concreta. O ato que incorpora tudo o que foi dito — e que o demônio vai tentar a todo custo impedir.</p>
+          </div>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+          <div class="cite-block" style="margin:0;max-width:100%;">
+            <span class="guillemet">"</span>
+            <blockquote>Se fordes fiéis a esta devoção — a grande devoção, a devoção perfeita — encontrareis a Deus em Maria, Maria em Deus, e em ambos a paz que o mundo não pode dar.</blockquote>
+            <cite>— São Luís de Montfort, §§ 118–119</cite>
+          </div>
+          <div class="highlight-para" style="margin:0;">No Encontro 3, o segredo é revelado: a consagração perfeita a Jesus por Maria — que renova as promessas batismais e entrega tudo, sem reserva, para toda a eternidade.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span class="pf-cross">✝</span>
+    <div class="pf-nav">
+      <a class="pf-link" href="encontro-1.html">← Encontro 1</a>
+      <span class="pf-sep">✦</span>
+      <a class="pf-link" href="encontro-3.html">Encontro 3 →</a>
+    </div>
+  </footer>
+</div>
+
+<!-- SIDE NAV -->
+<nav class="side-nav" id="sideNav">
+  <button class="side-nav-btn" id="btnUp" onclick="sideNavGo(-1)">&#8593;</button>
+  <div class="side-nav-dots" id="sideNavDots"></div>
+  <button class="side-nav-btn" id="btnDown" onclick="sideNavGo(1)">&#8595;</button>
+</nav>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), {threshold:.08, rootMargin:'0px 0px -30px 0px'});
+  reveals.forEach(el => obs.observe(el));
+  document.querySelectorAll('.sintese-item,.verdade-card,.devocao-card,.sl-card,.falso-item').forEach((el,i) => { el.style.transitionDelay = i*0.06+'s'; });
+
+  const _ids = ['s-hero','s-sintese','s-verdades','s-verdades-2','s-falsos','s-falsos-2','s-devoção-verdadeira','s-segredo','s-segredo-2'];
+  const _labels = ['Início','Síntese','Verdades I–II','Verdades III–V','Falsos I–IV','Os 5 Sinais','O Anúncio','O Segredo','Transição'];
+  let _cur = 0, _scrolling = false;
+  const _dots = document.getElementById('sideNavDots');
+  const _btnUp = document.getElementById('btnUp');
+  const _btnDown = document.getElementById('btnDown');
+  _ids.forEach((id,i) => {
+    const d = document.createElement('span');
+    d.className = 'side-dot'+(i===0?' active':'');
+    d.title = _labels[i];
+    d.addEventListener('click', () => sideNavGoto(i));
+    _dots.appendChild(d);
+  });
+  function _updateNav() {
+    _dots.querySelectorAll('.side-dot').forEach((d,i) => d.classList.toggle('active', i===_cur));
+    _btnUp.classList.toggle('hidden', _cur===0);
+    _btnDown.classList.toggle('hidden', _cur>=_ids.length-1);
+  }
+  function sideNavGoto(i) {
+    if (i<0||i>=_ids.length) return;
+    _cur=i;
+    const el = document.getElementById(_ids[i]);
+    if (el) { _scrolling=true; el.scrollIntoView({behavior:'smooth',block:'start'}); setTimeout(()=>{_scrolling=false;},900); }
+    _updateNav();
+  }
+  function sideNavGo(dir) { sideNavGoto(_cur+dir); }
+  const _secEls = _ids.map(id=>document.getElementById(id)).filter(Boolean);
+  const _scrollObs = new IntersectionObserver((entries) => {
+    if (_scrolling) return;
+    entries.forEach(e => {
+      if (e.isIntersecting && e.intersectionRatio>=0.4) {
+        const idx = _ids.indexOf(e.target.id);
+        if (idx!==-1) { _cur=idx; _updateNav(); }
+      }
+    });
+  },{threshold:0.05,rootMargin:'0px 0px -5% 0px'});
+  _secEls.forEach(el => _scrollObs.observe(el));
+  document.addEventListener('keydown', e => {
+    if (e.key==='ArrowDown'||e.key==='PageDown') { e.preventDefault(); sideNavGo(1); }
+    if (e.key==='ArrowUp'||e.key==='PageUp') { e.preventDefault(); sideNavGo(-1); }
+  });
+  _updateNav();
+</script>
+</body>
+</html>

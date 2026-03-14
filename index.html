@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consagração a Jesus pelas Mãos de Maria</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --gold: #c9a84c;
+        --gold-light: #e8c97a;
+        --gold-pale: #f5e8c0;
+        --navy: #0d1b2a;
+        --navy-mid: #162236;
+        --navy-soft: #1e3050;
+        --cream: #faf5eb;
+        --cream-dark: #ede4d0;
+        --white: #ffffff;
+        --text-light: #e8dec4;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--navy);
+        color: var(--cream);
+        font-family: "Cormorant Garamond", serif;
+        overflow-x: hidden;
+        cursor: default;
+      }
+
+      /* ── STARS BACKGROUND ── */
+      .stars-bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background: radial-gradient(
+            ellipse at 20% 20%,
+            rgba(201, 168, 76, 0.06) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 80% 80%,
+            rgba(201, 168, 76, 0.04) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 50% 0%,
+            rgba(30, 48, 80, 0.8) 0%,
+            transparent 70%
+          ),
+          var(--navy);
+        pointer-events: none;
+      }
+      .stars-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            1px 1px at 15% 25%,
+            rgba(232, 201, 122, 0.5) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 35% 10%,
+            rgba(232, 201, 122, 0.4) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1.5px 1.5px at 65% 18%,
+            rgba(232, 201, 122, 0.6) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 80% 35%,
+            rgba(232, 201, 122, 0.3) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 10% 60%,
+            rgba(232, 201, 122, 0.4) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1.5px 1.5px at 90% 65%,
+            rgba(232, 201, 122, 0.5) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 45% 80%,
+            rgba(232, 201, 122, 0.3) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 70% 90%,
+            rgba(232, 201, 122, 0.4) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 25% 92%,
+            rgba(232, 201, 122, 0.3) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1.5px 1.5px at 55% 50%,
+            rgba(232, 201, 122, 0.25) 0%,
+            transparent 100%
+          );
+      }
+
+      /* ── LAYOUT ── */
+      .page-wrapper {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; REMOVIDO */
+        text-align: center;
+        padding: clamp(40px, 8vh, 80px) 24px;
+        position: relative;
+        background-image: url("img/hero/hero-main.jpg");
+        background-size: cover;
+        background-position: center center;
+        isolation: isolate;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(13, 27, 42, 0.72) 0%,
+          rgba(13, 27, 42, 0.8) 50%,
+          rgba(13, 27, 42, 0.92) 100%
+        );
+      }
+      .hero > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-ornament {
+        width: 180px;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+        margin: 0 auto 16px;
+        animation: fadeIn 1.2s ease forwards;
+      }
+      
+      .hero-content {
+        width: 100%;
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-cross {
+        font-size: 2.56rem;
+        color: var(--gold);
+        margin-bottom: 12px;
+        animation: fadeIn 1s ease 0.2s both;
+        letter-spacing: 0.2em;
+      }
+
+      .hero-subtitle-top {
+        font-family: "Cinzel", serif;
+        font-size: clamp(0.922rem, 1.5vw, 1.05rem);
+        letter-spacing: 0.35em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        animation: fadeSlideUp 1s ease 0.3s both;
+      }
+
+      .hero-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(2.56rem, 6vw, 5.76rem);
+        font-weight: 500;
+        line-height: 1.15;
+        color: var(--white);
+        margin-bottom: 8px;
+        animation: fadeSlideUp 1s ease 0.5s both;
+      }
+
+      .hero-title em {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold-light);
+        font-size: 1.15em;
+      }
+
+      .hero-title-line2 {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1.792rem, 4vw, 3.584rem);
+        font-weight: 300;
+        color: var(--gold-light);
+        margin-bottom: 24px;
+        animation: fadeSlideUp 1s ease 0.65s both;
+      }
+
+      .divider-diamond {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        justify-content: center;
+        margin-bottom: 32px;
+        animation: fadeIn 1s ease 0.8s both;
+      }
+      .divider-diamond .line {
+        width: 80px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold));
+      }
+      .divider-diamond .line:last-child {
+        background: linear-gradient(90deg, var(--gold), transparent);
+      }
+      .divider-diamond .diamond {
+        width: 8px;
+        height: 8px;
+        background: var(--gold);
+        transform: rotate(45deg);
+      }
+
+      /* ── QUOTE BLOCK ── */
+      .hero-quote {
+        max-width: 700px;
+        margin: 0 auto 32px;
+        padding: 24px 32px;
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        background: rgba(201, 168, 76, 0.04);
+        position: relative;
+        animation: fadeSlideUp 1.2s ease 0.9s both;
+      }
+      .hero-quote::before,
+      .hero-quote::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-color: var(--gold);
+        border-style: solid;
+      }
+      .hero-quote::before {
+        top: -1px;
+        left: -1px;
+        border-width: 2px 0 0 2px;
+      }
+      .hero-quote::after {
+        bottom: -1px;
+        right: -1px;
+        border-width: 0 2px 2px 0;
+      }
+
+      .hero-quote blockquote {
+        font-size: clamp(1.408rem, 2.5vw, 1.792rem);
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1.7;
+        color: var(--cream);
+        margin-bottom: 16px;
+      }
+      .hero-quote cite {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        font-style: normal;
+        letter-spacing: 0.25em;
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+
+      /* ── DATE BADGE ── */
+      .date-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid rgba(201, 168, 76, 0.4);
+        padding: 12px 28px;
+        animation: fadeSlideUp 1.2s ease 1.1s both;
+        margin-bottom: 16px;
+      }
+      .date-badge .dot {
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+      }
+      .date-badge span {
+        font-family: "Cinzel", serif;
+        font-size: 1.088rem;
+        letter-spacing: 0.2em;
+        color: var(--gold-light);
+      }
+
+      /* ── SCROLL INDICATOR ── */
+      .scroll-hint {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        animation: fadeIn 2s ease 2s both;
+      }
+      .scroll-hint span {
+        font-family: "Cinzel", serif;
+        font-size: 0.998rem;
+        letter-spacing: 0.3em;
+        color: rgba(201, 168, 76, 0.5);
+        text-transform: uppercase;
+      }
+      .scroll-line {
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(var(--gold), transparent);
+        animation: scrollPulse 2s ease-in-out infinite;
+      }
+
+      /* ── SECTION BASE ── */
+      section {
+        padding: clamp(40px, 8vh, 80px) 24px;
+        position: relative;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      /* ── SIDE NAV ── */
+      .side-nav {
+        position: fixed;
+        right: 28px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .side-nav-btn {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(201, 168, 76, 0.3);
+        font-size: 0.832rem;
+        cursor: pointer;
+        transition: color 0.3s, opacity 0.3s, border-color 0.3s;
+        border: 1px solid rgba(201, 168, 76, 0.12);
+        background: rgba(13, 27, 42, 0.55);
+        backdrop-filter: blur(6px);
+        text-decoration: none;
+      }
+      .side-nav-btn:hover {
+        color: rgba(201, 168, 76, 0.85);
+        border-color: rgba(201, 168, 76, 0.4);
+      }
+      .side-nav-btn.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .side-nav-dots {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        align-items: center;
+        padding: 4px 0;
+      }
+      .side-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: rgba(201, 168, 76, 0.18);
+        transition: background 0.3s, transform 0.3s;
+        cursor: pointer;
+      }
+      .side-dot.active {
+        background: rgba(201, 168, 76, 0.7);
+        transform: scale(1.5);
+      }
+      @media (max-width: 640px) {
+        .side-nav {
+          right: 10px;
+        }
+      }
+      .section-label {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.4em;
+        color: var(--gold);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      .section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.304rem, 4vw, 3.84rem);
+        font-weight: 400;
+        text-align: center;
+        color: var(--white);
+        line-height: 1.2;
+        margin-bottom: 32px;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--gold-light);
+      }
+
+      /* ── COMO FUNCIONA ── */
+      .funciona-section {
+        background: rgba(201, 168, 76, 0.03);
+        border-top: 1px solid rgba(201, 168, 76, 0.1);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+      }
+
+      .funciona-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2px;
+        margin-bottom: 64px;
+        border: 1px solid rgba(201, 168, 76, 0.15);
+      }
+      .funciona-item {
+        padding: 36px 28px;
+        background: rgba(13, 27, 42, 0.8);
+        text-align: center;
+        position: relative;
+        transition: background 0.3s;
+      }
+      .funciona-item:hover {
+        background: rgba(201, 168, 76, 0.06);
+      }
+      .funciona-item .fi-icon {
+        font-size: 2.304rem;
+        margin-bottom: 16px;
+        display: block;
+      }
+      .funciona-item h3 {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .funciona-item p {
+        font-size: 1.344rem;
+        font-weight: 300;
+        color: #e8dec4;
+        line-height: 1.6;
+      }
+
+      /* ── CONSAGRAÇÃO DATE ── */
+      .consagracao-date {
+        text-align: center;
+        padding: 40px;
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+        background: rgba(201, 168, 76, 0.04);
+      }
+      .consagracao-date::before {
+        content: "✦";
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--navy);
+        padding: 0 12px;
+        color: var(--gold);
+        font-size: 1.28rem;
+      }
+      .consagracao-date .cd-label {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.35em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .consagracao-date .cd-date {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.816rem;
+        font-weight: 500;
+        color: var(--white);
+        margin-bottom: 6px;
+      }
+      .consagracao-date .cd-sub {
+        font-size: 1.28rem;
+        font-style: italic;
+        color: var(--gold-light);
+        font-weight: 300;
+      }
+
+      /* ── ENCONTROS ── */
+      .encontros-section {
+        background: var(--navy);
+      }
+
+      .encontros-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border: 1px solid rgba(201, 168, 76, 0.15);
+        overflow: hidden;
+      }
+      .encontro-item {
+        display: grid;
+        grid-template-columns: 90px 1fr auto;
+        align-items: center;
+        gap: 0;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        transition: background 0.3s;
+        cursor: default;
+        text-decoration: none;
+        color: inherit;
+      }
+      .encontro-item:last-child {
+        border-bottom: none;
+      }
+      .encontro-item:hover {
+        background: rgba(201, 168, 76, 0.06);
+      }
+
+      .enc-number {
+        padding: 20px 16px;
+        text-align: center;
+        border-right: 1px solid rgba(201, 168, 76, 0.1);
+        background: rgba(201, 168, 76, 0.04);
+      }
+      .enc-number span {
+        font-family: "Cinzel", serif;
+        font-size: 2.048rem;
+        font-weight: 400;
+        color: rgba(201, 168, 76, 0.65);
+      }
+
+      .enc-content {
+        padding: 16px 24px;
+      }
+      .enc-date {
+        font-family: "Cinzel", serif;
+        font-size: 1.088rem;
+        letter-spacing: 0.25em;
+        color: var(--gold);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+      }
+      .enc-title {
+        font-size: 1.472rem;
+        font-weight: 400;
+        color: var(--white);
+        line-height: 1.4;
+        margin-bottom: 2px;
+      }
+      .enc-theme {
+        font-size: 1.28rem;
+        font-style: italic;
+        font-weight: 300;
+        color: #e8dec4;
+      }
+
+      .enc-keyword {
+        padding: 0 32px;
+        font-family: "Cinzel", serif;
+        font-size: 0.998rem;
+        letter-spacing: 0.25em;
+        color: rgba(201, 168, 76, 0.5);
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      /* ── EXERCÍCIOS ── */
+      .exercicios-section {
+        background: rgba(201, 168, 76, 0.025);
+        border-top: 1px solid rgba(201, 168, 76, 0.08);
+      }
+
+      .exercicios-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        overflow: hidden;
+      }
+      .exercicio-card {
+        background: var(--navy);
+        padding: 32px 24px 28px;
+        transition: background 0.35s;
+        position: relative;
+        overflow: hidden;
+        border-right: 1px solid rgba(201, 168, 76, 0.12);
+      }
+      .exercicio-card:last-child {
+        border-right: none;
+      }
+      .exercicio-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        opacity: 0;
+        transition: opacity 0.35s;
+      }
+      .exercicio-card::after {
+        content: attr(data-step);
+        position: absolute;
+        bottom: 20px;
+        right: 24px;
+        font-family: "Cinzel", serif;
+        font-size: 5.12rem;
+        font-weight: 700;
+        color: rgba(201, 168, 76, 0.05);
+        line-height: 1;
+        pointer-events: none;
+        transition: color 0.35s;
+      }
+      .exercicio-card:hover::before {
+        opacity: 1;
+      }
+      .exercicio-card:hover {
+        background: rgba(201, 168, 76, 0.06);
+      }
+      .exercicio-card:hover::after {
+        color: rgba(201, 168, 76, 0.09);
+      }
+
+      .exc-step-dot {
+        width: 8px;
+        height: 8px;
+        border: 1px solid var(--gold);
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+      .exc-phase {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.35em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        display: block;
+      }
+      .exc-period {
+        font-size: 1.28rem;
+        font-weight: 300;
+        color: var(--gold-light);
+        margin-bottom: 12px;
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        letter-spacing: 0.02em;
+        display: block;
+      }
+      .exc-title {
+        font-size: 1.536rem;
+        font-weight: 400;
+        color: var(--white);
+        line-height: 1.35;
+        margin-bottom: 12px;
+      }
+      .exc-nums {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        color: rgba(201, 168, 76, 0.7);
+        letter-spacing: 0.15em;
+        padding-top: 12px;
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+        display: block;
+      }
+      @media (max-width: 768px) {
+        .exercicios-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .exercicio-card {
+          border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+          border-right: none;
+        }
+        .exercicio-card:nth-child(odd) {
+          border-right: 1px solid rgba(201, 168, 76, 0.12);
+        }
+        .exercicio-card:last-child,
+        .exercicio-card:nth-last-child(2):nth-child(odd) {
+          border-bottom: none;
+        }
+      }
+      @media (max-width: 480px) {
+        .exercicios-grid {
+          grid-template-columns: 1fr;
+        }
+        .exercicio-card {
+          border-right: none;
+          border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+        }
+        .exercicio-card:last-child {
+          border-bottom: none;
+        }
+      }
+
+      /* ── NAV PAGES ── */
+      .nav-section {
+        padding: 60px 24px 80px;
+      }
+
+      .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0;
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        overflow: hidden;
+      }
+      /* Linha 1: 3 cards de 2 colunas cada */
+      .nav-card:nth-child(1) {
+        grid-column: span 2;
+      }
+      .nav-card:nth-child(2) {
+        grid-column: span 2;
+      }
+      .nav-card:nth-child(3) {
+        grid-column: span 2;
+      }
+      /* Linha 2: 2 cards de 3 colunas cada — centralizados */
+      .nav-card:nth-child(4) {
+        grid-column: span 3;
+      }
+      .nav-card:nth-child(5) {
+        grid-column: span 3;
+      }
+
+      .nav-card {
+        background: var(--navy);
+        padding: 0;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.35s;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border-right: 1px solid rgba(201, 168, 76, 0.12);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+      }
+      .nav-card:nth-child(3) {
+        border-right: none;
+      }
+      .nav-card:nth-child(4),
+      .nav-card:nth-child(5) {
+        border-bottom: none;
+      }
+      .nav-card:nth-child(5) {
+        border-right: none;
+      }
+
+      .nav-card:hover {
+        background: rgba(22, 34, 54, 1);
+      }
+      .nav-card:hover .nc-arrow {
+        transform: translateX(5px);
+      }
+      .nav-card:hover .nc-top-line {
+        width: 100%;
+      }
+      .nav-card:hover .nc-number {
+        color: rgba(201, 168, 76, 0.75);
+      }
+
+      .nc-top-line {
+        height: 3px;
+        width: 0;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        transition: width 0.45s ease;
+        flex-shrink: 0;
+      }
+
+      .nc-inner {
+        padding: 32px 30px 28px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nc-number {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.3em;
+        color: rgba(201, 168, 76, 0.55);
+        margin-bottom: 14px;
+        text-transform: uppercase;
+        transition: color 0.3s;
+      }
+      .nc-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.536rem;
+        font-weight: 500;
+        color: var(--white);
+        line-height: 1.35;
+        margin-bottom: 14px;
+        transition: color 0.3s;
+      }
+      .nav-card:hover .nc-title {
+        color: var(--gold-light);
+      }
+
+      .nc-desc {
+        font-size: 1.28rem;
+        font-weight: 300;
+        font-style: italic;
+        color: #c8bba0;
+        line-height: 1.7;
+        flex: 1;
+        margin-bottom: 22px;
+      }
+      .nc-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+        padding-top: 14px;
+        margin-top: auto;
+      }
+      .nc-tag {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.2em;
+        color: rgba(201, 168, 76, 0.7);
+        text-transform: uppercase;
+      }
+      .nc-arrow {
+        color: var(--gold);
+        font-size: 1.408rem;
+        transition: transform 0.3s;
+      }
+      @media (max-width: 900px) {
+        .nav-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .nav-card:nth-child(n) {
+          grid-column: span 1;
+          border-right: 1px solid rgba(201, 168, 76, 0.12) !important;
+          border-bottom: 1px solid rgba(201, 168, 76, 0.12) !important;
+        }
+        .nav-card:nth-child(even) {
+          border-right: none !important;
+        }
+        .nav-card:last-child {
+          border-bottom: none !important;
+        }
+      }
+      @media (max-width: 560px) {
+        .nav-grid {
+          grid-template-columns: 1fr;
+        }
+        .nav-card:nth-child(n) {
+          grid-column: span 1;
+          border-right: none !important;
+        }
+        .nav-card:last-child {
+          border-bottom: none !important;
+        }
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+        padding: 48px 24px;
+        text-align: center;
+      }
+      footer .f-cross {
+        font-size: 1.92rem;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+      footer p {
+        font-size: 1.126rem;
+        font-weight: 300;
+        color: rgba(201, 168, 76, 0.4);
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+      }
+      footer .f-parish {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.3em;
+        color: rgba(201, 168, 76, 0.5);
+        text-transform: uppercase;
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeSlideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scaleY(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scaleY(1.15);
+        }
+      }
+
+      /* Scroll reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ── ORAÇÕES ── */
+      .oracoes-section {
+        padding: 80px 24px;
+        background: rgba(201, 168, 76, 0.025);
+        border-top: 1px solid rgba(201, 168, 76, 0.08);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+
+      /* Grid compacta — 4 colunas, sem excerpt */
+      .oracoes-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: rgba(201, 168, 76, 0.12);
+        border: 1px solid rgba(201, 168, 76, 0.12);
+        overflow: hidden;
+        margin-bottom: 0;
+      }
+      @media (max-width: 1100px) {
+        .oracoes-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .oracoes-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Orações extras: ocultas por padrão */
+      .oracoes-extra {
+        display: none;
+      }
+      .oracoes-extra.visible {
+        display: contents;
+      }
+
+      /* Botão mais orações */
+      .more-oracoes-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 28px auto 0;
+        background: none;
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        color: var(--gold);
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        padding: 14px 32px;
+        cursor: pointer;
+        transition: border-color 0.3s, color 0.3s, background 0.3s;
+      }
+      .more-oracoes-btn:hover {
+        border-color: var(--gold);
+        background: rgba(201, 168, 76, 0.06);
+      }
+      .more-oracoes-btn .mob-arrow {
+        transition: transform 0.3s;
+      }
+      .more-oracoes-btn.open .mob-arrow {
+        transform: rotate(180deg);
+      }
+
+      .oracao-card {
+        background: var(--navy);
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.4s;
+        position: relative;
+        overflow: hidden;
+      }
+      .oracao-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(201, 168, 76, 0.04);
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+      .oracao-card:hover {
+        background: rgba(22, 34, 54, 1);
+      }
+      .oracao-card:hover::after {
+        opacity: 1;
+      }
+      .oracao-card:hover .oc-arrow {
+        transform: translateX(4px);
+      }
+      .oracao-card:hover .oc-top-line {
+        width: 100%;
+      }
+
+      .oc-top-line {
+        height: 2px;
+        width: 0;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        transition: width 0.5s ease;
+      }
+      .oc-inner {
+        padding: 22px 24px 18px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .oc-saint {
+        font-family: "Cinzel", serif;
+        font-size: 0.922rem;
+        letter-spacing: 0.3em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .oc-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.178rem;
+        font-weight: 400;
+        color: var(--white);
+        line-height: 1.4;
+        margin-bottom: 0;
+        flex: 1;
+        transition: color 0.3s;
+      }
+      .oracao-card:hover .oc-title {
+        color: var(--gold-light);
+      }
+      .oc-excerpt {
+        display: none;
+      } /* oculto na grid compacta */
+      .oc-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(201, 168, 76, 0.1);
+        padding-top: 12px;
+        margin-top: 14px;
+      }
+      .oc-tag {
+        font-family: "Cinzel", serif;
+        font-size: 0.96rem;
+        letter-spacing: 0.2em;
+        color: rgba(201, 168, 76, 0.7);
+        text-transform: uppercase;
+      }
+      .oc-arrow {
+        color: var(--gold);
+        font-size: 1.28rem;
+        transition: transform 0.3s;
+      }
+
+      /* ── APÊNDICES ── */
+      .apendices-section {
+        padding: 80px 24px;
+        border-top: 1px solid rgba(201, 168, 76, 0.08);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+      .apendices-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        margin-top: 16px;
+      }
+      @media (max-width: 800px) {
+        .apendices-cols {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+
+      .ap-col-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.998rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      }
+      .ap-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        background: rgba(201, 168, 76, 0.1);
+        border: 1px solid rgba(201, 168, 76, 0.1);
+        overflow: hidden;
+      }
+      .ap-item {
+        background: var(--navy);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 18px 20px;
+        text-decoration: none;
+        color: inherit;
+        transition: background 0.3s;
+        position: relative;
+      }
+      .ap-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--gold);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .ap-item:hover {
+        background: rgba(22, 34, 54, 1);
+      }
+      .ap-item:hover::before {
+        opacity: 1;
+      }
+      .ap-icon {
+        font-size: 1.536rem;
+        opacity: 0.6;
+        flex-shrink: 0;
+      }
+      .ap-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .ap-name {
+        font-family: "Cinzel", serif;
+        font-size: 1.126rem;
+        font-weight: 400;
+        color: var(--white);
+        line-height: 1.3;
+        margin-bottom: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ap-meta {
+        font-size: 0.998rem;
+        color: rgba(201, 168, 76, 0.6);
+        letter-spacing: 0.1em;
+      }
+      .ap-arrow {
+        color: rgba(201, 168, 76, 0.4);
+        font-size: 1.152rem;
+        flex-shrink: 0;
+      }
+      .ap-item:hover .ap-arrow {
+        color: var(--gold);
+      }
+
+      /* placeholder vazio */
+      .ap-empty {
+        background: rgba(13, 27, 42, 0.4);
+        border: 1px dashed rgba(201, 168, 76, 0.15);
+        padding: 32px 24px;
+        text-align: center;
+        color: rgba(201, 168, 76, 0.3);
+        font-family: "Cinzel", serif;
+        font-size: 0.998rem;
+        letter-spacing: 0.25em;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .nav-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .nav-grid .nav-card:nth-child(5) {
+          grid-column: 1 / -1;
+        }
+        .nav-grid .nav-card:nth-child(5) .nc-inner {
+          max-width: 480px;
+          margin: 0 auto;
+        }
+      }
+      @media (max-width: 640px) {
+        .encontro-item {
+          grid-template-columns: 60px 1fr;
+        }
+        .enc-keyword {
+          display: none;
+        }
+        .enc-number span {
+          font-size: 1.408rem;
+        }
+        .enc-content {
+          padding: 18px 20px;
+        }
+        .nav-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .nav-grid .nav-card:nth-child(5) {
+          grid-column: auto;
+        }
+        .nav-grid .nav-card:nth-child(5) .nc-inner {
+          max-width: 100%;
+        }
+        .hero-quote {
+          padding: 24px 24px;
+        }
+      }
+
+      /* ── HEIGHT RESPONSIVE ── */
+      @media (max-height: 900px) {
+        section { padding: 30px 20px; }
+        .hero-title { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 8px; }
+        .hero-title-line2 { font-size: clamp(1.2rem, 2.5vw, 2rem); margin-bottom: 20px; }
+        .hero-quote { margin-bottom: 24px; padding: 16px 24px; }
+        .hero-ornament { margin-bottom: 12px; }
+        .hero-cross { font-size: 1.8rem; margin-bottom: 8px; }
+        .divider-diamond { margin-bottom: 16px; }
+        
+        .section-title { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 20px; }
+        .section-label { margin-bottom: 6px; }
+        
+        .funciona-grid { margin-bottom: 20px; }
+        .funciona-item { padding: 16px 16px; }
+        .funciona-item h3 { margin-bottom: 4px; font-size: 1.2rem; }
+        .funciona-item p { font-size: 1rem; line-height: 1.4; }
+        .fi-icon { font-size: 1.8rem; margin-bottom: 8px; }
+        
+        /* Compact Encontros List */
+        .encontros-list { gap: 0; }
+        .enc-number { padding: 12px 12px; }
+        .enc-number span { font-size: 1.6rem; }
+        .enc-content { padding: 10px 16px; }
+        .enc-date { font-size: 0.9rem; margin-bottom: 2px; }
+        .enc-title { font-size: 1.2rem; margin-bottom: 0; line-height: 1.3; }
+        .enc-theme { font-size: 1.05rem; }
+        .enc-keyword { padding: 0 16px; font-size: 0.85rem; }
+        
+        /* Compact Exercicios */
+        .exercicios-grid { gap: 0; }
+        .exercicio-card { padding: 16px 16px 16px; }
+        .exercicio-card::after { font-size: 3rem; bottom: 8px; right: 12px; }
+        .exc-step-dot { margin-bottom: 8px; }
+        .exc-title { font-size: 1.2rem; margin-bottom: 8px; line-height: 1.2; }
+        .exc-phase { font-size: 0.9rem; margin-bottom: 4px; }
+        .exc-period { font-size: 1.05rem; }
+        
+        .nav-card .nc-inner { padding: 16px 16px 14px; }
+        .nav-card .nc-desc { margin-bottom: 8px; font-size: 1rem; }
+        .nav-card h3 { margin-bottom: 6px; font-size: 1.2rem; }
+      }
+
+      @media (max-height: 600px) {
+        section { padding: 20px 16px; }
+        .hero-title { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        .hero-quote { display: none; } /* Ocultar citação em telas muito baixas para priorizar título e data */
+        .hero-ornament { margin-bottom: 10px; }
+        .divider-diamond { margin-bottom: 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars-bg"></div>
+
+    <div class="page-wrapper">
+      <!-- ══ HERO ══ -->
+      <section class="hero" id="s-hero">
+        <div class="hero-content">
+          <div class="hero-ornament"></div>
+          <div class="hero-cross">✦ ✝ ✦</div>
+          <p class="hero-subtitle-top">
+            Tratado da Verdadeira Devoção à Santíssima Virgem
+          </p>
+          <h1 class="hero-title">
+            Consagração a Jesus<br /><em>pelas Mãos de Maria</em>
+          </h1>
+          <p class="hero-title-line2">
+            segundo São Luís Maria Grignion de Montfort
+          </p>
+
+          <div class="divider-diamond">
+            <span class="line"></span>
+            <span class="diamond"></span>
+            <span class="line"></span>
+          </div>
+
+          <div class="hero-quote reveal">
+            <blockquote>
+              "Cedo ou tarde a Santíssima Virgem terá mais filhos, servos e
+              escravos de amor como nunca, e que por esse meio Jesus Cristo, meu
+              amado Mestre, reinará nos corações mais do que nunca."
+            </blockquote>
+            <cite>— São Luís de Montfort</cite>
+          </div>
+
+          <div class="date-badge">
+            <span class="dot"></span>
+            <span>Paróquia São Vicente de Paulo</span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <div class="scroll-hint">
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ══ COMO FUNCIONA ══ -->
+      <section class="funciona-section" id="s-funciona">
+        <div class="container">
+          <p class="section-label reveal">O Caminho</p>
+          <h2 class="section-title reveal">Como <em>funciona</em></h2>
+
+          <div class="funciona-grid reveal">
+            <div class="funciona-item">
+              <span class="fi-icon">🕯</span>
+              <h3>5 Encontros</h3>
+              <p>
+                Presenciais<br />Segundas-feiras, 20h30<br />Matriz São Vicente
+                de Paulo
+              </p>
+            </div>
+            <div class="funciona-item">
+              <span class="fi-icon">📿</span>
+              <h3>33 Dias</h3>
+              <p>Exercícios Espirituais<br />individuais</p>
+            </div>
+          </div>
+
+          <div class="consagracao-date reveal">
+            <p class="cd-label">Consagração</p>
+            <p class="cd-date">13 de Maio · 2026</p>
+            <p class="cd-sub">
+              Missa 19h30 Matriz São Vicente e Comunidade São José
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ ENCONTROS ══ -->
+      <section class="encontros-section" id="s-encontros">
+        <div class="container">
+          <p class="section-label reveal">Formação</p>
+          <h2 class="section-title reveal">Os Cinco <em>Encontros</em></h2>
+
+          <div class="encontros-list reveal">
+            <div class="encontro-item">
+              <div class="enc-number"><span>01</span></div>
+              <div class="enc-content">
+                <p class="enc-date">13 de Abril</p>
+                <p class="enc-title">
+                  Introdução, Fundamentos e a Necessidade de Maria
+                </p>
+                <p class="enc-theme">A maior obra de Deus — e a mais oculta</p>
+              </div>
+              <div class="enc-keyword">Fundamento</div>
+            </div>
+            <div class="encontro-item">
+              <div class="enc-number"><span>02</span></div>
+              <div class="enc-content">
+                <p class="enc-date">20 de Abril</p>
+                <p class="enc-title">
+                  Verdades Fundamentais e a Verdadeira Devoção
+                </p>
+                <p class="enc-theme">
+                  O segredo que não encontrei em nenhum livro
+                </p>
+              </div>
+              <div class="enc-keyword">Discernimento</div>
+            </div>
+            <div class="encontro-item">
+              <div class="enc-number"><span>03</span></div>
+              <div class="enc-content">
+                <p class="enc-date">27 de Abril</p>
+                <p class="enc-title">
+                  A Perfeita Consagração a Jesus por Maria
+                </p>
+                <p class="enc-theme">
+                  Dar tudo — sem reserva, para toda a eternidade
+                </p>
+              </div>
+              <div class="enc-keyword">Consagração</div>
+            </div>
+            <div class="encontro-item">
+              <div class="enc-number"><span>04</span></div>
+              <div class="enc-content">
+                <p class="enc-date">04 de Maio</p>
+                <p class="enc-title">
+                  Como Maria nos Transforma à Imagem de Cristo
+                </p>
+                <p class="enc-theme">
+                  O molde de Deus — liquefazer-se e ser formado
+                </p>
+              </div>
+              <div class="enc-keyword">Conformação</div>
+            </div>
+            <div class="encontro-item">
+              <div class="enc-number"><span>05</span></div>
+              <div class="enc-content">
+                <p class="enc-date">11 de Maio</p>
+                <p class="enc-title">
+                  Os Efeitos Maravilhosos e as Práticas da Devoção
+                </p>
+                <p class="enc-theme">
+                  Por Maria, com Maria, em Maria, para Maria
+                </p>
+              </div>
+              <div class="enc-keyword">Frutificação</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ EXERCÍCIOS ESPIRITUAIS ══ -->
+      <section class="exercicios-section" id="s-exercicios">
+        <div class="container">
+          <p class="section-label reveal">33 Dias de Preparação</p>
+          <h2 class="section-title reveal">Exercícios <em>Espirituais</em></h2>
+
+          <div class="exercicios-grid reveal">
+            <div class="exercicio-card" data-step="I">
+              <span class="exc-step-dot"></span>
+              <span class="exc-phase">Etapa I</span>
+              <span class="exc-period">13 – 23 de Abril</span>
+              <p class="exc-title">Renúncia ao Espírito do Mundo</p>
+              <span class="exc-nums">§§ 1 – 12</span>
+            </div>
+            <div class="exercicio-card" data-step="II">
+              <span class="exc-step-dot"></span>
+              <span class="exc-phase">Etapa II</span>
+              <span class="exc-period">24 – 29 de Abril</span>
+              <p class="exc-title">Conhecimento de Si Mesmo</p>
+              <span class="exc-nums">§§ 13 – 19</span>
+            </div>
+            <div class="exercicio-card" data-step="III">
+              <span class="exc-step-dot"></span>
+              <span class="exc-phase">Etapa III</span>
+              <span class="exc-period">27 de Abril – 05 de Maio</span>
+              <p class="exc-title">Conhecimento de Maria</p>
+              <span class="exc-nums">§§ 20 – 26</span>
+            </div>
+            <div class="exercicio-card" data-step="IV">
+              <span class="exc-step-dot"></span>
+              <span class="exc-phase">Etapa IV</span>
+              <span class="exc-period">06 – 12 de Maio</span>
+              <p class="exc-title">Conhecimento de Cristo</p>
+              <span class="exc-nums">§§ 27 – 33</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ NAVEGAÇÃO PARA PÁGINAS ══ -->
+      <section class="nav-section" id="s-paginas">
+        <div class="container">
+          <p class="section-label reveal">Aprofunde-se</p>
+          <h2 class="section-title reveal">Conteúdo <em>dos Encontros</em></h2>
+
+          <div class="nav-grid reveal">
+            <a class="nav-card" href="encontro-1.html">
+              <div class="nc-top-line"></div>
+              <div class="nc-inner">
+                <p class="nc-number">Encontro · 01 · 13 de Abril</p>
+                <h3 class="nc-title">
+                  Introdução, Fundamentos e a Necessidade de Maria
+                </h3>
+                <p class="nc-desc">
+                  São Luís, o Tratado, Maria como santuário da Trindade e a
+                  necessidade de Maria na ordem da graça. Lógica e fogo — não
+                  espiritualidade suave.
+                </p>
+                <div class="nc-bottom">
+                  <span class="nc-tag">§§ 1 – 59</span>
+                  <span class="nc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="nav-card" href="encontro-2.html">
+              <div class="nc-top-line"></div>
+              <div class="nc-inner">
+                <p class="nc-number">Encontro · 02 · 20 de Abril</p>
+                <h3 class="nc-title">
+                  Verdades Fundamentais e a Verdadeira Devoção
+                </h3>
+                <p class="nc-desc">
+                  Cristo é o fim de tudo. As cinco verdades fundamentais, os
+                  sete falsos devotos e os cinco sinais da devoção verdadeira. O
+                  segredo que não está em nenhum livro.
+                </p>
+                <div class="nc-bottom">
+                  <span class="nc-tag">§§ 60 – 119</span>
+                  <span class="nc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="nav-card" href="encontro-3.html">
+              <div class="nc-top-line"></div>
+              <div class="nc-inner">
+                <p class="nc-number">Encontro · 03 · 27 de Abril</p>
+                <h3 class="nc-title">
+                  A Perfeita Consagração a Jesus por Maria
+                </h3>
+                <p class="nc-desc">
+                  Dar-se a Maria é dar tudo — sem reserva, para toda a
+                  eternidade. A renovação perfeita das promessas do Batismo. O
+                  caminho fácil, curto, perfeito e seguro.
+                </p>
+                <div class="nc-bottom">
+                  <span class="nc-tag">§§ 120 – 170</span>
+                  <span class="nc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="nav-card" href="encontro-4.html">
+              <div class="nc-top-line"></div>
+              <div class="nc-inner">
+                <p class="nc-number">Encontro · 04 · 04 de Maio</p>
+                <h3 class="nc-title">
+                  Como Maria nos Transforma à Imagem de Cristo
+                </h3>
+                <p class="nc-desc">
+                  Jacó e Rebeca: a figura bíblica da consagração. Os cinco
+                  deveres de caridade de Maria. O vestimento triplo e a aliança
+                  para sempre.
+                </p>
+                <div class="nc-bottom">
+                  <span class="nc-tag">§§ 171 – 212</span>
+                  <span class="nc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="nav-card" href="encontro-5.html">
+              <div class="nc-top-line"></div>
+              <div class="nc-inner">
+                <p class="nc-number">Encontro · 05 · 11 de Maio</p>
+                <h3 class="nc-title">
+                  Os Efeitos Maravilhosos e as Práticas da Devoção
+                </h3>
+                <p class="nc-desc">
+                  Sete efeitos reais na alma. O molde de Deus. As práticas
+                  exteriores e o espírito interior: por Maria, com Maria, em
+                  Maria, para Maria.
+                </p>
+                <div class="nc-bottom">
+                  <span class="nc-tag">§§ 213 – 265</span>
+                  <span class="nc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ ORAÇÕES ══ -->
+      <section class="oracoes-section" id="s-oracoes">
+        <div class="container">
+          <p class="section-label reveal">Para a Jornada</p>
+          <h2 class="section-title reveal">
+            Orações para a <em>Consagração</em>
+          </h2>
+
+          <div class="oracoes-grid reveal" id="oracoesGrid">
+            <!-- visíveis por padrão: 4 primeiras -->
+            <a class="oracao-card" href="oracoes.html#s-consagracao">
+              <div class="oc-top-line"></div>
+              <div class="oc-inner">
+                <p class="oc-saint">São Luís de Montfort</p>
+                <h3 class="oc-title">
+                  Consagração a Jesus Cristo pelas Mãos de Maria
+                </h3>
+                <div class="oc-bottom">
+                  <span class="oc-tag">Consagração</span>
+                  <span class="oc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="oracao-card" href="oracoes.html#s-ladainha">
+              <div class="oc-top-line"></div>
+              <div class="oc-inner">
+                <p class="oc-saint">Ladainha Mariana</p>
+                <h3 class="oc-title">Ladainha de Nossa Senhora</h3>
+                <div class="oc-bottom">
+                  <span class="oc-tag">Ladainha · Maria</span>
+                  <span class="oc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="oracao-card" href="oracoes.html#s-sagrado-coracao">
+              <div class="oc-top-line"></div>
+              <div class="oc-inner">
+                <p class="oc-saint">Ladainha</p>
+                <h3 class="oc-title">Ladainha do Sagrado Coração de Jesus</h3>
+                <div class="oc-bottom">
+                  <span class="oc-tag">Ladainha · Jesus</span>
+                  <span class="oc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="oracao-card" href="oracoes.html#s-abrasada">
+              <div class="oc-top-line"></div>
+              <div class="oc-inner">
+                <p class="oc-saint">São Luís de Montfort</p>
+                <h3 class="oc-title">Oração Abrasada pelos Apóstolos</h3>
+                <div class="oc-bottom">
+                  <span class="oc-tag">Oração · Apóstolos</span>
+                  <span class="oc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- extras: reveladas ao clicar "Mais orações" -->
+            <a class="oracao-card" href="oracoes.html#s-espirito">
+              <div class="oc-top-line"></div>
+              <div class="oc-inner">
+                <p class="oc-saint">Hino ao Espírito Santo</p>
+                <h3 class="oc-title">Vem, ó Espírito Criador</h3>
+                <div class="oc-bottom">
+                  <span class="oc-tag">Hino · Ladainha</span>
+                  <span class="oc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="oracao-card" href="oracoes.html#s-ave-estrela">
+              <div class="oc-top-line"></div>
+              <div class="oc-inner">
+                <p class="oc-saint">Hino a Nossa Senhora</p>
+                <h3 class="oc-title">Ave, Estrela do Mar</h3>
+                <div class="oc-bottom">
+                  <span class="oc-tag">Hino · Maria</span>
+                  <span class="oc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="oracao-card" href="oracoes.html#s-santo-agostinho">
+              <div class="oc-top-line"></div>
+              <div class="oc-inner">
+                <p class="oc-saint">Santo Agostinho</p>
+                <h3 class="oc-title">Oração de Santo Agostinho</h3>
+                <div class="oc-bottom">
+                  <span class="oc-tag">Oração · Ladainha</span>
+                  <span class="oc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="oracao-card" href="oracoes.html#s-santo-tomas">
+              <div class="oc-top-line"></div>
+              <div class="oc-inner">
+                <p class="oc-saint">Santo Tomás de Aquino</p>
+                <h3 class="oc-title">Oração pela Graça da Luz nos Estudos</h3>
+                <div class="oc-bottom">
+                  <span class="oc-tag">Oração · Estudo</span>
+                  <span class="oc-arrow">→</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ APÊNDICES ══ -->
+      <section class="apendices-section" id="s-apendices">
+        <div class="container">
+          <p class="section-label reveal">Material de Apoio</p>
+          <h2 class="section-title reveal"><em>Apêndices</em></h2>
+
+          <div class="apendices-cols reveal">
+            <!-- MÚSICAS -->
+            <div class="ap-col">
+              <p class="ap-col-title">♩ Músicas</p>
+              <div class="ap-grid" id="musicasGrid">
+                <a class="ap-item" href="apendice-musicas.html#musica-1">
+                  <span class="ap-icon">♩</span>
+                  <div class="ap-info">
+                    <p class="ap-name">
+                      Quando Teu Pai Revelou o Segredo a Maria
+                    </p>
+                    <p class="ap-meta">6 estrofes · Refrão</p>
+                  </div>
+                  <span class="ap-arrow">→</span>
+                </a>
+                <a class="ap-item" href="apendice-musicas.html#musica-2">
+                  <span class="ap-icon">♩</span>
+                  <div class="ap-info">
+                    <p class="ap-name">Mãe do Novo Homem</p>
+                    <p class="ap-meta">2 estrofes · Refrão</p>
+                  </div>
+                  <span class="ap-arrow">→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- LEITURAS -->
+            <div class="ap-col">
+              <p class="ap-col-title">☩ Leituras</p>
+              <div class="ap-grid" id="leiturasGrid">
+                <a class="ap-item" href="apendice-leituras.html#s-anunciacao">
+                  <span class="ap-icon">☩</span>
+                  <div class="ap-info">
+                    <p class="ap-name">A Anunciação do Senhor</p>
+                    <p class="ap-meta">Lucas 1,26–38</p>
+                  </div>
+                  <span class="ap-arrow">→</span>
+                </a>
+                <a class="ap-item" href="apendice-leituras.html#s-visitacao">
+                  <span class="ap-icon">☩</span>
+                  <div class="ap-info">
+                    <p class="ap-name">A Visitação</p>
+                    <p class="ap-meta">Lucas 1,39–45</p>
+                  </div>
+                  <span class="ap-arrow">→</span>
+                </a>
+                <a class="ap-item" href="apendice-leituras.html#s-magnificat">
+                  <span class="ap-icon">☩</span>
+                  <div class="ap-info">
+                    <p class="ap-name">O Magnificat</p>
+                    <p class="ap-meta">Lucas 1,46–56</p>
+                  </div>
+                  <span class="ap-arrow">→</span>
+                </a>
+                <a class="ap-item" href="apendice-leituras.html#s-apocalipse">
+                  <span class="ap-icon">☩</span>
+                  <div class="ap-info">
+                    <p class="ap-name">A Mulher Vestida de Sol</p>
+                    <p class="ap-meta">Apocalipse 12,1–6</p>
+                  </div>
+                  <span class="ap-arrow">→</span>
+                </a>
+                <a class="ap-item" href="apendice-leituras.html#s-joao">
+                  <span class="ap-icon">☩</span>
+                  <div class="ap-info">
+                    <p class="ap-name">Mulher, Eis Teu Filho</p>
+                    <p class="ap-meta">João 19,25–27</p>
+                  </div>
+                  <span class="ap-arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ FOOTER ══ -->
+      <footer>
+        <div class="f-cross">✝</div>
+        <p class="f-parish">Paróquia São Vicente de Paulo</p>
+        <p
+          style="
+            margin-top: 10px;
+            font-size: 1.05rem;
+            color: var(--white);
+            font-weight: 400;
+          "
+        >
+          Consagração a Jesus pelas Mãos de Maria
+        </p>
+        <p
+          style="
+            margin-top: 8px;
+            font-style: italic;
+            font-size: 1rem;
+            color: rgba(201, 168, 76, 0.7);
+          "
+        >
+          segundo São Luís Maria Grignion de Montfort
+        </p>
+      </footer>
+    </div>
+
+    <!-- ══ SIDE NAV ══ -->
+    <nav class="side-nav" id="sideNav">
+      <button
+        class="side-nav-btn"
+        id="btnUp"
+        onclick="sideNavGo(-1)"
+        title="Seção anterior"
+      >
+        &#8593;
+      </button>
+      <div class="side-nav-dots" id="sideNavDots"></div>
+      <button
+        class="side-nav-btn"
+        id="btnDown"
+        onclick="sideNavGo(1)"
+        title="Próxima seção"
+      >
+        &#8595;
+      </button>
+    </nav>
+
+    <script>
+      // ── SIDE NAV (global scope) ──
+      const _sIds = [
+        "s-hero",
+        "s-funciona",
+        "s-encontros",
+        "s-exercicios",
+        "s-paginas",
+        "s-oracoes",
+        "s-apendices",
+      ];
+      const _sLabels = [
+        "Início",
+        "Como Funciona",
+        "Os Encontros",
+        "33 Dias",
+        "Páginas",
+        "Orações",
+        "Apêndices",
+      ];
+      let _cur = 0,
+        _scrolling = false;
+
+      function _updateNav() {
+        const dots = document
+          .getElementById("sideNavDots")
+          .querySelectorAll(".side-dot");
+        dots.forEach((d, i) => d.classList.toggle("active", i === _cur));
+        document.getElementById("btnUp").classList.toggle("hidden", _cur === 0);
+        document
+          .getElementById("btnDown")
+          .classList.toggle("hidden", _cur >= _sIds.length - 1);
+      }
+
+      function goToSection(index) {
+        if (index < 0 || index >= _sIds.length) return;
+        _cur = index;
+        const el = document.getElementById(_sIds[index]);
+        if (el) {
+          _scrolling = true;
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          setTimeout(() => {
+            _scrolling = false;
+          }, 900);
+        }
+        _updateNav();
+      }
+
+      function sideNavGo(dir) {
+        goToSection(_cur + dir);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Scroll reveal
+        const reveals = document.querySelectorAll(".reveal");
+        new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) e.target.classList.add("visible");
+            });
+          },
+          { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+        ).observe &&
+          document.querySelectorAll(".reveal").forEach((el) => {
+            new IntersectionObserver(
+              (entries) => {
+                entries.forEach((e) => {
+                  if (e.isIntersecting) e.target.classList.add("visible");
+                });
+              },
+              { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+            ).observe(el);
+          });
+
+        document
+          .querySelectorAll(
+            ".funciona-grid .funciona-item, .exercicios-grid .exercicio-card, .nav-grid .nav-card"
+          )
+          .forEach((el, i) => {
+            el.style.transitionDelay = `${i * 0.08}s`;
+          });
+
+        // Build dots
+        const dotsContainer = document.getElementById("sideNavDots");
+        _sIds.forEach((id, i) => {
+          const d = document.createElement("span");
+          d.className = "side-dot" + (i === 0 ? " active" : "");
+          d.title = _sLabels[i];
+          d.addEventListener("click", () => goToSection(i));
+          dotsContainer.appendChild(d);
+        });
+
+        // Scroll observer
+        const secEls = _sIds
+          .map((id) => document.getElementById(id))
+          .filter(Boolean);
+        const scrollObs = new IntersectionObserver(
+          (entries) => {
+            if (_scrolling) return;
+            entries.forEach((e) => {
+              if (e.isIntersecting && e.intersectionRatio >= 0.05) {
+                const idx = _sIds.indexOf(e.target.id);
+                if (idx !== -1) {
+                  _cur = idx;
+                  _updateNav();
+                }
+              }
+            });
+          },
+          { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
+        );
+        secEls.forEach((el) => scrollObs.observe(el));
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowDown" || e.key === "PageDown") {
+            e.preventDefault();
+            sideNavGo(1);
+          }
+          if (e.key === "ArrowUp" || e.key === "PageUp") {
+            e.preventDefault();
+            sideNavGo(-1);
+          }
+        });
+
+        _updateNav();
+      });
+    </script>
+  </body>
+</html>

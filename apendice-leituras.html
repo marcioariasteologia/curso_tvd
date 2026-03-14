@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leituras — Consagração</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --navy:#0D1B2A;--gold:#C9A84C;--gold-light:#E8C97A;--white:#F5EFE0;--cream:#E8DEC4;--text-body:rgba(232,222,196,0.9); }
+html { scroll-behavior:smooth; }
+body { background:var(--navy);color:var(--text-body);font-family:'EB Garamond',Georgia,serif;overflow-x:hidden; }
+.bg-layer { position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at 15% 50%,rgba(201,168,76,0.05) 0%,transparent 55%),
+             radial-gradient(ellipse at 85% 20%,rgba(201,168,76,0.04) 0%,transparent 50%); }
+nav.site-nav { position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;gap:16px;
+  padding:15px 32px;background:rgba(13,27,42,0.92);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,168,76,0.1); }
+.nav-back { font-family:'Cinzel',serif;font-size: 0.998rem;letter-spacing:0.2em;color:rgba(201,168,76,0.7);text-decoration:none;transition:color .3s; }
+.nav-back:hover { color:var(--gold); }
+.nav-label { font-family:'Cinzel',serif;font-size: 1.05rem;letter-spacing:0.3em;color:var(--white);margin-left:auto; }
+.nav-type  { font-family:'Cinzel',serif;font-size: 0.922rem;letter-spacing:0.2em;color:rgba(201,168,76,0.45); }
+.side-nav { position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:200;
+  display:flex;flex-direction:column;align-items:center;gap:10px; }
+.side-nav-btn { width:30px;height:30px;border:1px solid rgba(201,168,76,0.2);background:rgba(13,27,42,0.6);
+  color:var(--gold);border-radius:50%;cursor:pointer;font-size: 1.024rem;display:flex;align-items:center;
+  justify-content:center;transition:background .3s,border-color .3s; }
+.side-nav-btn:hover { background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.5); }
+.side-nav-btn.hidden { opacity:0;pointer-events:none; }
+.side-dots { display:flex;flex-direction:column;gap:8px;align-items:center; }
+.side-dot { width:5px;height:5px;border-radius:50%;background:rgba(201,168,76,0.2);cursor:pointer;transition:background .3s,transform .3s; }
+.side-dot.active { background:rgba(201,168,76,0.75);transform:scale(1.5); }
+.side-dot:hover { background:rgba(201,168,76,0.5); }
+@media(max-width:700px){ .side-nav{display:none;} }
+.leitura-section { position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;padding:90px 60px 60px;border-top:1px solid rgba(201,168,76,0.1); }
+.leitura-section:first-of-type { border-top:none; }
+.leitura-header { margin-bottom:32px; }
+.leitura-num { font-family:'Cinzel',serif;font-size: 0.922rem;letter-spacing:0.5em;color:rgba(201,168,76,0.4);text-transform:uppercase;margin-bottom:6px; }
+.leitura-ref { font-family:'Cinzel',serif;font-size: 1.126rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:10px; }
+.leitura-titulo { font-family:'Cinzel',serif;font-size:clamp(1.792rem, 3vw, 2.816rem);font-weight:400;color:var(--white);line-height:1.25; }
+.leitura-divider { width:52px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-top:14px; }
+.versiculos {
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:transparent;
+}
+.versiculos .versiculo {
+  border-left:2px solid rgba(201,168,76,0.22);
+  background:rgba(201,168,76,0.015);
+}
+@media(max-width:800px){ .versiculos { grid-template-columns:1fr; } }
+.versiculo { display:flex;border-bottom:1px solid rgba(201,168,76,0.07);transition:background .2s; }
+.versiculo:last-child { border-bottom:none; }
+.versiculo:hover { background:rgba(201,168,76,0.05); }
+.v-num { font-family:'Cinzel',serif;font-size: 0.998rem;letter-spacing:0.08em;color:rgba(201,168,76,0.38);
+  min-width:52px;padding:18px 0 18px 20px;line-height:2.2;flex-shrink:0;user-select:none; }
+.v-text { font-size:clamp(1.664rem, 1.9vw, 2.048rem);font-weight:300;color:var(--cream);line-height:1.85;
+  padding:18px 32px 18px 10px;font-style:italic; }
+.versiculo.destaque { background:rgba(201,168,76,0.04);position:relative; }
+.versiculo.destaque::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold); }
+.versiculo.destaque .v-text { color:var(--gold-light); }
+/* cols-2 handled by base .versiculos */
+@media(max-width:600px){ .leitura-section{padding:80px 24px 48px;} .v-text{font-size: 1.536rem;} }
+.page-footer { position:relative;z-index:1;border-top:1px solid rgba(201,168,76,0.15);padding:56px 24px;text-align:center; }
+.pf-cross { color:var(--gold);font-size: 1.28rem;display:block;margin-bottom:20px; }
+.pf-nav { display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap; }
+.pf-link { font-family:'Cinzel',serif;font-size: 0.998rem;letter-spacing:0.2em;color:rgba(201,168,76,0.7);text-decoration:none;transition:color .3s; }
+.pf-link:hover { color:var(--gold); }
+.pf-sep { color:rgba(201,168,76,0.5); }
+.reveal { opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease; }
+.reveal.visible { opacity:1;transform:translateY(0); }
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--navy);}::-webkit-scrollbar-thumb{background:rgba(201,168,76,0.3);border-radius:3px;}
+
+  /* ── COMPACT MODE (HEIGHT < 900px) ── */
+  @media (max-height: 900px) {
+    /* Hero Compact */
+    .hero { justify-content: center; }
+    .hero-ornament { margin-bottom: 6px !important; }
+    .hero h1, .hero-title { margin-bottom: 4px !important; line-height: 1.05 !important; font-size: clamp(2rem, 4vw, 3rem) !important; }
+    .hero-sub { margin-bottom: 10px !important; font-size: clamp(1.1rem, 2vw, 1.4rem) !important; }
+    .hero-divider { margin-bottom: 10px !important; margin-top: 4px !important; }
+    .hero-verse { padding: 10px 16px !important; margin-bottom: 0 !important; }
+    .hero-verse p { margin-bottom: 2px !important; line-height: 1.3 !important; font-size: 0.95rem !important; }
+    .enc-label { margin-bottom: 8px !important; font-size: 0.9rem !important; }
+
+    /* General Sections Compact */
+    section, .musica-section, .consagracao-section { padding: 24px 16px !important; }
+    .section-title { margin-bottom: 12px !important; line-height: 1.1 !important; font-size: clamp(1.6rem, 3vw, 2.2rem) !important; }
+    .section-label { margin-bottom: 4px !important; font-size: 0.9rem !important; }
+    
+    /* Elements Compact */
+    .cite-block { padding: 10px 14px !important; margin-bottom: 10px !important; }
+    .guillemet { font-size: 1.6rem !important; margin-bottom: -4px !important; }
+    
+    /* Grids Compact */
+    .trindade-grid, .fact-grid, .sintese-grid, .exercicios-grid { margin-bottom: 10px !important; }
+    .trindade-card, .fact-item, .sintese-item, .exercicio-card { padding: 8px 10px !important; }
+    
+    /* Text Compact */
+    p, .tc-text, .paradox-side p, .si-text { line-height: 1.35 !important; font-size: 1rem !important; }
+    .si-num { font-size: 1.4rem !important; margin-bottom: 2px !important; }
+    .si-text { font-size: 1.05rem !important; }
+    
+    .tc-icon, .pf-cross { margin-bottom: 4px !important; font-size: 1.2rem !important; }
+    .tc-persona, .paradox-tag { margin-bottom: 2px !important; font-size: 0.85rem !important; }
+    .tc-title, .paradox-side h3 { margin-bottom: 2px !important; font-size: 0.95rem !important; }
+    
+    /* Footer */
+    .page-footer { padding: 12px 12px !important; }
+    .pf-nav { gap: 12px; }
+    .pf-link { font-size: 0.9rem !important; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-layer"></div>
+<nav class="site-nav">
+  <a class="nav-back" href="index.html">← Início</a>
+  <span class="nav-label">Apêndice</span>
+  <span class="nav-type">Leituras</span>
+</nav>
+<nav class="side-nav" id="sideNav">
+  <button class="side-nav-btn" id="btnUp" onclick="sideNavGo(-1)" title="Anterior">&#8593;</button>
+  <div class="side-dots" id="sideNavDots"></div>
+  <button class="side-nav-btn" id="btnDown" onclick="sideNavGo(1)" title="Próxima">&#8595;</button>
+</nav>
+
+<!-- I — ANUNCIAÇÃO -->
+<section class="leitura-section" id="s-anunciacao">
+  <div class="leitura-header reveal">
+    <p class="leitura-num">Leitura I</p>
+    <p class="leitura-ref">Lucas 1,26–38</p>
+    <h2 class="leitura-titulo">A Anunciação do Senhor</h2>
+    <div class="leitura-divider"></div>
+  </div>
+  <div class="versiculos cols-2 reveal">
+    <div class="versiculo"><span class="v-num">26</span><p class="v-text">No sexto mês, o anjo Gabriel foi enviado por Deus a uma cidade da Galileia, chamada Nazaré,</p></div>
+    <div class="versiculo"><span class="v-num">27</span><p class="v-text">a uma virgem desposada com um homem chamado José, da casa de Davi; o nome da virgem era Maria.</p></div>
+    <div class="versiculo"><span class="v-num">28</span><p class="v-text">Entrando onde ela estava, o anjo disse: "Alegra-te, cheia de graça, o Senhor está contigo."</p></div>
+    <div class="versiculo"><span class="v-num">29</span><p class="v-text">Ela ficou perturbada com esta palavra e pensava o que poderia significar tal saudação.</p></div>
+    <div class="versiculo"><span class="v-num">30</span><p class="v-text">O anjo lhe disse: "Não temas, Maria! Encontraste graça diante de Deus.</p></div>
+    <div class="versiculo"><span class="v-num">31</span><p class="v-text">Eis que conceberás e darás à luz um filho, e lhe porás o nome de Jesus.</p></div>
+  </div>
+</section>
+
+<!-- I-b — ANUNCIAÇÃO continuação -->
+<section class="leitura-section" id="s-anunciacao-2">
+  <div class="leitura-header reveal">
+    <p class="leitura-num">Leitura I · continuação</p>
+    <p class="leitura-ref">Lucas 1,32–38</p>
+    <h2 class="leitura-titulo">A Anunciação do Senhor</h2>
+    <div class="leitura-divider"></div>
+  </div>
+  <div class="versiculos cols-2 reveal">
+    <div class="versiculo"><span class="v-num">32</span><p class="v-text">Ele será grande e será chamado Filho do Altíssimo; o Senhor Deus lhe dará o trono de seu pai Davi.</p></div>
+    <div class="versiculo"><span class="v-num">33</span><p class="v-text">Reinará eternamente sobre a casa de Jacó, e o seu reino não terá fim."</p></div>
+    <div class="versiculo"><span class="v-num">34</span><p class="v-text">Maria disse ao anjo: "Como se fará isso, pois não conheço homem algum?"</p></div>
+    <div class="versiculo"><span class="v-num">35</span><p class="v-text">O anjo respondeu: "O Espírito Santo descerá sobre ti, e o poder do Altíssimo te cobrirá com a sua sombra. Por isso, o que vai nascer será chamado Santo, Filho de Deus.</p></div>
+    <div class="versiculo"><span class="v-num">36</span><p class="v-text">E Isabel, tua parenta, também concebeu um filho na sua velhice, e este já é o sexto mês para aquela que chamavam estéril,</p></div>
+    <div class="versiculo"><span class="v-num">37</span><p class="v-text">porque nada é impossível a Deus."</p></div>
+    <div class="versiculo destaque"><span class="v-num">38</span><p class="v-text">Então Maria disse: "Eis aqui a serva do Senhor. Faça-se em mim segundo a tua palavra." E o anjo a deixou.</p></div>
+  </div>
+</section>
+
+<!-- II — VISITAÇÃO -->
+<section class="leitura-section" id="s-visitacao">
+  <div class="leitura-header reveal">
+    <p class="leitura-num">Leitura II</p>
+    <p class="leitura-ref">Lucas 1,39–45</p>
+    <h2 class="leitura-titulo">A Visitação</h2>
+    <div class="leitura-divider"></div>
+  </div>
+  <div class="versiculos cols-2 reveal">
+    <div class="versiculo"><span class="v-num">39</span><p class="v-text">Naqueles dias, Maria se levantou e foi às pressas à região montanhosa, a uma cidade de Judá.</p></div>
+    <div class="versiculo"><span class="v-num">40</span><p class="v-text">Entrou na casa de Zacarias e saudou Isabel.</p></div>
+    <div class="versiculo"><span class="v-num">41</span><p class="v-text">Quando Isabel ouviu a saudação de Maria, o menino saltou no seu ventre, e Isabel ficou cheia do Espírito Santo.</p></div>
+    <div class="versiculo"><span class="v-num">42</span><p class="v-text">Exclamou em alta voz: "Bendita és tu entre as mulheres, e bendito é o fruto do teu ventre!</p></div>
+    <div class="versiculo"><span class="v-num">43</span><p class="v-text">Como é possível que a mãe do meu Senhor venha a mim?</p></div>
+    <div class="versiculo"><span class="v-num">44</span><p class="v-text">Pois, logo que chegou aos meus ouvidos a voz de tua saudação, o menino saltou de alegria no meu ventre.</p></div>
+    <div class="versiculo destaque"><span class="v-num">45</span><p class="v-text">Feliz aquela que acreditou, pois se cumprirá o que lhe foi dito da parte do Senhor."</p></div>
+  </div>
+</section>
+
+<!-- III — MAGNIFICAT -->
+<section class="leitura-section" id="s-magnificat">
+  <div class="leitura-header reveal">
+    <p class="leitura-num">Leitura III</p>
+    <p class="leitura-ref">Lucas 1,46–56</p>
+    <h2 class="leitura-titulo">O Magnificat</h2>
+    <div class="leitura-divider"></div>
+  </div>
+  <div class="versiculos cols-2 reveal">
+    <div class="versiculo destaque"><span class="v-num">46</span><p class="v-text">Então Maria disse: "Minha alma glorifica ao Senhor,</p></div>
+    <div class="versiculo destaque"><span class="v-num">47</span><p class="v-text">e meu espírito se alegra em Deus, meu Salvador,</p></div>
+    <div class="versiculo destaque"><span class="v-num">48</span><p class="v-text">porque olhou para a humildade da sua serva. Por isso, desde agora me chamarão bem-aventurada todas as gerações,</p></div>
+    <div class="versiculo destaque"><span class="v-num">49</span><p class="v-text">porque o Todo-Poderoso fez grandes coisas em meu favor. Santo é o seu nome.</p></div>
+    <div class="versiculo destaque"><span class="v-num">50</span><p class="v-text">Sua misericórdia se estende de geração em geração sobre os que o temem.</p></div>
+    <div class="versiculo destaque"><span class="v-num">51</span><p class="v-text">Agiu com o poder do seu braço, dispersou os orgulhosos em seus pensamentos.</p></div>
+    <div class="versiculo destaque"><span class="v-num">52</span><p class="v-text">Derrubou os poderosos dos seus tronos e exaltou os humildes.</p></div>
+    <div class="versiculo destaque"><span class="v-num">53</span><p class="v-text">Encheu de bens os famintos e despediu de mãos vazias os ricos.</p></div>
+    <div class="versiculo destaque"><span class="v-num">54</span><p class="v-text">Socorreu Israel, seu servo, lembrando-se da sua misericórdia,</p></div>
+    <div class="versiculo destaque"><span class="v-num">55</span><p class="v-text">como tinha prometido aos nossos pais, a Abraão e à sua descendência, para sempre."</p></div>
+    <div class="versiculo"><span class="v-num">56</span><p class="v-text">Maria ficou com Isabel cerca de três meses; depois voltou para sua casa.</p></div>
+  </div>
+</section>
+
+<!-- IV — MULHER VESTIDA DE SOL -->
+<section class="leitura-section" id="s-apocalipse">
+  <div class="leitura-header reveal">
+    <p class="leitura-num">Leitura IV</p>
+    <p class="leitura-ref">Apocalipse 12,1–6</p>
+    <h2 class="leitura-titulo">A Mulher Vestida de Sol</h2>
+    <div class="leitura-divider"></div>
+  </div>
+  <div class="versiculos cols-2 reveal">
+    <div class="versiculo destaque"><span class="v-num">1</span><p class="v-text">Um grande sinal apareceu no céu: uma mulher vestida do sol, com a lua debaixo dos seus pés e uma coroa de doze estrelas sobre a cabeça.</p></div>
+    <div class="versiculo"><span class="v-num">2</span><p class="v-text">Ela estava grávida e gritava com as dores do parto, atormentada para dar à luz.</p></div>
+    <div class="versiculo"><span class="v-num">3</span><p class="v-text">Outro sinal apareceu no céu: um grande dragão vermelho, com sete cabeças e dez chifres, e sobre as cabeças sete diademas.</p></div>
+    <div class="versiculo"><span class="v-num">4</span><p class="v-text">A sua cauda arrastou a terça parte das estrelas do céu e as lançou sobre a terra. O dragão ficou de pé diante da mulher que ia dar à luz, para devorar o filho dela logo que nascesse.</p></div>
+    <div class="versiculo destaque"><span class="v-num">5</span><p class="v-text">Ela deu à luz um filho varão, que vai reger todas as nações com cetro de ferro. O seu filho foi arrebatado para junto de Deus e do seu trono.</p></div>
+    <div class="versiculo"><span class="v-num">6</span><p class="v-text">A mulher fugiu para o deserto, onde Deus lhe tinha preparado um lugar para ser alimentada ali durante mil duzentos e sessenta dias.</p></div>
+  </div>
+</section>
+
+<!-- V — MULHER, EIS TEU FILHO -->
+<section class="leitura-section" id="s-joao">
+  <div class="leitura-header reveal">
+    <p class="leitura-num">Leitura V</p>
+    <p class="leitura-ref">João 19,25–27</p>
+    <h2 class="leitura-titulo">Mulher, Eis Teu Filho</h2>
+    <div class="leitura-divider"></div>
+  </div>
+  <div class="versiculos cols-2 reveal">
+    <div class="versiculo"><span class="v-num">25</span><p class="v-text">Junto à cruz de Jesus estavam sua mãe, a irmã de sua mãe, Maria de Clopas, e Maria Madalena.</p></div>
+    <div class="versiculo destaque"><span class="v-num">26</span><p class="v-text">Jesus, vendo sua mãe e, perto dela, o discípulo que ele amava, disse à sua mãe: "Mulher, eis teu filho."</p></div>
+    <div class="versiculo destaque"><span class="v-num">27</span><p class="v-text">Depois disse ao discípulo: "Eis tua mãe." E desde aquela hora o discípulo a recebeu em sua própria casa.</p></div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <span class="pf-cross">✝</span>
+  <div class="pf-nav">
+    <a class="pf-link" href="index.html">← Início</a>
+    <span class="pf-sep">✦</span>
+    <a class="pf-link" href="apendice-musicas.html">← Músicas</a>
+  </div>
+</footer>
+
+<script>
+const _ids    = ['s-anunciacao','s-anunciacao-2','s-visitacao','s-magnificat','s-apocalipse','s-joao'];
+const _labels = ['Anunciação I','Anunciação II','Visitação','Magnificat','Apocalipse','Eis Teu Filho'];
+let _cur = 0, _scrolling = false;
+
+function _updateNav() {
+  document.getElementById('sideNavDots').querySelectorAll('.side-dot')
+    .forEach((d,i) => d.classList.toggle('active', i === _cur));
+  document.getElementById('btnUp').classList.toggle('hidden', _cur === 0);
+  document.getElementById('btnDown').classList.toggle('hidden', _cur >= _ids.length - 1);
+}
+function goToSection(i) {
+  if (i < 0 || i >= _ids.length) return;
+  _cur = i; _scrolling = true;
+  document.getElementById(_ids[i]).scrollIntoView({behavior:'smooth', block:'start'});
+  setTimeout(() => { _scrolling = false; }, 900);
+  _updateNav();
+}
+function sideNavGo(dir) { goToSection(_cur + dir); }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dotsEl = document.getElementById('sideNavDots');
+  _ids.forEach((id, i) => {
+    const d = document.createElement('span');
+    d.className = 'side-dot' + (i === 0 ? ' active' : '');
+    d.title = _labels[i];
+    d.addEventListener('click', () => goToSection(i));
+    dotsEl.appendChild(d);
+  });
+  _ids.map(id => document.getElementById(id)).filter(Boolean).forEach(el => {
+    new IntersectionObserver((entries) => {
+      if (_scrolling) return;
+      entries.forEach(e => {
+        if (e.isIntersecting) { const idx = _ids.indexOf(e.target.id); if (idx !== -1) { _cur = idx; _updateNav(); } }
+      });
+    }, {threshold: 0.25}).observe(el);
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.06, rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  document.addEventListener('keydown', e => {
+    if (e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();sideNavGo(1);}
+    if (e.key==='ArrowUp'  ||e.key==='PageUp'  ){e.preventDefault();sideNavGo(-1);}
+  });
+  _updateNav();
+});
+</script>
+</body>
+</html>

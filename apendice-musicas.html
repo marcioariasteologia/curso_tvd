@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Músicas — Consagração</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0D1B2A; --gold: #C9A84C; --gold-light: #E8C97A;
+    --white: #F5EFE0; --cream: #E8DEC4; --text-body: rgba(232,222,196,0.85);
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--text-body); font-family: 'EB Garamond', Georgia, serif; font-size: 1.6rem; line-height: 1.85; }
+  .bg-layer { position: fixed; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.04) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.03) 0%, transparent 50%); pointer-events: none; z-index: 0; }
+  .page { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  .container { max-width: 760px; margin: 0 auto; }
+
+  /* NAV */
+  nav.site-nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 16px; padding: 16px 32px; background: rgba(13,27,42,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.1); }
+  .nav-back { font-family: 'Cinzel', serif; font-size: 0.998rem; letter-spacing: 0.2em; color: rgba(201,168,76,0.7); text-decoration: none; transition: color 0.3s; }
+  .nav-back:hover { color: var(--gold); }
+  .nav-label { font-family: 'Cinzel', serif; font-size: 1.05rem; letter-spacing: 0.3em; color: var(--white); margin-left: auto; }
+  .nav-type  { font-family: 'Cinzel', serif; font-size: 0.922rem; letter-spacing: 0.2em; color: rgba(201,168,76,0.5); }
+
+  /* HERO */
+  .hero { min-height: 45vh; display: flex; flex-direction: column; align-items: center;  text-align: center; padding: clamp(40px, 8vh, 80px) 24px; }
+  .hero-ornament { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+  .hero-ornament .line { width: 60px; height: 1px; background: linear-gradient(90deg,transparent,var(--gold)); }
+  .hero-ornament .line:last-child { background: linear-gradient(90deg,var(--gold),transparent); }
+  .hero-ornament .cross { color: var(--gold); font-size: 1.242rem; letter-spacing: 0.2em; }
+  .hero-tag { font-family: 'Cinzel', serif; font-size: 1.05rem; letter-spacing: 0.45em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+  .hero-title { font-size: clamp(2.304rem, 5vw, 4.096rem); font-weight: 500; color: var(--white); line-height: 1.15; margin-bottom: 16px; font-family: 'Cinzel', serif; }
+  .hero-title em { font-style: italic; color: var(--gold-light); font-family: 'EB Garamond', serif; }
+  .hero-divider { display: flex; align-items: center; gap: 16px; margin-top: 32px; }
+  .hero-divider .hline { width: 70px; height: 1px; background: linear-gradient(90deg,transparent,var(--gold)); }
+  .hero-divider .hline:last-child { background: linear-gradient(90deg,var(--gold),transparent); }
+  .hero-divider .dia { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+
+  /* SECTION LABEL */
+  .section-label { font-family: 'Cinzel', serif; font-size: 0.998rem; letter-spacing: 0.45em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; display: block; }
+  .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.792rem, 3vw, 2.816rem); font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 48px; }
+  .section-title em { font-style: italic; color: var(--gold-light); }
+
+  /* MÚSICA SECTION */
+  .musica-section { padding: 80px 0 70px; border-top: 1px solid rgba(201,168,76,0.1); }
+
+  /* Header da música */
+  .musica-header { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+  .musica-num { font-family: 'Cinzel', serif; font-size: 0.922rem; letter-spacing: 0.5em; color: rgba(201,168,76,0.45); text-transform: uppercase; margin-bottom: 10px; }
+  .musica-titulo { font-family: 'Cinzel', serif; font-size: clamp(1.408rem, 2.5vw, 1.984rem); font-weight: 400; color: var(--white); line-height: 1.3; margin-bottom: 8px; }
+  .musica-divider { width: 48px; height: 1px; background: linear-gradient(90deg,transparent,var(--gold),transparent); margin: 16px auto 0; }
+
+  /* Estrofes */
+  .estrofes { max-width: 640px; margin: 0 auto; }
+  .estrofe { margin-bottom: 0; padding: 26px 36px; border-left: 2px solid rgba(201,168,76,0.2); background: rgba(201,168,76,0.018); transition: border-color 0.3s, background 0.3s; border-bottom: 1px solid rgba(201,168,76,0.06); }
+  .estrofe:last-child { border-bottom: none; }
+  .estrofe:hover { border-left-color: rgba(201,168,76,0.55); background: rgba(201,168,76,0.045); }
+  .estrofe-tipo { display: none; }
+  .estrofe p { font-size: 1.664rem; font-weight: 300; color: var(--cream); line-height: 1.9; font-style: italic; }
+  .estrofe p + p { margin-top: 0; }
+
+  /* Refrão — destaque dourado */
+  .estrofe.refrao { border-left-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.04); }
+  .estrofe.refrao .estrofe-tipo { color: var(--gold-light); }
+  .estrofe.refrao p { color: var(--gold-light); }
+
+  /* FOOTER */
+  .page-footer { border-top: 1px solid rgba(201,168,76,0.15); padding: 48px 24px; text-align: center; }
+  .pf-cross { color: var(--gold); font-size: 1.28rem; display: block; margin-bottom: 20px; }
+  .pf-nav { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .pf-link { font-family: 'Cinzel', serif; font-size: 0.998rem; letter-spacing: 0.2em; color: rgba(201,168,76,0.7); text-decoration: none; transition: color 0.3s; }
+  .pf-link:hover { color: var(--gold); }
+  .pf-sep { color: rgba(201,168,76,0.5); }
+
+  .reveal { opacity:0; transform:translateY(18px); transition:opacity .8s ease,transform .8s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  ::-webkit-scrollbar { width:6px; }
+  ::-webkit-scrollbar-track { background:var(--navy); }
+  ::-webkit-scrollbar-thumb { background:rgba(201,168,76,0.3); border-radius:3px; }
+
+  /* ── COMPACT MODE (HEIGHT < 900px) ── */
+  @media (max-height: 900px) {
+    /* Hero Compact */
+    .hero { justify-content: center; }
+    .hero-ornament { margin-bottom: 6px !important; }
+    .hero h1, .hero-title { margin-bottom: 4px !important; line-height: 1.05 !important; font-size: clamp(2rem, 4vw, 3rem) !important; }
+    .hero-sub { margin-bottom: 10px !important; font-size: clamp(1.1rem, 2vw, 1.4rem) !important; }
+    .hero-divider { margin-bottom: 10px !important; margin-top: 4px !important; }
+    .hero-verse { padding: 10px 16px !important; margin-bottom: 0 !important; }
+    .hero-verse p { margin-bottom: 2px !important; line-height: 1.3 !important; font-size: 0.95rem !important; }
+    .enc-label { margin-bottom: 8px !important; font-size: 0.9rem !important; }
+
+    /* General Sections Compact */
+    section, .musica-section, .consagracao-section { padding: 24px 16px !important; }
+    .section-title { margin-bottom: 12px !important; line-height: 1.1 !important; font-size: clamp(1.6rem, 3vw, 2.2rem) !important; }
+    .section-label { margin-bottom: 4px !important; font-size: 0.9rem !important; }
+    
+    /* Elements Compact */
+    .cite-block { padding: 10px 14px !important; margin-bottom: 10px !important; }
+    .guillemet { font-size: 1.6rem !important; margin-bottom: -4px !important; }
+    
+    /* Grids Compact */
+    .trindade-grid, .fact-grid, .sintese-grid, .exercicios-grid { margin-bottom: 10px !important; }
+    .trindade-card, .fact-item, .sintese-item, .exercicio-card { padding: 8px 10px !important; }
+    
+    /* Text Compact */
+    p, .tc-text, .paradox-side p, .si-text { line-height: 1.35 !important; font-size: 1rem !important; }
+    .si-num { font-size: 1.4rem !important; margin-bottom: 2px !important; }
+    .si-text { font-size: 1.05rem !important; }
+    
+    .tc-icon, .pf-cross { margin-bottom: 4px !important; font-size: 1.2rem !important; }
+    .tc-persona, .paradox-tag { margin-bottom: 2px !important; font-size: 0.85rem !important; }
+    .tc-title, .paradox-side h3 { margin-bottom: 2px !important; font-size: 0.95rem !important; }
+    
+    /* Footer */
+    .page-footer { padding: 12px 12px !important; }
+    .pf-nav { gap: 12px; }
+    .pf-link { font-size: 0.9rem !important; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-layer"></div>
+
+<nav class="site-nav">
+  <a class="nav-back" href="index.html">← Início</a>
+  <span class="nav-label">Apêndice</span>
+  <span class="nav-type">Músicas</span>
+</nav>
+
+<div class="page">
+
+  <section class="hero">
+    <div class="hero-content" style="width: 100%; max-width: 1100px; margin: auto; display: flex; flex-direction: column; align-items: center;">
+
+    <div class="hero-ornament"><span class="line"></span><span class="cross">♩ ✝ ♩</span><span class="line"></span></div>
+    <p class="hero-tag">Apêndice</p>
+    <h1 class="hero-title"><em>Músicas</em></h1>
+    <div class="hero-divider"><span class="hline"></span><span class="dia"></span><span class="hline"></span></div>
+  
+    </div>
+</section>
+
+  <!-- ══ MÚSICA 1 ══ -->
+  <section class="musica-section" id="musica-1">
+    <div class="container">
+
+      <div class="musica-header reveal">
+        <p class="musica-num">Música I</p>
+        <h2 class="musica-titulo">Quando Teu Pai Revelou o Segredo a Maria</h2>
+        <div class="musica-divider"></div>
+      </div>
+
+      <div class="estrofes">
+
+        <div class="estrofe reveal">
+          <p>Quando Teu Pai revelou o segredo a Maria</p>
+          <p>Que, pela força do Espírito, conceberia</p>
+          <p>A Ti, Jesus, ela não hesitou logo em responder</p>
+          <p>Faça-se em mim, pobre serva, o que a Deus aprouver</p>
+        </div>
+
+        <div class="estrofe reveal">
+          <p>Hoje imitando a Maria, que é imagem da Igreja</p>
+          <p>Nossa família outra vez Te recebe e deseja</p>
+          <p>Cheia de fé, de esperança e de amor, dizer sim a Deus</p>
+          <p>Eis aqui os Teus servos, Senhor</p>
+        </div>
+
+        <div class="estrofe refrao reveal">
+          <p>Que a graça de Deus cresça em nós sem cessar</p>
+          <p>E de Ti, nosso Pai, venha o Espírito Santo de amor</p>
+          <p>Pra gerar e formar Cristo em nós</p>
+        </div>
+
+        <div class="estrofe reveal">
+          <p>Por um decreto do Pai, ela foi escolhida</p>
+          <p>Para gerar-Te, ó Senhor, que és origem da vida</p>
+          <p>Cheia do Espírito Santo no corpo e no coração</p>
+          <p>Foi quem melhor cooperou com a Tua missão</p>
+        </div>
+
+        <div class="estrofe reveal">
+          <p>Na comunhão recebemos o Espírito Santo</p>
+          <p>E vem contigo, Jesus, o Teu Pai sacrossanto</p>
+          <p>Vamos agora ajudar-Te no plano da salvação</p>
+          <p>Eis aqui os Teus servos, Senhor</p>
+        </div>
+
+        <div class="estrofe refrao reveal">
+          <p>Que a graça de Deus cresça em nós sem cessar</p>
+          <p>E de Ti, nosso Pai, venha o Espírito Santo de amor</p>
+          <p>Pra gerar e formar Cristo em nós</p>
+        </div>
+
+        <div class="estrofe reveal">
+          <p>No coração de Maria, no olhar doce e terno</p>
+          <p>Sempre tiveste na vida um apoio materno</p>
+          <p>Desde Belém, Nazaré, só viveu para Te servir</p>
+          <p>Quando morrias na cruz, Tua mãe estava ali</p>
+        </div>
+
+        <div class="estrofe reveal">
+          <p>Mãe amorosa da Igreja, quer ser nosso auxílio</p>
+          <p>Reproduzir nos cristãos as feições de Teu Filho</p>
+          <p>Como Ela fez em Caná, nos convida a Te obedecer</p>
+          <p>Eis aqui os Teus servos, Senhor</p>
+        </div>
+
+        <div class="estrofe refrao reveal">
+          <p>Que a graça de Deus cresça em nós sem cessar</p>
+          <p>E de Ti, nosso Pai, venha o Espírito Santo de amor</p>
+          <p>Pra gerar e formar Cristo em nós</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MÚSICA 2 ══ -->
+  <section class="musica-section" id="musica-2">
+    <div class="container">
+
+      <div class="musica-header reveal">
+        <p class="musica-num">Música II</p>
+        <h2 class="musica-titulo">Mãe do Novo Homem</h2>
+        <div class="musica-divider"></div>
+      </div>
+
+      <div class="estrofes">
+
+        <div class="estrofe reveal">
+          <p>Singela doce e pura, Maria de José</p>
+          <p>Mãe terna e escolhida, és Mãe leal da fé</p>
+          <p>Seu nome é Maria de Deus</p>
+        </div>
+
+        <div class="estrofe refrao reveal">
+          <p>Maria santa e fiel, ensina-nos a viver como escolhidos</p>
+          <p>Olhos voltados para o céu e por Ele construir a nova vida</p>
+        </div>
+
+        <div class="estrofe reveal">
+          <p>Mãe da obediência, da graça e do amor</p>
+          <p>Que os homens se encontrem no Filho desta Flor</p>
+          <p>Seu nome é Maria de Deus</p>
+        </div>
+
+        <div class="estrofe refrao reveal">
+          <p>Maria santa e fiel, ensina-nos a viver como escolhidos</p>
+          <p>Olhos voltados para o Céu e por Ele construir a nova vida</p>
+        </div>
+
+        <div class="estrofe refrao reveal">
+          <p>Maria santa e fiel, ensina-nos a viver como escolhidos</p>
+          <p>Olhos voltados para o Céu e por Ele construir a nova vida</p>
+        </div>
+
+        <div class="estrofe reveal">
+          <p>A nova vida, a nova vida, a nova vida, a nova vida</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span class="pf-cross">✝</span>
+    <div class="pf-nav">
+      <a class="pf-link" href="index.html">← Início</a>
+      <span class="pf-sep">✦</span>
+      <a class="pf-link" href="apendice-leituras.html">Leituras →</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold: 0.08, rootMargin: '0px 0px -30px 0px'});
+  reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
