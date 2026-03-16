@@ -65,18 +65,18 @@ section {
 .hero { padding-top: clamp(48px, 9.6vh, 96px) !important; padding-bottom: clamp(48px, 9.6vh, 96px) !important; }
 /* s2 sintese: +20% */
 #s-sintese { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
-/* s3 verdades: -10% */
-#s-verdades { padding-top: clamp(36px, 7.2vh, 72px); padding-bottom: clamp(36px, 7.2vh, 72px); }
-/* s4 verdades-2: +10% */
-#s-verdades-2 { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
-/* s5 falsos: +10% */
-#s-falsos { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
-/* s6 falsos-2: +10% */
-#s-falsos-2 { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
-/* s7 devoção-verdadeira: -10% */
-#s-devoção-verdadeira { padding-top: clamp(36px, 7.2vh, 72px); padding-bottom: clamp(36px, 7.2vh, 72px); }
-/* s8 segredo: -10% */
-#s-segredo { padding-top: clamp(36px, 7.2vh, 72px); padding-bottom: clamp(36px, 7.2vh, 72px); }
+/* s3 verdades: layout — sem espaço em branco */
+#s-verdades { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); }
+/* s4 verdades-2: +20% */
+#s-verdades-2 { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s5 falsos: +20% */
+#s-falsos { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s6 falsos-2: +20% */
+#s-falsos-2 { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s7 devoção-verdadeira: +20% + layout */
+#s-devoção-verdadeira { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s8 segredo: layout */
+#s-segredo { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); }
 /* s9 segredo-2: EXCLUÍDA (display:none) */
 #s-segredo-2 { display: none !important; }
 .container { max-width:1060px; margin: auto; width:100%; }
@@ -259,8 +259,8 @@ section {
 
     <div class="hero-ornament"><span class="line"></span><span class="cross">✦ ✝ ✦</span><span class="line"></span></div>
     <p class="enc-label">Encontro 02 · 20 de Abril</p>
-    <h1>Verdades e Devoção</h1>
-    <p class="hero-sub">As cinco verdades, os sete falsos devotos e o segredo</p>
+    <h1>Verdades Fundamentais<br>e a Verdadeira Devoção</h1>
+    <p class="hero-sub">§§ 60–119 · As cinco verdades, os sete falsos devotos e o segredo</p>
     <div class="hero-divider"><span class="hline"></span><span class="dia"></span><span class="hline"></span></div>
     <div class="hero-verse">
       <p>"Vós estais, Senhor, sempre com Maria, e Maria está sempre convosco e não pode estar sem Vós."</p>
@@ -280,23 +280,23 @@ section {
       <div class="sintese-grid">
         <div class="sintese-item reveal">
           <span class="si-num">I</span>
-          <p class="si-text">Cristo é o fim de tudo — Maria conduz a Ele, nunca afasta d'Ele</p>
+          <p class="si-text">Cristo é o fim de tudo. A devoção a Maria só tem sentido se <strong>levar a Cristo</strong> — os dois são inseparáveis.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">II</span>
-          <p class="si-text">Somos escravos por amor — a escravidão voluntária é a mais perfeita liberdade</p>
+          <p class="si-text">Somos <strong>escravos voluntários</strong> de Cristo — e por isso, de Maria. Não por coerção: o modelo é o próprio Cristo que tomou "a forma de escravo".</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">III</span>
-          <p class="si-text">Somos vasilhas estragadas — precisamos de um cofre que não seja nós mesmos</p>
+          <p class="si-text">Nossa condição é de <strong>vasilha estragada</strong>. As graças de Deus precisam de uma vasilha limpa — e nós não somos essa vasilha sozinhos.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">IV</span>
-          <p class="si-text">O demônio falsifica o ouro — sete tipos de devoção falsa, cinco sinais da verdadeira</p>
+          <p class="si-text">O demônio <strong>falsifica o ouro</strong> — sete tipos de devoção falsa, cinco sinais da verdadeira. Interior, terna, santa, constante e desinteressada.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">V</span>
-          <p class="si-text">Existe um segredo que o Altíssimo ensinou a São Luís — e que o demônio vai perseguir</p>
+          <p class="si-text">Há <strong>um segredo</strong> que o Altíssimo ensinou a São Luís. Nem todos vão compreendê-lo — só aquele a quem o Espírito Santo revelar.</p>
         </div>
       </div>
     </div>
@@ -312,24 +312,24 @@ section {
         <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div class="cite-block" style="margin:0;max-width:100%;">
             <span class="guillemet">"</span>
-            <blockquote>Se a devoção a Nossa Senhora afastasse de Jesus Cristo, seria preciso rejeitá-la como uma ilusão do demônio.</blockquote>
-            <cite>— São Luís de Montfort, § 62</cite>
+            <blockquote>Vós estais, Senhor, sempre com Maria, e Maria está sempre convosco — Ela está tão transformada em Vós pela graça que já não vive mais: sois só Vós, meu Jesus, que viveis e reinais n'Ela.</blockquote>
+            <cite>— São Luís de Montfort, § 63</cite>
           </div>
-          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">1ª Verdade (§§ 61–64):</strong> São Luís começa com Cristo, não com Maria. Os dois são inseparáveis: honrá-la é honrá-Lo. O perigo oposto: saber muito sobre Deus sem ser transformado por nada disso.</div>
-          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">§ 64 · O aviso:</strong> Um conhecimento teológico seco, estéril, indiferente — que não muda nada — é mais perigoso do que a ignorância.</div>
+          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">1ª Verdade (§§ 61–64):</strong> São Luís começa com Cristo, não com Maria. Os dois são inseparáveis: Maria não tem existência espiritual separada d'Ele. Honrá-la é honrá-Lo. Separar as duas devoções é uma violência contra a realidade do que Maria é.</div>
+          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">§ 64 · O aviso:</strong> O maior risco de quem estuda teologia sem oração — saber muitas coisas sobre Deus sem ser transformado por nenhuma delas. Um conhecimento seco, estéril, indiferente é mais perigoso do que a ignorância.</div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">2ª Verdade · §§ 68–74</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">São Luís usa uma palavra radical: escravidão. Mas distingue: há escravidão de natureza (todo ser criado depende de Deus), de força (o pecador), e de <strong style="color:var(--gold-light)">amor e vontade livre</strong> — a mais perfeita.</p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">2ª Verdade · §§ 68–74 · A escravidão</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">São Luís usa a palavra radical: escravo. § 69 distingue servo de escravo — um servo tem prazo, salário, direito de sair; um escravo pertence totalmente. § 70 distingue três tipos: escravidão de natureza, de força e de <strong style="color:var(--gold-light)">amor e vontade livre</strong> — a mais perfeita, a única que vem inteiramente do coração.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">A lógica</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Amor perfeito quer dar tudo. Quem ama sem reservas escolhe dar-se inteiramente. A escravidão de amor é a mais alta liberdade porque é a mais completa entrega.</p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">§ 72 · O modelo</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Cristo mesmo tomou "a forma de escravo" por amor. Se o Filho de Deus escolheu essa forma como expressão máxima do amor, a escravidão voluntária não é rebaixamento — é a forma mais elevada de pertença que existe.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">§ 73 · A marca</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Os santos usavam correntes como sinal exterior. Não por masoquismo — por afirmação pública: <em>"Pertenço a ela. Libremente."</em></p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">§ 74 · A extensão a Maria</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Cristo escolheu Maria como "companheira indissolúvel de sua vida, morte, glória e poder" — dando-lhe os mesmos direitos e privilégios. Pertencer a ela é uma forma de pertencer a Ele.</p>
           </div>
         </div>
       </div>
@@ -346,26 +346,26 @@ section {
         <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div class="cite-block" style="margin:0;max-width:100%;">
             <span class="guillemet">"</span>
-            <blockquote>Quando se põe água limpa numa vasilha que cheira mal, a água fica estragada. Assim acontece quando se colocam em nós as graças de Deus.</blockquote>
-            <cite>— São Luís de Montfort, § 78</cite>
+            <blockquote>Somos naturalmente mais orgulhosos que pavões, mais apegados à terra que sapos, mais invejosos que serpentes, mais gulosos que porcos, mais coléricos que tigres e mais inconstantes que cata-ventos.</blockquote>
+            <cite>— São Luís de Montfort, § 79</cite>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">3ª Verdade · §§ 78–82</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">"Mais orgulhosos que pavões, mais apegados à terra que sapos, mais invejosos que serpentes…" São Luís não está a insultar — está diagnosticando. A descrição da condição humana caída, honestamente.</p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">3ª Verdade · §§ 78–82 · A vasilha</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">São Luís não está a insultar — está diagnosticando. A vasilha somos nós. A água limpa são as graças de Deus. O problema não é a graça — ela é perfeita. O problema é a vasilha. E o § 82 aponta a conclusão: entre todas as devoções, devemos escolher a que mais nos leva à <strong style="color:var(--gold-light)">morte de nós mesmos</strong>.</p>
           </div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">4ª Verdade · §§ 83–86</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Ir direto a Deus sem mediador não é humildade — é presunção. Maria não é obstáculo ao Filho: ela é o único caminho que o Filho escolheu para vir, e pelo qual o Pai quer que voltemos.</p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">4ª Verdade · §§ 83–86 · A lua</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Ir direto a Deus sem mediador não é humildade — é presunção. § 85: "Temos necessidade de um mediador junto do próprio Mediador." Maria é a lua — não tem luz própria, recebe a luz do Sol e a torna suportável para a nossa fraqueza. <strong style="color:var(--gold-light)">§ 86: três degraus</strong> — Maria, Jesus, Deus Pai. Quem pula o primeiro não sobe mais rápido: tropeça.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">5ª Verdade · §§ 87–89</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Maria é a lua: não brilha por si — reflete a luz do Sol. Ela não retém as graças: as multiplica e as distribui. Dá a seus filhos o que recebe do Filho — sem perder nada, aumentando tudo.</p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">5ª Verdade · §§ 87–89 · O cofre</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">§ 87: três razões para as graças escaparem — vasilha frágil, demônios que espreitam, mundo que mancha. § 88: cedros do Líbano e estrelas do firmamento que caíram. Não por falta de graça — por falta de humildade. § 89: <em>"Se tivessem conhecido esta devoção, teriam confiado o tesouro a uma Virgem fiel, que o guardaria como seu bem próprio."</em></p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Conclusão</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Depender de Maria não é fraqueza espiritual — é sabedoria da criatura que conhece sua própria fragilidade e escolhe o cofre certo para guardar o tesouro.</p>
+          <div>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">A solução</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Não guardar as graças em nós mesmos — depositá-las em Maria. <strong style="color:var(--gold-light)">Mudar o cofre.</strong> O cofre que somos nós é frágil, arrombável, manchado. Maria é inexpugnável.</p>
           </div>
         </div>
       </div>
@@ -432,17 +432,17 @@ section {
           </div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O que é esse segredo</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Não é uma revelação nova. É uma síntese — um modo de viver o Evangelho que São Luís recebeu por oração, sofrimento e iluminação do Espírito Santo.</p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">§ 113 · A profecia</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;"><em>"Sinto-me animado a crer que cedo ou tarde a Santíssima Virgem terá mais filhos, servos e escravos de amor como nunca, e que por esse meio Jesus Cristo, meu amado Mestre, reinará nos corações mais do que nunca."</em> Escrito em 1712. Chegou até nós.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Por que o demônio persegue</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">São Luís adverte: quem quiser viver essa devoção será perseguido — não pelos de fora, mas pelos de dentro. O demônio não falsifica o que não tem valor.</p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">§ 114 · O preço anunciado</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;"><em>"Prevejo que muitas feras frementes virão em fúria para rasgar com seus dentes diabólicos este pequeno escrito. Atacarão aqueles que o lerem e o puserem em prática. Mas, não importa! Tanto melhor! Essa visão me encoraja."</em> São Luís sabia o que escrevia — e escreveu assim mesmo.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O que vem no Encontro 3</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">O segredo finalmente nomeado: a perfeita consagração a Jesus por Maria — que entrega tudo, sem reserva, para toda a eternidade.</p>
+          <div>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">O que vem no Encontro 3</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">O segredo finalmente nomeado: a perfeita consagração a Jesus por Maria — que renova as promessas batismais e entrega tudo, sem reserva, para toda a eternidade.</p>
           </div>
         </div>
       </div>
@@ -462,20 +462,20 @@ section {
             <blockquote>Como o essencial desta devoção consiste no interior que ela deve formar, não será igualmente compreendida por todos. Uns se deterão no que ela tem de exterior, e não passarão além, e estes serão a maioria.</blockquote>
             <cite>— São Luís de Montfort, § 119</cite>
           </div>
-          <div class="highlight-para" style="margin:0;">São Luís não está desmotivando. Está sendo honesto: esse caminho tem profundidade — e cada um entra no nível que o Espírito Santo permite. O que nos cabe é querer entrar.</div>
+          <div class="highlight-para" style="margin:0;">São Luís não está desmotivando. Está sendo honesto: esse caminho tem profundidade — e cada um entra no nível que o Espírito Santo permite. O que nos cabe é <strong style="color:var(--gold-light)">querer entrar</strong> — e pedir ao Espírito que nos leve mais fundo.</div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Os degraus</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">"Outros, em pequeno número, entrarão em seu interior, mas subirão apenas um degrau. Quem subirá ao segundo? Quem chegará até o terceiro?"</p>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Os degraus de profundidade</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">"Outros, em pequeno número, entrarão em seu interior, mas subirão apenas um degrau. Quem subirá ao segundo? Quem chegará até o terceiro? Quem se identificará com ela permanentemente?" Quatro perguntas abertas — não retóricas.</p>
           </div>
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
             <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">A chave</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><strong style="color:var(--gold-light)">Só aquele a quem o Espírito de Jesus Cristo revelar este segredo.</strong> Não é conquista — é dom. O que nos cabe: pedir ao Espírito Santo que nos leve mais fundo.</p>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><strong style="color:var(--gold-light)">Só aquele a quem o Espírito de Jesus Cristo revelar este segredo.</strong> Não é conquista de esforço — é dom. Isso não afasta a responsabilidade: afasta o orgulho espiritual.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Resumo da devoção verdadeira</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><strong style="color:var(--gold-light)">Interior</strong> · <strong style="color:var(--gold-light)">Terna</strong> · <strong style="color:var(--gold-light)">Santa</strong> · <strong style="color:var(--gold-light)">Constante</strong> · <strong style="color:var(--gold-light)">Desinteressada</strong> — as cinco marcas que distinguem o real do falsificado.</p>
+          <div>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Os cinco sinais — resumo</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><strong style="color:var(--gold-light)">Interior</strong> · <strong style="color:var(--gold-light)">Terna</strong> · <strong style="color:var(--gold-light)">Santa</strong> · <strong style="color:var(--gold-light)">Constante</strong> · <strong style="color:var(--gold-light)">Desinteressada</strong> — não são cinco qualidades separadas. A devoção verdadeira possui as cinco ao mesmo tempo. Falta uma: a devoção não é verdadeira.</p>
           </div>
         </div>
       </div>
@@ -511,6 +511,54 @@ section {
     </div>
   </section>
 
+  <!-- ══ CHAVES ESPIRITUAIS ══ -->
+  <section class="content-section" id="s-chaves">
+    <div class="container">
+      <p class="section-label reveal">Aplicação · Encontro 2</p>
+      <h2 class="section-title reveal">Chaves <em>Espirituais</em></h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto 1px;">
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">I</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Fim Último</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Toda oração a Maria deve terminar em Jesus. Ela não é fim — é caminho. O devoto que não chega a Cristo pela mão de Maria perdeu-se no caminho.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">II</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Humildade</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Aceitar precisar de mediação — renunciar ao orgulho de ir direto a Deus. A recusa da mediação é soberba disfarçada de espiritualidade.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">III</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Interior</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Examinar: <em>"minha devoção mudou meu caráter?"</em> — não apenas sentimentos, mas virtudes concretas e duráveis.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">IV</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Santa</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Nunca usar Maria como desculpa para pecar — verdadeira devoção produz horror ao pecado. O presunçoso desonra a quem invoca.</p>
+        </div>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);border-top:none;overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">V</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Perseverança</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Continuar rezando mesmo sem sentir — este fervor da vontade, chamado devoção substancial, constitui o fundamento firme e a causa de todo o mérito diante de Deus.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">VI</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Desinteressada</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Amar Maria mesmo que não dê nada — o amor verdadeiro não é instrumental. Pedir a ela, mas amá-la antes de qualquer resposta.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">VII</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Vigilância</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Examinar qual falsa devoção me atrai e pedir a Maria que purifique. O demônio não falsifica senão o que tem valor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="page-footer">
     <span class="pf-cross">✝</span>
     <div class="pf-nav">
@@ -534,8 +582,8 @@ section {
   reveals.forEach(el => obs.observe(el));
   document.querySelectorAll('.sintese-item,.verdade-card,.devocao-card,.sl-card,.falso-item').forEach((el,i) => { el.style.transitionDelay = i*0.06+'s'; });
 
-  const _ids = ['s-hero','s-sintese','s-verdades','s-verdades-2','s-falsos','s-falsos-2','s-devoção-verdadeira','s-segredo'];
-  const _labels = ['Início','Síntese','Verdades I–II','Verdades III–V','Falsos I–IV','Os 5 Sinais','O Anúncio','O Segredo'];
+  const _ids = ['s-hero','s-sintese','s-verdades','s-verdades-2','s-falsos','s-falsos-2','s-devoção-verdadeira','s-segredo','s-chaves'];
+  const _labels = ['Início','Síntese','Verdades I–II','Verdades III–V','Falsos I–IV','Os 5 Sinais','O Anúncio','O Segredo','Chaves'];
   let _cur = 0, _scrolling = false;
   const _dots = document.getElementById('sideNavDots');
   const _btnUp = document.getElementById('btnUp');

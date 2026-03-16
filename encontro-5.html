@@ -53,18 +53,18 @@ section {
 .hero { padding-top: clamp(48px, 9.6vh, 96px) !important; padding-bottom: clamp(48px, 9.6vh, 96px) !important; }
 /* s2 sintese: +20% */
 #s-sintese { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
-/* s3 efeitos: +20% */
+/* s3 efeitos: +20% + layout (já tem flex-start inline) */
 #s-efeitos { padding-bottom: clamp(48px, 9.6vh, 96px); }
 /* s4 efeitos-2: +20% */
 #s-efeitos-2 { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
-/* s5 efeitos-3: +20% */
-#s-efeitos-3 { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
-/* s6 praticas: sem alteração */
-/* s7 prep: +10% */
-#s-prep { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
-/* s8 prep-2: +10% */
-#s-prep-2 { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
-/* s9 eco: sem alteração */
+/* s5 efeitos-3: +20% + layout */
+#s-efeitos-3 { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s6 prep: +20% + layout */
+#s-prep { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s7 prep-2: +20% */
+#s-prep-2 { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s8 eco: +20% */
+#s-eco { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
 .container { max-width:1060px; margin: auto; width:100%; }
 .section-label { font-family:'Cinzel',serif;font-size: 1.216rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:10px; }
 .section-title { font-family:'Cormorant Garamond',serif;font-size:clamp(2.304rem, 3.8vw, 3.84rem);font-weight:400;text-align:center;color:var(--white);line-height:1.2;margin-bottom: 16px; }
@@ -205,7 +205,7 @@ section {
     <div class="hero-ornament"><span class="line"></span><span class="cross">✦ ✝ ✦</span><span class="line"></span></div>
     <p class="enc-label">Encontro 05 · 11 de Maio</p>
     <h1>Os Efeitos Maravilhosos<br>e as Práticas da Devoção</h1>
-    <p class="hero-sub">Viver a consagração no dia a dia</p>
+    <p class="hero-sub">§§ 213–265 · Viver a consagração no dia a dia</p>
     <div class="hero-divider"><span class="hline"></span><span class="dia"></span><span class="hline"></span></div>
     <div class="hero-verse">
       <p>"Maria é o eco de Deus: Se dizeis Maria, Ela diz Deus."</p>
@@ -224,23 +224,23 @@ section {
       <div class="sintese-grid">
         <div class="sintese-item reveal">
           <span class="si-num">I</span>
-          <p class="si-text">Sete efeitos reais na alma — não promessas, mas transformações identificáveis</p>
+          <p class="si-text">A consagração produz <strong>sete efeitos reais</strong> na alma — não promessas sentimentais, mas transformações identificáveis que surpreendem porque vão na direção contrária ao que o mundo chama de crescimento.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">II</span>
-          <p class="si-text">Conhecer-se melhor e gostar menos de si — e isso é liberdade</p>
+          <p class="si-text">O 1º efeito é o mais paradoxal: <strong>conhecer-se melhor e gostar menos de si</strong> — e isso é liberdade, não destruição. Quem se conhece de verdade para de defender ilusões.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">III</span>
-          <p class="si-text">As práticas exteriores: por que importam — e qual é a prática central</p>
+          <p class="si-text">O <strong>molde de Deus:</strong> Maria não esculpe a alma a golpes de martelo — a forma por fusão. É preciso primeiro <em>liquefazer-se</em>. O que liquesfaz: mortificação, humildade, sofrimento aceito.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">IV</span>
-          <p class="si-text">As quatro preposições: Por, Com, Em e Para Maria — o espírito interior</p>
+          <p class="si-text">As <strong>quatro preposições</strong> — Por, Com, Em e Para Maria — são o espírito interior que anima todas as práticas. Não técnicas: a respiração do consagrado.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">V</span>
-          <p class="si-text">O ECO final: Maria não vive senão em Deus. Dizer Maria é dizer Deus</p>
+          <p class="si-text">O ECO final: <strong>"Se dizeis Maria, Ela diz Deus."</strong> Toda devoção a ela termina em Deus — não como ressalva, mas como natureza intrínseca. Honrar Maria é honrar Deus.</p>
         </div>
       </div>
     </div>
@@ -257,24 +257,24 @@ section {
               <p style="font-size:1.0rem;font-style:italic;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:8px;">Convencei-vos de que, se fordes fiel às práticas desta devoção, vereis os efeitos que ela produz em vossa alma, que vos surpreenderão agradavelmente.</p>
               <cite style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;font-style:normal;">— São Luís, § 213</cite>
             </div>
-            <div style="padding:8px 12px;border-left:3px solid var(--gold);background:rgba(201,168,76,.04);font-style:italic;color:var(--cream);line-height:1.5;font-size:1.0rem;">São Luís não promete consolações — promete <strong style="color:var(--gold-light)">transformações identificáveis</strong>. São frutos que Maria produz em quem está em suas mãos — não conquistas do esforço próprio.</div>
+            <div style="padding:8px 12px;border-left:3px solid var(--gold);background:rgba(201,168,76,.04);font-style:italic;color:var(--cream);line-height:1.5;font-size:1.0rem;">São Luís não promete consolações — promete <strong style="color:var(--gold-light)">transformações identificáveis</strong>. Os sete efeitos formam uma progressão — não são sete eventos isolados, mas sete dimensões de uma única transformação, cada uma aprofundando a anterior. E cada um tem um paradoxo no centro.</div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
             <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
               <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">01 · Conhecimento de si · § 213</span>
-              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Maria dá uma luz sobre a própria miséria — não para esmagar, mas para libertar. Quem se conhece de verdade para de depender de si mesmo.</p>
+              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Humildade tem uma definição precisa: o conhecimento verdadeiro de si mesmo. Não autopiedade, não complexo de inferioridade — conhecimento real. Quem se conhece não precisa de aprovação externa para se manter de pé, não tem ilusões a defender, não reage defensivamente quando criticado.</p>
             </div>
             <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
               <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">02 · Fé viva · § 214</span>
-              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Maria forma a mesma fé que ela teve — simples, firme, sem vacilação. Não uma fé de argumento: uma fé de presença.</p>
+              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">A fé de Maria foi maior do que a de todos os patriarcas juntos. Ela a comunica com seis qualidades: <strong style="color:var(--gold-light)">pura</strong> (sem consolações), <strong style="color:var(--gold-light)">viva</strong> (que produz obras), <strong style="color:var(--gold-light)">firme</strong> (como rochedo), <strong style="color:var(--gold-light)">ativa</strong> (chave mestra), <strong style="color:var(--gold-light)">corajosa</strong> (diz Fiat sem garantias), <strong style="color:var(--gold-light)">arma</strong> (irradia e contagia).</p>
             </div>
             <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
               <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">03 · Amor puro · § 215</span>
-              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">O temor servil dá lugar ao amor filial. Depois de uma queda: <em>"Humilhar-vos-eis logo, sem angústia, sem agitação."</em> Marca do filho, não do escravo.</p>
+              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">O temor servil dá lugar ao amor filial. Depois de uma queda — <em>queda · levantamento · retomada</em> — sem drama, sem espiral de culpa. A perturbação prolongada depois de uma queda não é sinal de profundidade: é sinal de que o temor servil ainda governa.</p>
             </div>
-            <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
+            <div>
               <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">04 · Confiança em Deus · § 216</span>
-              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Quem deposita tudo em Maria para de ter a ansiedade de quem guarda o tesouro num cofre frágil. Ela guarda — e nunca perde.</p>
+              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">A confiança não é fundada nos próprios méritos — nasce precisamente da pobreza. Quem sabe que não tem nada, mas tem Maria, apresenta-se a Deus com os méritos dela. Essa confiança não pode ser destruída por nenhuma queda.</p>
             </div>
         </div>
       </div>
@@ -292,8 +292,8 @@ section {
               <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Maria comunica ao consagrado seu próprio espírito — humildade profunda, pureza imaculada, caridade ardente. Não como imitação forçada e artificial, mas como respiração natural de quem vive dentro dela.</p>
             </div>
             <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">06 · §§ 218–221 · Transformação em Cristo</span>
-              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;"><em>Forma Dei</em> — o molde de Deus. Quem é lançado nesse molde é formado em Jesus Cristo, e Jesus Cristo nele. São Luís cita Agostinho: <em>"A um pequeno custo e em pouco tempo, ficará deificado."</em> Não é metáfora — é o fim do ser humano.</p>
+              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">06 · §§ 218–221 · Transformação em Cristo · o molde</span>
+              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;"><em>Forma Dei</em> — o molde de Deus. Quem é lançado nesse molde é formado em Jesus Cristo. Agostinho: <em>"A um pequeno custo e em pouco tempo, ficará deificado."</em> Mas a condição é o § 221: <strong style="color:var(--gold-light)">só se lança no molde o que está fundido e líquido.</strong> É preciso primeiro destruir o velho Adão — a rigidez do amor próprio é o que impede a entrada. O que liquesfaz: mortificação, humildade, sofrimento aceito.</p>
             </div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
@@ -353,24 +353,24 @@ section {
               <cite style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;font-style:normal;">— São Luís de Montfort, § 257</cite>
             </div>
             <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Por Maria · A intenção</span>
-              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Agir por ela — como instrumento nas suas mãos, não por iniciativa própria. Deixar que ela seja o princípio de movimento de cada ação. O que se faz por Maria, Maria leva a Cristo.</p>
+              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Por Maria · A instrumentalidade</span>
+              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Antes de cada ação, renunciar ao próprio espírito e entregar-se ao espírito de Maria — agir como instrumento dela, não por iniciativa própria. A ação não muda externamente. Mas o princípio que a anima é diferente.</p>
             </div>
             <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Com Maria · A companhia</span>
-              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Agir com ela — como alguém que nunca está sozinho. Ela está presente em cada ação, olha, acompanha, sustenta. Não é solidão disfarçada: é comunhão real com uma pessoa real.</p>
+              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Com Maria · O modelo</span>
+              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Antes de agir, olhar para Maria como espelho — perguntar como ela agiria. Três virtudes fundamentais a imitar: <em>fé viva</em> até o pé da Cruz, <em>humildade profunda</em> que a fez esconder-se, <em>pureza divina</em> que nunca terá igual.</p>
             </div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
             <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Em Maria · A contemplação</span>
-              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Operar em Maria é agir a partir do paraíso terrestre do novo Adão — em paz, nutrido por Cristo, fecundo. Quem age <em>em</em> Maria age a partir de dentro de Cristo, pois ela é o lugar onde Cristo habita.</p>
+              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Em Maria · O estado de fundo</span>
+              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Agir a partir do interior de Maria — do paraíso terrestre do novo Adão. Quatro frutos: <strong style="color:var(--gold-light)">nutrição</strong> (o fruto é Cristo), <strong style="color:var(--gold-light)">paz</strong> (o mundo não entra), <strong style="color:var(--gold-light)">segurança</strong> (jardim fechado pelo Espírito), <strong style="color:var(--gold-light)">formação</strong> (dentro de Maria se é formado à imagem de Cristo).</p>
             </div>
             <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Para Maria · A finalidade</span>
-              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Tudo que se faz é para ela — para que ela o ofereça a Cristo, e Cristo ao Pai. A cadeia de amor está completa: do consagrado a Maria, de Maria a Cristo, de Cristo ao Pai. Nada se perde no caminho.</p>
+              <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Para Maria · O envio · § 265</span>
+              <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;"><em>"Defender seus privilégios quando alguém lhos disputar. Apoiar sua glória quando a atacarem. Atrair todo o mundo, se for possível, ao seu serviço."</em> A consagração não é refúgio privado — é envio público.</p>
             </div>
-            <div style="padding:8px 12px;border-left:3px solid var(--gold);background:rgba(201,168,76,.04);font-style:italic;color:var(--cream);line-height:1.5;font-size:1.05rem;">As quatro preposições não são técnicas — são a <strong style="color:var(--gold-light)">respiração interior</strong> do consagrado. Quem as vive não faz orações: vive dentro de uma oração contínua.</div>
+            <div style="padding:8px 12px;border-left:3px solid var(--gold);background:rgba(201,168,76,.04);font-style:italic;color:var(--cream);line-height:1.5;font-size:1.05rem;"><em>"Pretender apenas a honra de pertencer a tão amável Princesa, e a felicidade de ser por Ela unida a Jesus, com um laço <strong style="color:var(--gold-light)">indissolúvel no tempo e na eternidade.</strong>"</em> — § 265</div>
         </div>
       </div>
     </div>
@@ -416,6 +416,54 @@ section {
     </div>
   </section>
 
+  <!-- ══ CHAVES ESPIRITUAIS ══ -->
+  <section class="content-section" id="s-chaves">
+    <div class="container">
+      <p class="section-label reveal">Aplicação · Encontro 5</p>
+      <h2 class="section-title reveal">Chaves <em>Espirituais</em></h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto 1px;">
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">I</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Essência Interior</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">O coração da devoção está nas práticas interiores — fazer tudo por, com, em e para Maria como atitude constante da vida.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">II</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Morte ao Eu</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Renúncias concretas diárias, combate ao amor-próprio, humilhações aceitas com paz — este é o esvaziamento que Maria pode preencher.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">III</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Unidade</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Práticas externas (Rosário, escapulário) sustentam e expressam a vida interior — nunca sendo fins em si mesmos, mas sinais do interior.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">IV</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Rosário</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Rezar diariamente — amor à Ave Maria é termômetro seguro de pertencer a Deus. Quem reza o Rosário com fé raramente se perde.</p>
+        </div>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);border-top:none;overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">V</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Pedagogia</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Os 33 dias não são formalismo — é preparação séria para evento decisivo da vida. Quem se prepara com seriedade recebe com profundidade.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">VI</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">ECO de Deus</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Familiaridade filial sem escrúpulos — quando você diz <em>"Maria"</em>, Ela responde <em>"Deus"</em>. Este é o mistério do ECO.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">VII</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Transformação Real</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Examinar concretamente: <em>estou me tornando cópia viva de Maria para amar e glorificar Jesus Cristo?</em> Esta é a pergunta final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="page-footer">
     <span class="pf-cross">✝</span>
     <div class="pf-nav">
@@ -436,8 +484,8 @@ section {
   const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
   reveals.forEach(el=>obs.observe(el));
   document.querySelectorAll('.sintese-item,.efeito-card,.pratica-card,.prep-card').forEach((el,i)=>{el.style.transitionDelay=i*0.06+'s';});
-  const _ids=['s-hero','s-sintese','s-efeitos','s-efeitos-2','s-efeitos-3','s-praticas','s-prep','s-prep-2','s-eco'];
-  const _labels=['Início','Síntese','Efeitos I','Efeitos II','Práticas','Práticas','As Preposições','33 Dias','ECO'];
+  const _ids=['s-hero','s-sintese','s-efeitos','s-efeitos-2','s-efeitos-3','s-praticas','s-prep','s-prep-2','s-eco','s-chaves'];
+  const _labels=['Início','Síntese','Efeitos I','Efeitos II','Práticas','Práticas','As Preposições','33 Dias','ECO','Chaves'];
   let _cur=0,_scrolling=false;
   const _dots=document.getElementById('sideNavDots'),_btnUp=document.getElementById('btnUp'),_btnDown=document.getElementById('btnDown');
   _ids.forEach((id,i)=>{const d=document.createElement('span');d.className='side-dot'+(i===0?' active':'');d.title=_labels[i];d.addEventListener('click',()=>sideNavGoto(i));_dots.appendChild(d);});

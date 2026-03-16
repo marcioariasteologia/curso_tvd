@@ -181,15 +181,14 @@ section {
 #s-sintese { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
 /* s3 timeline: +20% */
 #s-timeline { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
-/* s4 maria: -10% */
-#s-maria { padding-top: clamp(36px, 7.2vh, 72px); padding-bottom: clamp(36px, 7.2vh, 72px); }
-/* s5 necessidade-1: sem alteração */
-/* s6 necessidade-2: +10% */
-#s-necessidade-2 { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
-/* s7 necessidade-3: +10% */
-#s-necessidade-3 { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
-/* s8 necessidade-4: +10% */
-#s-necessidade-4 { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
+/* s4 maria: sem alteração */
+/* s5 necessidade-1: layout — conteúdo no topo, sem espaço em branco */
+#s-necessidade-1 { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); }
+/* s6 necessidade-2: +20% */
+#s-necessidade-2 { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s7 necessidade-3: +20% + layout */
+#s-necessidade-3 { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s8 necessidade-4: sem alteração */
 .container { max-width:1060px; margin: auto; width:100%; }
 .section-label { font-family:'Cinzel',serif;font-size: 1.216rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:10px; }
 .section-title { font-family:'Cormorant Garamond',serif;font-size:clamp(2.304rem, 3.8vw, 3.84rem);font-weight:400;text-align:center;color:var(--white);line-height:1.2;margin-bottom: 16px; }
@@ -712,8 +711,8 @@ section {
       <span class="line"></span><span class="cross">✦ ✝ ✦</span><span class="line"></span>
     </div>
     <p class="enc-label">Encontro 01 · 13 de Abril</p>
-    <h1>Introdução e Fundamentos</h1>
-    <p class="hero-sub">São Luís, Maria e a Necessidade da Graça</p>
+    <h1>Introdução, Fundamentos<br>e a Necessidade de Maria</h1>
+    <p class="hero-sub">§§ 1–59 · São Luís, Maria e a Ordem da Graça</p>
     <div class="hero-divider"><span class="hline"></span><span class="dia"></span><span class="hline"></span></div>
     <div class="hero-verse">
       <p>"Foi pela Santíssima Virgem Maria que Jesus Cristo veio ao mundo, e é também por Ela que Ele deve reinar no mundo."</p>
@@ -727,74 +726,165 @@ section {
       <section class="content-section sintese-section" id="s-sintese">
     <div class="container">
       <div class="reveal" style="max-width:700px;margin:0 auto 20px;text-align:center;">
-        <p style="font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;">O que esperar</p>
+        <p style="font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;">Síntese do Encontro</p>
         <p style="font-size:clamp(1.4rem,2vw,1.8rem);color:var(--cream);font-style:italic;margin-top:6px;font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.3;">Fundamento: Conhecer a Verdade</p>
       </div>
       <div class="sintese-grid">
         <div class="sintese-item reveal">
           <span class="si-num">I</span>
-          <p class="si-text">São Luís: lógica e fogo — um missionário que pagou caro por tudo que ensinou</p>
+          <p class="si-text">São Luís foi um missionário perseguido que escreveu para o futuro. O Tratado é <strong>lógica e fogo</strong> — não espiritualidade suave.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">II</span>
-          <p class="si-text">Maria é a maior obra de Deus — e a mais oculta. O santuário da Trindade</p>
+          <p class="si-text">Maria é a <strong>maior obra de Deus</strong> — e a mais oculta. O que estava escondido era o santuário da Trindade.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">III</span>
-          <p class="si-text">Deus não precisava de Maria — mas quis agir por ela. E Deus nunca muda</p>
+          <p class="si-text">Deus <strong>não precisava</strong> de Maria — mas quis agir por ela. E Deus nunca muda.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">IV</span>
-          <p class="si-text">A devoção não é opcional — é a condição de receber o que Deus quer dar</p>
+          <p class="si-text">A devoção não é opcional — é a <strong>condição de receber</strong> o que Deus quer dar. O Espírito Santo opera onde ela está.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">V</span>
-          <p class="si-text">Nos últimos tempos, essa necessidade só aumenta. E nós vivemos nesses tempos</p>
+          <p class="si-text">Nos últimos tempos, essa necessidade <strong>só aumenta</strong>. E nós vivemos nesses tempos.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ══ SÃO LUÍS ══ -->
-    <section class="content-section" id="s-timeline">
+  <section class="content-section" id="s-timeline">
     <div class="container">
       <p class="section-label reveal">§§ 1 – 12 · Parte 1</p>
       <h2 class="section-title reveal">São Luís e o Tratado</h2>
 
-      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
-        <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">1673 · Nascimento</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Bretanha, França. Família nobre mas pobre. A Bretanha moldaria o pregador que viria a ser.</p>
+      <!-- CARROSSEL DE SLIDES — timeline -->
+      <div class="reveal" style="max-width:1060px;margin:0 auto 14px;position:relative;">
+
+        <!-- Slides wrapper -->
+        <div id="tl-track" style="overflow:hidden;">
+          <div id="tl-inner" style="display:flex;transition:transform .4s ease;will-change:transform;">
+
+            <!-- SLIDE 1 — Vida (1673–1716) -->
+            <div class="tl-page" style="min-width:100%;box-sizing:border-box;padding:0 2px;">
+              <div style="position:relative;">
+                <!-- linha sólida -->
+                <div style="position:absolute;top:38px;left:calc(12.5% + 6px);right:calc(12.5% + 6px);height:1px;background:rgba(201,168,76,0.55);z-index:0;"></div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:1;">
+                  <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px;">
+                    <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:var(--gold);margin-bottom:8px;">1673</div>
+                    <div style="width:12px;height:12px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;margin-bottom:14px;"></div>
+                    <div style="background:var(--navy-card);border:1px solid rgba(201,168,76,0.18);padding:14px 14px;width:100%;">
+                      <span style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:5px;">Nascimento</span>
+                      <p style="font-size:0.95rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Bretanha, França. Família nobre mas pobre. Estudará teologia em Paris, no Seminário de Saint-Sulpice.</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px;">
+                    <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:var(--gold);margin-bottom:8px;">1700</div>
+                    <div style="width:12px;height:12px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;margin-bottom:14px;"></div>
+                    <div style="background:var(--navy-card);border:1px solid rgba(201,168,76,0.18);padding:14px 14px;width:100%;">
+                      <span style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:5px;">Ordenação</span>
+                      <p style="font-size:0.95rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Paris. Pobreza voluntária. Pregação itinerante — antídoto vivo da frieza jansenista. Perseguido pelo próprio clero.</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px;">
+                    <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:var(--gold);margin-bottom:8px;">1711</div>
+                    <div style="width:12px;height:12px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;margin-bottom:14px;"></div>
+                    <div style="background:var(--navy-card);border:1px solid rgba(201,168,76,0.18);padding:14px 14px;width:100%;">
+                      <span style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:5px;">O Tratado</span>
+                      <p style="font-size:0.95rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Escreve o manuscrito em retiro, endereçado aos missionários dos últimos tempos. Prevê que será escondido antes de ser conhecido.</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px;">
+                    <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:var(--gold);margin-bottom:8px;">1716</div>
+                    <div style="width:12px;height:12px;background:transparent;border:2px solid var(--gold);transform:rotate(45deg);flex-shrink:0;margin-bottom:14px;"></div>
+                    <div style="background:var(--navy-card);border:1px solid rgba(201,168,76,0.35);padding:14px 14px;width:100%;">
+                      <span style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:5px;">Morte · 43 anos</span>
+                      <p style="font-size:0.95rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Morreu pregando em Saint-Laurent-sur-Sèvre. O manuscrito desaparece num baú por <strong style="color:var(--gold-light)">126 anos</strong>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 — Após a morte (1842–1947) -->
+            <div class="tl-page" style="min-width:100%;box-sizing:border-box;padding:0 2px;">
+              <div style="position:relative;">
+                <!-- linha tracejada -->
+                <div style="position:absolute;top:38px;left:calc(12.5% + 6px);right:calc(12.5% + 6px);height:1px;background:repeating-linear-gradient(90deg,rgba(201,168,76,0.45) 0px,rgba(201,168,76,0.45) 6px,transparent 6px,transparent 13px);z-index:0;"></div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:1;">
+                  <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px;">
+                    <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:rgba(201,168,76,0.75);margin-bottom:8px;">1842</div>
+                    <div style="width:10px;height:10px;background:rgba(201,168,76,0.4);transform:rotate(45deg);flex-shrink:0;margin-bottom:15px;"></div>
+                    <div style="background:var(--navy);border:1px solid rgba(201,168,76,0.15);padding:14px 14px;width:100%;">
+                      <span style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;color:rgba(201,168,76,0.75);text-transform:uppercase;display:block;margin-bottom:5px;">Redescoberta</span>
+                      <p style="font-size:0.95rem;font-weight:300;color:var(--text-muted);line-height:1.55;margin:0;">Encontrado por acaso num baú numa casa de missionários. Exatamente como São Luís havia previsto.</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px;">
+                    <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:rgba(201,168,76,0.75);margin-bottom:8px;">1843</div>
+                    <div style="width:10px;height:10px;background:rgba(201,168,76,0.4);transform:rotate(45deg);flex-shrink:0;margin-bottom:15px;"></div>
+                    <div style="background:var(--navy);border:1px solid rgba(201,168,76,0.15);padding:14px 14px;width:100%;">
+                      <span style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;color:rgba(201,168,76,0.75);text-transform:uppercase;display:block;margin-bottom:5px;">Publicação</span>
+                      <p style="font-size:0.95rem;font-weight:300;color:var(--text-muted);line-height:1.55;margin:0;">O Tratado é publicado pela 1ª vez — 127 anos após ser escrito, 126 anos após a morte de São Luís.</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px;">
+                    <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:rgba(201,168,76,0.75);margin-bottom:8px;">1888</div>
+                    <div style="width:10px;height:10px;background:rgba(201,168,76,0.4);transform:rotate(45deg);flex-shrink:0;margin-bottom:15px;"></div>
+                    <div style="background:var(--navy);border:1px solid rgba(201,168,76,0.15);padding:14px 14px;width:100%;">
+                      <span style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;color:rgba(201,168,76,0.75);text-transform:uppercase;display:block;margin-bottom:5px;">Beatificação</span>
+                      <p style="font-size:0.95rem;font-weight:300;color:var(--text-muted);line-height:1.55;margin:0;">Beatificado pelo Papa Leão XIII, 172 anos após a morte.</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;align-items:center;padding:0 8px;">
+                    <div style="font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;color:rgba(201,168,76,0.75);margin-bottom:8px;">1947</div>
+                    <div style="width:10px;height:10px;background:rgba(201,168,76,0.4);transform:rotate(45deg);flex-shrink:0;margin-bottom:15px;"></div>
+                    <div style="background:var(--navy);border:1px solid rgba(201,168,76,0.15);padding:14px 14px;width:100%;">
+                      <span style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.15em;color:rgba(201,168,76,0.75);text-transform:uppercase;display:block;margin-bottom:5px;">Canonização</span>
+                      <p style="font-size:0.95rem;font-weight:300;color:var(--text-muted);line-height:1.55;margin:0;">Canonizado pelo Papa Pio XII. O grão de trigo enterrado 126 anos floresceu no tempo certo.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- fim tl-inner -->
+        </div><!-- fim tl-track -->
+
+        <!-- Controles -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-top:20px;">
+          <button onclick="tlMove(-1)" id="tl-prev" style="background:transparent;border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-size:1.2rem;width:38px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.4)'">&#8592;</button>
+          <div style="display:flex;gap:10px;align-items:center;">
+            <span id="tl-dot-0" onclick="tlGoto(0)" style="display:inline-block;width:8px;height:8px;background:var(--gold);transform:rotate(45deg) scale(1.3);cursor:pointer;transition:all .2s;"></span>
+            <span id="tl-dot-1" onclick="tlGoto(1)" style="display:inline-block;width:8px;height:8px;background:rgba(201,168,76,0.25);transform:rotate(45deg);cursor:pointer;transition:all .2s;"></span>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">1700 · Ordenação</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Paris. Pobreza voluntária, pregação aos mais pobres — contra a frieza jansenista.</p>
-          </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">1711 · O Tratado</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Escrito em retiro. Endereçado aos seus sucessores espirituais — aos missionários dos últimos tempos.</p>
-          </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">1716 · Morte</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Saint-Laurent-sur-Sèvre. O manuscrito foi esquecido por 126 anos — enterrado como grão de trigo.</p>
-          </div>
+          <button onclick="tlMove(1)" id="tl-next" style="background:transparent;border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-size:1.2rem;width:38px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.4)'">&#8594;</button>
         </div>
-        <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O Jansenismo · Séc. XVIII</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Deus distante, severo, inacessível. Desconfiança da devoção a Maria. Por isso São Luís foi perseguido — não pelos inimigos da Igreja, mas pelas autoridades dentro dela.</p>
-          </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O Tratado</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Não é um livro de consolação. É uma argumentação rigorosa, escrita por alguém que pagou com perseguição, desterro e pobreza cada verdade que defendeu.</p>
-          </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">A profezia</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;"><em>"Quando esse segredo, que escrevo para o fim dos tempos, for revelado e compreendido — a glória e a santidade de Maria resplandecerão mais do que nunca."</em></p>
-          </div>
+
+        <!-- Label do slide atual -->
+        <div style="text-align:center;margin-top:10px;">
+          <span id="tl-label" style="font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.3em;color:rgba(201,168,76,0.6);text-transform:uppercase;">Vida · 1673–1716</span>
+        </div>
+
+      </div>
+
+      <!-- BLOCO CONTEXTUAL -->
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy);padding:14px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:0.82rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">O Jansenismo · Séc. XVIII</span>
+          <p style="font-size:0.97rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Heresia dominante na França: Deus distante, severo, inacessível. Tinha penetrado fundo no clero e nas universidades. São Luís foi perseguido — não pelos inimigos da Igreja, mas pelo próprio clero jansenista.</p>
+        </div>
+        <div style="background:var(--navy);padding:14px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:0.82rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Escrito para nós</span>
+          <p style="font-size:0.97rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">São Luís escreveu deliberadamente para gerações que ainda não haviam nascido. O Tratado chegou até nós. Chegou até esta sala, neste curso, neste ano.</p>
         </div>
       </div>
+
+
+
     </div>
   </section>
 
@@ -823,19 +913,19 @@ section {
         <div style="background:var(--navy-card);display:flex;flex-direction:column;">
           <div class="point-row" style="flex:1;border-bottom:1px solid rgba(201,168,76,0.07);">
             <span class="point-tag">§ 2 · O Paradoxo</span>
-            <p class="point-text">A maior criatura de Deus é também a mais oculta — <em>por vontade própria</em>. Seus pais não a conheciam plenamente. Os anjos perguntavam: "Quem é esta?"</p>
+            <p class="point-text">A maior criatura de Deus é também a mais oculta — <em>por vontade própria</em>. Seu maior desejo: ser conhecida apenas por Deus. Seus pais não a conheciam plenamente. Os anjos perguntavam entre si: "Quem é esta?"</p>
           </div>
           <div class="point-row" style="flex:1;border-bottom:1px solid rgba(201,168,76,0.07);">
             <span class="point-tag">§§ 3–4 · A Trindade</span>
-            <p class="point-text">O Pai não fez milagres por ela. O Filho fez com que ela quase não falasse. O Espírito Santo fez que os Apóstolos falassem muito pouco d'ela. <strong>O silêncio dos Evangelhos foi uma escolha da Trindade.</strong></p>
+            <p class="point-text">O Pai não fez milagres por ela. O Filho fez com que ela quase não falasse. O Espírito Santo fez que os Apóstolos falassem muito pouco d'ela. <strong>O silêncio dos Evangelhos foi uma escolha ativa da própria Trindade — por amor e respeito ao desejo dela.</strong></p>
           </div>
           <div class="point-row" style="flex:1;border-bottom:1px solid rgba(201,168,76,0.07);">
             <span class="point-tag">§§ 5–6 · O Santuário</span>
-            <p class="point-text">O lugar onde Deus mais habita no universo não é o Céu dos anjos. <strong>É Maria.</strong> O paraíso terrestre do novo Adão — o grande tesouro deliberadamente escondido.</p>
+            <p class="point-text">O lugar onde Deus mais habita no universo não é o Céu dos anjos. <strong>É Maria.</strong> O paraíso terrestre do novo Adão — o grande tesouro deliberadamente escondido. Afirmação teológica precisa, não metáfora poética.</p>
           </div>
           <div class="point-row" style="flex:1;">
             <span class="point-tag">§ 12 · A Medida</span>
-            <p class="point-text">"Se quereis compreender a Mãe, compreendei o Filho." A medida de Maria é o Filho infinito. O silêncio, no final, é a resposta mais honesta.</p>
+            <p class="point-text">"Se quereis compreender a Mãe, compreendei o Filho." A medida de Maria é o Filho infinito. A grandeza da devoção a ela é proporcional ao que ela realmente é — não à nossa emoção. O silêncio, no final, é a resposta mais honesta.</p>
           </div>
         </div>
 
@@ -856,20 +946,20 @@ section {
             <blockquote>A divina Maria tem sido desconhecida até o momento, e esta é uma das razões pelas quais Jesus Cristo não é conhecido como deve ser.</blockquote>
             <cite>— São Luís de Montfort, § 13</cite>
           </div>
-          <div class="highlight-para" style="margin:0;">Ignorar Maria não é ser mais espiritual — é nadar contra a vontade imutável de Deus. Quem diz que se pode honrar Cristo sem honrá-la, não entendeu a lógica da Encarnação.</div>
+          <div class="highlight-para" style="margin:0;">Não são duas devoções paralelas e independentes. São a mesma coisa. O conhecimento de Maria e o conhecimento de Cristo estão ligados por uma necessidade interna: quem desconhece o canal, desconhece algo essencial sobre o que passa por ele.</div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
             <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 14 · A Objeção</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">"Maria é menor que um átomo diante da Majestade infinita. Deus nunca teve necessidade alguma dela." — São Luís concorda completamente.</p>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">"Maria é menor que um átomo diante da Majestade infinita. Deus nunca teve necessidade alguma dela." São Luís começa concordando completamente. A objeção está correta.</p>
           </div>
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
             <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 15 · A Virada</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">"Tendo Deus <em>desejado</em> agir por Maria, é de se acreditar que não mudará de conduta pelos séculos dos séculos, pois Ele nunca muda."</p>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">"Tendo Deus <em>desejado</em> agir por Maria — é de se acreditar que não mudará de conduta pelos séculos dos séculos, pois Ele nunca muda em seus sentimentos nem em sua conduta."</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Conclusão</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Não necessidade — <strong style="color:var(--gold-light)">vontade livre.</strong> E Deus é imutável. O argumento fecha nos dois lados: não é exagero (foi Deus quem escolheu), nem substitui Deus (ela é criatura).</p>
+          <div>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">O Argumento Fecha nos Dois Lados</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Não foi necessidade — foi <strong style="color:var(--gold-light)">vontade livre.</strong> E Deus é imutável. Não é exagero (foi Deus quem escolheu), nem substitui Deus (ela é criatura). Ignorar Maria não é atalho para Deus — é nadar contra a corrente da vontade imutável de Deus.</p>
           </div>
         </div>
       </div>
@@ -885,21 +975,21 @@ section {
         <div style="background:var(--navy-card);padding:16px 18px;">
           <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Deus Pai · §§ 16–17</span>
           <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Age por ela</p>
-          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">4000 anos de orações — só Maria mereceu trazer o Messias. O mundo era indigno de receber Cristo diretamente do Pai — O deu a Maria. Comunicou a ela sua fecundidade.</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">4.000 anos de orações — patriarcas, profetas, santos — e ninguém conseguiu trazer o Messias. Só Maria mereceu. O mundo era indigno de receber Cristo diretamente do Pai — Ele O deu a Maria. E comunicou a ela sua própria fecundidade: cada cristão que nasce para a graça, nasce por Maria.</p>
         </div>
         <div style="background:var(--navy-card);padding:16px 18px;">
           <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Deus Filho · § 18</span>
           <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Formou-Se nela</p>
-          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">O Filho eterno escolheu ser formado por Maria. Passados 30 dos 33 anos em silêncio sob sua autoridade. A obediência do Filho eterno à criatura — escândalo da fé.</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">O Filho eterno encontrou sua <em>liberdade</em> ao se ver aprisionado nela. Sua <em>glória</em> ao ocultar seus esplendores. Sua <em>independência</em> ao depender dela. Trinta anos de obediência silenciosa a Maria deram mais glória ao Pai do que trinta anos de prodígios teriam dado. Quem somos nós para achar exagerada essa devoção?</p>
         </div>
         <div style="background:var(--navy-card);padding:16px 18px;">
           <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Espírito Santo · §§ 20–36</span>
           <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Opera por ela</p>
-          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">O Espírito Santo é estéril em si mesmo enquanto princípio de obras ad extra — age por Maria. É por ela que forma os eleitos. Ela é seu Esposa inseparável.</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">O Espírito Santo tornou-Se fecundo por Maria: é com ela, nela e dela que produz os predestinados. <strong style="color:var(--gold-light)">§ 36:</strong> "Uma das grandes razões pelas quais o Espírito Santo não opera maravilhas nas almas é porque não encontra nelas uma união bastante grande com sua fiel e inseparável Esposa." A vida árida tem diagnóstico.</p>
         </div>
       </div>
       <div class="reveal" style="max-width:1060px;margin:14px auto 0;padding:14px 24px;border-left:3px solid var(--gold);background:rgba(201,168,76,0.04);">
-        <p style="font-size:1.0rem;font-style:italic;color:var(--cream);line-height:1.65;">As três Pessoas da Trindade agem <em>por</em> Maria — não <em>apesar</em> dela. Ignorá-la não é atalho para Deus. É contornar o caminho que Deus mesmo escolheu.</p>
+        <p style="font-size:1.0rem;font-style:italic;color:var(--cream);line-height:1.65;">As três Pessoas da Trindade agem <em>por</em> Maria — não <em>apesar</em> dela. Quem ignora Maria não está sendo mais espiritual, mais direto, mais focado em Deus. Está contornando o caminho que a própria Providência traçou.</p>
       </div>
     </div>
   </section>
@@ -907,7 +997,7 @@ section {
   <!-- ══ INIMIZADE ══ -->
     <section class="content-section" id="s-necessidade-3">
     <div class="container">
-      <p class="section-label reveal">§§ 51 – 54</p>
+      <p class="section-label reveal">§§ 37 · 51 – 54</p>
       <h2 class="section-title reveal">A Inimizade Irreconciliável</h2>
 
       <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
@@ -917,20 +1007,20 @@ section {
             <blockquote>Satanás sofre infinitamente mais por ser vencido por uma pequena e humilde serva de Deus — a humildade d'Ela o humilha mais do que o poder divino.</blockquote>
             <cite>— São Luís de Montfort, § 52</cite>
           </div>
-          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">Gênesis 3,15:</strong> Deus criou uma única inimizade irreconciliável no mundo: entre Maria e o demônio. Não há neutralidade possível.</div>
+          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">§ 40:</strong> "A devoção à Santíssima Virgem é necessária para a salvação." <strong style="color:var(--gold-light)">§ 44:</strong> "Só Maria encontrou graça diante de Deus — todos os que a acharam desde então, só por seu intermédio a obtiveram." Ela tem as chaves — por doação de Deus.</div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Por que ela o vence</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">O demônio é orgulho puro. Maria é humildade pura. São opostos absolutos. Ela não o vence pelo poder — vence pela <em>natureza</em>.</p>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Gên 3,15 · A única inimizade</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Deus criou uma única inimizade irreconciliável no mundo: entre Maria e o demônio. O demônio é orgulho puro. Maria é humildade pura. São opostos absolutos — ela não o vence pelo poder, vence pela <em>natureza</em>.</p>
           </div>
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">A lógica da guerra</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Quanto mais alguém se consagra a Maria, mais o demônio o odeia — e mais Maria o protege. A inimizade é proporcional à proximidade.</p>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">A simetria teológica</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">O que Lúcifer perdeu por orgulho, Maria ganhou por humildade. O que Eva destruiu por desobediência, Maria reconstruiu por obediência. O orgulho foi a origem da queda. A humildade é a origem da restauração.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Consequência prática</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">"Quem tem Maria como Mãe tem o demônio como inimigo declarado." São Luís não atenua. Mas o inimigo declarado de Maria já está vencido.</p>
+          <div>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">A lógica do combate</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Quem se une a Maria entra nessa inimizade — passa a ser alvo do demônio de uma forma que não era antes. A devoção a Maria não é abrigo confortável. É posicionamento de combate. Os filhos de Maria e os filhos do demônio não têm neutralidade possível entre si.</p>
           </div>
         </div>
       </div>
@@ -946,23 +1036,70 @@ section {
       <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
         <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 50 · A Virada</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Na 1ª vinda, Maria ficou oculta — proteção para a fé imatura. Nos últimos tempos: <em>"Deus quer revelar e manifestar Maria, a obra-prima de suas mãos."</em> O demônio redobra os ataques. A resposta de Deus: Maria.</p>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 50 · A Virada dos Tempos</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Na 1ª vinda, Maria ficou oculta — os homens eram imaturos na fé e poderiam confundi-la com a divindade. A ocultação foi proteção para eles. Nos últimos tempos, Deus fará o contrário: <em>"quer revelar e manifestar Maria, a obra-prima de suas mãos."</em> O demônio redobra os ataques. A resposta de Deus: Maria.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">O que serão</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><strong style="color:var(--gold-light)">Fogo ardente</strong> — ministros que atearão o amor divino por toda parte. <strong style="color:var(--gold-light)">Flechas</strong> na mão de Maria contra os inimigos. <strong style="color:var(--gold-light)">Trovões</strong> — palavras que abatem o pecado.</p>
+          <div>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 59 · A Postura do Cristão</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><em>"Mas, quando e como isso acontecerá?... Só Deus o sabe. Cabe a nós <strong style="color:var(--gold-light)">calar, rezar, suspirar e esperar.</strong>"</em> Quatro verbos que descrevem a postura de quem entendeu em que tempo vive. Não agitação ativista, não desespero, não indiferença — a espera vigilante e orante.</p>
           </div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§§ 56–57 · O que serão</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><strong style="color:var(--gold-light)">Fogo ardente</strong> — ministros que atearão o amor divino por toda parte. <strong style="color:var(--gold-light)">Flechas pontiagudas</strong> na mão poderosa de Maria contra seus inimigos. <strong style="color:var(--gold-light)">Trovões</strong> — palavras e obras que abatem o pecado e abalam o mundo.</p>
+          </div>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
             <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§§ 57–58 · O que não serão</span>
             <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Não serão de ouro — serão de prata. Não de grande reputação. Pobres e humildes, pisados por todos como o calcanhar o é. Mas o calcanhar esmaga a cabeça da serpente.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
+          <div>
             <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 59 · A marca</span>
             <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><em>"Conhecê-los-eis pelas suas obras e pelos frutos de sua devoção a Maria — pois nunca houve e nunca haverá um grande servo de Deus que não tivesse grande devoção à Santíssima Virgem."</em></p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CHAVES ESPIRITUAIS ══ -->
+  <section class="content-section" id="s-chaves">
+    <div class="container">
+      <p class="section-label reveal">Aplicação · Encontro 1</p>
+      <h2 class="section-title reveal">Chaves <em>Espirituais</em></h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto 1px;">
+        <div style="background:var(--navy-card);padding:16px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">I</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Imitar Deus</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Antes de cada ação importante, dizer interiormente: <em>"Mãe, isto é por suas mãos"</em> — é imitar a própria conduta divina. Se o Pai age por ela, posso eu agir de outro modo?</p>
+        </div>
+        <div style="background:var(--navy-card);padding:16px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">II</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Ser Filho</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Cultivar relação filial — não meramente devocional. São Luís diz que muitas vezes parece mais fácil e mais doce servir a Maria do que ao próprio Cristo, quais filhos ocupados com o que interessa à Mãe.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:16px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">III</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Reconhecer</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Agradecer a Maria cada graça recebida — todas passam por suas mãos (§ 44). Nomear a graça concreta e render graças pela mediação. Criar o hábito de identificar o canal.</p>
+        </div>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);border-top:none;overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy-card);padding:16px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">IV</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Examinar</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Avaliar a qualidade do amor que tenho por Ela — é terno ou apenas formal? Exterior sem interior é a marca do falso devoto. São Luís distingue a devoção verdadeira da supersticiosa e da presunçosa.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:16px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">V</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Combater</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Combater o mal com amor mariano — Maria esmaga a serpente com suavidade, não com violência. A humildade é a arma que o demônio não pode suportar. Ele perdeu por orgulho; ela venceu por humildade.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:16px 18px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">VI</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Esperar</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Calar, rezar, suspirar e esperar (§ 59). Ter paciência esperançosa — não forçar, mas confiar. O manuscrito enterrado 126 anos floresceu no tempo certo. O grão de trigo não controla quando germina.</p>
         </div>
       </div>
     </div>
@@ -997,8 +1134,8 @@ section {
   document.querySelectorAll('.sintese-item,.timeline-item').forEach((el,i) => { el.style.transitionDelay = i*0.07+'s'; });
 
   // ── SIDE NAV ──
-  const _ids = ['s-hero', 's-sintese', 's-timeline', 's-maria', 's-necessidade-1', 's-necessidade-2', 's-necessidade-3', 's-necessidade-4'];
-  const _labels = ['Início', 'Síntese', 'São Luís', 'Maria', 'Necessidade I', 'Trindade', 'Inimizade', 'Apóstolos'];
+  const _ids = ['s-hero', 's-sintese', 's-timeline', 's-maria', 's-necessidade-1', 's-necessidade-2', 's-necessidade-3', 's-necessidade-4', 's-chaves'];
+  const _labels = ['Início', 'Síntese', 'São Luís', 'Maria', 'Necessidade I', 'Trindade', 'Inimizade', 'Apóstolos', 'Chaves'];
   let _cur = 0, _scrolling = false;
 
   const _dots = document.getElementById('sideNavDots');
@@ -1051,29 +1188,48 @@ section {
 
 <script>
   // ── TIMELINE CAROUSEL ──
-  let _tlCur = 0;
-  const _tlSlides = document.querySelectorAll('.tl-slide');
-  const _tlDots   = document.querySelectorAll('.tl-cdot');
-  const _tlTotal  = _tlSlides.length;
+  (function(){
+    var cur = 0;
+    var labels = ['Vida · 1673–1716', 'O Manuscrito · 1842–1947'];
 
-  function tlGoto(n) {
-    _tlSlides[_tlCur].classList.remove('active');
-    _tlDots[_tlCur].classList.remove('active');
-    _tlCur = (n + _tlTotal) % _tlTotal;
-    _tlSlides[_tlCur].classList.add('active');
-    _tlDots[_tlCur].classList.add('active');
-  }
-  function tlMove(dir) { tlGoto(_tlCur + dir); }
+    function tlGoto(n) {
+      var inner = document.getElementById('tl-inner');
+      var dot0  = document.getElementById('tl-dot-0');
+      var dot1  = document.getElementById('tl-dot-1');
+      var label = document.getElementById('tl-label');
+      var prev  = document.getElementById('tl-prev');
+      var next  = document.getElementById('tl-next');
+      if (!inner) return;
+      cur = Math.max(0, Math.min(1, n));
+      inner.style.transform = 'translateX(-' + (cur * 100) + '%)';
+      if (dot0) { dot0.style.background = cur===0 ? 'var(--gold)' : 'rgba(201,168,76,0.25)'; dot0.style.transform = cur===0 ? 'rotate(45deg) scale(1.3)' : 'rotate(45deg)'; }
+      if (dot1) { dot1.style.background = cur===1 ? 'var(--gold)' : 'rgba(201,168,76,0.25)'; dot1.style.transform = cur===1 ? 'rotate(45deg) scale(1.3)' : 'rotate(45deg)'; }
+      if (label) label.textContent = labels[cur];
+      if (prev)  prev.style.opacity  = cur===0 ? '0.3' : '1';
+      if (next)  next.style.opacity  = cur===1 ? '0.3' : '1';
+    }
 
-  // Arrow keys inside s-timeline also advance carousel
-  document.addEventListener('keydown', e => {
-    const sec = document.getElementById('s-timeline');
-    const rect = sec.getBoundingClientRect();
-    const inView = rect.top < window.innerHeight/2 && rect.bottom > window.innerHeight/2;
-    if (!inView) return;
-    if (e.key === 'ArrowRight') { e.stopImmediatePropagation(); tlMove(1); }
-    if (e.key === 'ArrowLeft')  { e.stopImmediatePropagation(); tlMove(-1); }
-  }, true);
+    window.tlMove = function(dir) { tlGoto(cur + dir); };
+    window.tlGoto = tlGoto;
+
+    // Init after DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function(){ tlGoto(0); });
+    } else {
+      tlGoto(0);
+    }
+
+    // Arrow keys when timeline section is in view
+    document.addEventListener('keydown', function(e) {
+      var sec = document.getElementById('s-timeline');
+      if (!sec) return;
+      var rect = sec.getBoundingClientRect();
+      var inView = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
+      if (!inView) return;
+      if (e.key === 'ArrowRight') { e.stopImmediatePropagation(); tlMove(1); }
+      if (e.key === 'ArrowLeft')  { e.stopImmediatePropagation(); tlMove(-1); }
+    }, true);
+  })();
 </script>
 
 </body>

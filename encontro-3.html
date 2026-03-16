@@ -55,15 +55,16 @@ section {
 .hero { padding-top: clamp(48px, 9.6vh, 96px) !important; padding-bottom: clamp(48px, 9.6vh, 96px) !important; }
 /* s2 sintese: +20% */
 #s-sintese { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
-/* s3 consagracao: -10% */
-#s-consagracao { padding-top: clamp(36px, 7.2vh, 72px); padding-bottom: clamp(36px, 7.2vh, 72px); }
-/* s4 entrega: +10% */
-#s-entrega { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
-/* s5 entrega-2: sem alteração */
-/* s6 caminho: +10% */
-#s-caminho { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
-/* s7 caminho-2: +10% */
-#s-caminho-2 { padding-top: clamp(44px, 8.8vh, 88px); padding-bottom: clamp(44px, 8.8vh, 88px); }
+/* s3 consagracao: +20% + layout */
+#s-consagracao { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s4 entrega: +20% */
+#s-entrega { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s5 entrega-2: +20% + layout */
+#s-entrega-2 { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s6 caminho: +20% */
+#s-caminho { padding-top: clamp(48px, 9.6vh, 96px); padding-bottom: clamp(48px, 9.6vh, 96px); }
+/* s7 caminho-2: +20% + layout */
+#s-caminho-2 { justify-content: flex-start; padding-top: clamp(60px, 10vh, 100px); padding-bottom: clamp(48px, 9.6vh, 96px); }
 .container { max-width:1060px; margin: auto; width:100%; }
 .section-label { font-family:'Cinzel',serif;font-size: 1.216rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:10px; }
 .section-title { font-family:'Cormorant Garamond',serif;font-size:clamp(2.304rem, 3.8vw, 3.84rem);font-weight:400;text-align:center;color:var(--white);line-height:1.2;margin-bottom: 16px; }
@@ -198,7 +199,7 @@ section {
     <div class="hero-ornament"><span class="line"></span><span class="cross">✦ ✝ ✦</span><span class="line"></span></div>
     <p class="enc-label">Encontro 03 · 27 de Abril</p>
     <h1>A Perfeita Consagração<br>a Jesus por Maria</h1>
-    <p class="hero-sub">Dar tudo, sem reserva, para toda a eternidade</p>
+    <p class="hero-sub">§§ 120–170 · Dar tudo, sem reserva, para toda a eternidade</p>
     <div class="hero-divider"><span class="hline"></span><span class="dia"></span><span class="hline"></span></div>
     <div class="hero-verse">
       <p>"A perfeita consagração a Jesus Cristo não é mais que uma perfeita e inteira consagração de si mesmo à Santíssima Virgem."</p>
@@ -217,23 +218,23 @@ section {
       <div class="sintese-grid">
         <div class="sintese-item reveal">
           <span class="si-num">I</span>
-          <p class="si-text">A consagração a Cristo é a consagração a Maria — os dois são inseparáveis</p>
+          <p class="si-text">A consagração a Cristo <strong>é</strong> a consagração a Maria. São a mesma coisa — porque Maria é a imagem mais perfeita de Cristo, a que mais O reproduz.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">II</span>
-          <p class="si-text">Dar-se a Maria é dar tudo — sem reserva alguma, para toda a eternidade</p>
+          <p class="si-text">Dar-se a Maria é dar <strong>tudo — sem reserva alguma, para toda a eternidade.</strong> Inclui até os méritos das obras passadas e o valor das obras futuras.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">III</span>
-          <p class="si-text">É a renovação das promessas batismais — mais perfeita do que qualquer voto religioso</p>
+          <p class="si-text">É a renovação perfeita das promessas batismais. <strong>Superior aos votos religiosos</strong> — entrega o que nenhum voto pede: o direito de dispor do valor das próprias obras.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">IV</span>
-          <p class="si-text">O caminho de Maria é fácil, curto, perfeito e seguro — transforma o modo de carregar as cruzes</p>
+          <p class="si-text">O caminho de Maria é <strong>fácil, curto, perfeito e seguro.</strong> Não elimina as cruzes — transforma o modo de carregá-las.</p>
         </div>
         <div class="sintese-item reveal">
           <span class="si-num">V</span>
-          <p class="si-text">O fruto inesperado: liberdade interior — "No vosso serviço está a liberdade"</p>
+          <p class="si-text">O fruto inesperado: <strong>liberdade interior.</strong> Não apesar do serviço, não depois do serviço — <em>no serviço está a liberdade.</em></p>
         </div>
       </div>
     </div>
@@ -248,23 +249,27 @@ section {
         <div style="background:var(--navy);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div class="cite-block" style="margin:0;max-width:100%;">
             <span class="guillemet">"</span>
-            <blockquote>Entre todas as devoções possíveis a Maria, devemos escolher a que mais nos leva à morte de nós mesmos. Não a mais fácil. Não a mais consoladora. A mais santificante.</blockquote>
-            <cite>— São Luís de Montfort, § 121</cite>
+            <blockquote>A perfeita consagração a Jesus Cristo não é mais que uma perfeita e inteira consagração de si mesmo à Santíssima Virgem.</blockquote>
+            <cite>— São Luís de Montfort, § 120</cite>
           </div>
-          <div class="highlight-para" style="margin:0;">A consagração é mais excelente do que qualquer voto religioso porque não reserva nada — nem mesmo o direito de dispor de si mesmo. É a forma mais completa de pertença que existe.</div>
+          <div class="highlight-para" style="margin:0;">O § 120 é o pivô de todo o Tratado. Um silogismo rigoroso: a perfeição cristã consiste em conformar-se a Cristo; Maria é a criatura mais conforme a Cristo; logo, a devoção mais perfeita — aquela que mais conforma o homem a Cristo — é a devoção mais perfeita a Maria.</div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Uma entrega sem reserva</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">A consagração não é uma prática a mais. É a entrega de tudo: corpo, alma, bens exteriores e interiores — passados, presentes e futuros — sem reserva, para toda a eternidade.</p>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Por que Maria e não Cristo diretamente?</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Não é que não se possa ir a Cristo. É que ir por Maria é o caminho <em>mais perfeito</em> — produz maior conformidade, maior pureza, maior perseverança. Não é desvio. É o caminho mais reto.</p>
           </div>
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">O fundamento</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Santo Agostinho: <em>"Toda a perfeição consiste em unir-se, unificar-se e consagrar-se a Jesus Cristo."</em> O caminho para essa perfeição passa por Maria.</p>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 122 · O que a entrega não implica</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Não significa que se perde o mérito das obras. Significa que se dá a Maria o direito de <em>dispor</em> desses méritos — e ela os aplica onde mais glorificam a Deus e salvam almas. A entrega não empobrece: muda apenas quem decide sobre o destino do tesouro. E a pergunta que São Luís deixa implícita é direta: <strong style="color:var(--gold-light)">quem decide com mais sabedoria — o consagrado ou Maria?</strong></p>
           </div>
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Por que Maria</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Ela é o caminho mais seguro, mais curto e mais perfeito — porque foi o caminho que Cristo mesmo escolheu para vir ao mundo.</p>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 123 · Superior aos votos religiosos</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Os votos entregam a fortuna (pobreza), o corpo (castidade), a vontade (obediência). A consagração acrescenta: o direito de dispor do valor espiritual das próprias obras. É o último reduto do amor próprio espiritual.</p>
+          </div>
+          <div>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 135 · O ordinário santificado</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;"><em>"Quer esteja acordado ou dormindo, quer beba ou coma — tudo será de Jesus e de Maria pela força desta intenção."</em> Um único ato de consagração santifica todo o dia. É a consagração do ordinário.</p>
           </div>
         </div>
       </div>
@@ -279,19 +284,21 @@ section {
         <div style="background:var(--navy-card);padding:12px 14px;">
           <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O Corpo</span>
           <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;line-height:1.3;">Todos os sentidos e membros</p>
-          <p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">O corpo inteiro — com tudo que ele faz, sente, experimenta. Não há parte do ser humano que fique de fora da consagração.</p>
-        </div>        <div style="background:var(--navy-card);padding:12px 14px;">
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">O corpo inteiro — com tudo que ele faz, sente, experimenta. Não há parte do ser humano que fique de fora.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:12px 14px;">
           <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">A Alma</span>
           <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;line-height:1.3;">Todas as faculdades e potências</p>
-          <p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Inteligência, memória, vontade. Os méritos das boas obras passadas e o valor das obras futuras — tudo passa pelas mãos de Maria.</p>
-        </div>        <div style="background:var(--navy-card);padding:12px 14px;">
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Inteligência, memória, vontade. Os méritos das boas obras passadas — e o valor das obras futuras. Tudo passa pelas mãos de Maria.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:12px 14px;">
           <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Os Bens</span>
-          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;line-height:1.3;">Externos, internos — presentes e futuros</p>
-          <p style="font-size:1.15rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Saúde, reputação, riquezas, graças, virtudes, satisfações espirituais. Nada é retido. Nada é excecionado.</p>
+          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;line-height:1.3;">Externos e internos — passados, presentes e futuros</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;margin:0;">Saúde, reputação, graças, virtudes, satisfações espirituais. <strong style="color:var(--gold-light)">Sem reserva alguma, nem sequer de um centavo, de um cabelo, da menor boa ação.</strong></p>
         </div>
       </div>
       <div class="reveal" style="max-width:1060px;margin:12px auto 0;padding:12px 24px;border-left:3px solid var(--gold);background:rgba(201,168,76,0.04);">
-        <p style="font-size:1.0rem;font-style:italic;color:var(--cream);line-height:1.65;margin:0;">A consagração é a entrega mais total que existe — porque inclui até o que ainda não aconteceu. Não é um gesto de um dia: é uma atitude de vida, renovada continuamente.</p>
+        <p style="font-size:1.0rem;font-style:italic;color:var(--cream);line-height:1.65;margin:0;">A maioria das pessoas vive a vida espiritual com uma reserva: um canto interior que não entrega, uma área onde permanece soberana. A consagração perfeita pede exatamente esse canto — porque é exatamente nele que mora o problema. <strong style="color:var(--gold-light)">É o fundo que estraga a vasilha.</strong></p>
       </div>
     </div>
   </section>
@@ -308,16 +315,16 @@ section {
             <blockquote>O voto do Batismo é o maior e o mais indispensável de todos os votos. Mas quem guarda esse grande voto? Quase todos os cristãos não têm mais do que a memória do nome.</blockquote>
             <cite>— São Luís de Montfort, §§ 126–127</cite>
           </div>
-          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">A diferença decisiva:</strong> no Batismo, a entrega foi de outros por nós. Na consagração, é nossa — por escolha, por amor, para sempre.</div>
+          <div class="highlight-para" style="margin:0;"><strong style="color:var(--gold-light)">A diferença decisiva:</strong> no Batismo, a entrega foi de outros por nós — na infância, sem escolha consciente. Na consagração, é nossa — por escolha livre, por amor, para sempre. Não é um novo sacramento. É a vivência plena do que já foi dado.</div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
             <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">O que o Batismo prometeu</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">No Batismo, renunciamos a Satanás, ao mundo e ao pecado — e nos entregamos inteiramente a Cristo. Quase ninguém guarda esse voto. Não por má vontade — mas porque foi feito na infância e nunca renovado de forma consciente.</p>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Renunciar a Satanás, às suas pompas e obras — e pertencer inteiramente a Cristo. É a promessa mais importante que um ser humano pode fazer. A maioria dos cristãos vive de forma muito parcial, muito intermitente, muito tíbia.</p>
           </div>
           <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:12px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">O que a consagração faz</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">É a renovação plena e consciente do Batismo — feita em liberdade, por amor, pelas mãos de Maria. Não é um novo sacramento. É a vivência plena do que já foi dado.</p>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">§ 130 · O que a consagração acrescenta</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;">Um religioso entrega a fortuna, o corpo e a vontade — mas conserva o direito de aplicar o valor espiritual de suas obras a intenções específicas. A consagração entrega até esse direito a Maria. É o último reduto — e é exatamente onde mora o amor próprio espiritual.</p>
           </div>
         </div>
       </div>
@@ -328,30 +335,30 @@ section {
     <div class="container">
       <p class="section-label reveal">§§ 152 – 168</p>
       <h2 class="section-title reveal">O Caminho de Maria: Fácil, Curto, Perfeito e Seguro</h2>
-      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr ;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto;">
         <div style="background:var(--navy-card);padding:16px 18px;">
-          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Fácil</span>
+          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Fácil · §§ 152–157</span>
           <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Ela já andou por esse caminho</p>
-          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">Não elimina as cruzes — transforma o modo de carregá-las. Está presente para iluminar quando há dúvida, consolar quando há dor, sustentar quando há fraqueza.</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">Não elimina as cruzes — transforma o modo de carregá-las. Está presente para iluminar nas trevas, aquecer na frieza, endireitar na queda. Não é a mesma coisa caminhar sozinho ou com a mão de Maria.</p>
         </div>
         <div style="background:var(--navy-card);padding:16px 18px;">
-          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Curto</span>
-          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">O caminho mais direto a Cristo</p>
-          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">Ela é a via que o próprio Cristo escolheu para vir ao mundo. Ir por ela é ir pelo mesmo caminho que Ele percorreu — em sentido inverso: de volta ao Pai.</p>
+          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Curto · §§ 158–160</span>
+          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Mais em pouco tempo do que em anos sozinho</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">A vontade própria — mesmo bem-intencionada — introduz desvios, hesitações e recuos que multiplicam o tempo. Quem deixa Maria conduzir não perde tempo com os desvios do amor próprio.</p>
         </div>
         <div style="background:var(--navy-card);padding:16px 18px;">
-          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Perfeito</span>
-          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Porque a união com ela é a união com Cristo</p>
-          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">Ela foi tão transformada por Cristo que não se pode amá-la sem amá-Lo. Ir a ela não é desvio — é atalho.</p>
+          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Perfeito · §§ 161–164</span>
+          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">As obras chegam purificadas a Deus</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">Mesmo as obras imperfeitas — manchadas por intenções mistas — são purificadas quando passam pelas mãos de Maria antes de chegarem ao Pai. O que Maria apresenta vale mais do que o que qualquer criatura apresenta sozinha.</p>
         </div>
         <div style="background:var(--navy-card);padding:16px 18px;">
-          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Seguro</span>
-          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Ninguém se perde no colo da Mãe</p>
-          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">O demônio não entra onde Maria habita. O que está nas mãos dela está nas mãos mais fortes e mais gentis do universo criado.</p>
+          <span style="font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:6px;">Seguro · §§ 165–168</span>
+          <p style="font-size:1.15rem;font-weight:500;color:var(--white);margin-bottom:6px;">Lá onde está Maria, o inimigo não pode estar</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.55;">São Boaventura: "Lá onde está Maria, o espírito maligno não pode estar." O demônio teme Maria mais do que teme o poder direto de Deus — como São Luís mostrou no Encontro 1.</p>
         </div>
       </div>
       <div class="reveal" style="max-width:1060px;margin:14px auto 0;padding:14px 24px;border-left:3px solid var(--gold);background:rgba(201,168,76,0.04);">
-        <p style="font-size:1.0rem;font-style:italic;color:var(--cream);line-height:1.65;">Não: <em>apesar</em> do serviço, há liberdade. Não: <em>depois</em> do serviço, virá liberdade. <strong style="color:var(--gold-light)">No serviço está a liberdade</strong> — como fruto imediato.</p>
+        <p style="font-size:1.0rem;font-style:italic;color:var(--cream);line-height:1.65;">Não: <em>apesar</em> do serviço, há liberdade. Não: <em>depois</em> do serviço, virá liberdade. <strong style="color:var(--gold-light)">No serviço está a liberdade</strong> — como fruto imediato, como característica intrínseca do próprio ato de entregar-se.</p>
       </div>
     </div>
   </section>
@@ -368,21 +375,70 @@ section {
             <blockquote>No vosso serviço está a liberdade — e na vossa corrente está o descanso.</blockquote>
             <cite>— São Luís de Montfort</cite>
           </div>
-          <div class="highlight-para" style="margin:0;">Não: <em>apesar</em> do serviço, há liberdade. Não: <em>depois</em> do serviço, virá liberdade. <strong style="color:var(--gold-light)">No serviço está a liberdade</strong> — como fruto imediato, como característica intrínseca do ato de se dar.</div>
+          <div class="highlight-para" style="margin:0;">A verdadeira prisão não é a entrega a Maria. É a escravidão ao mundo, às opiniões, às paixões, ao amor próprio. Quem entregou tudo a Maria não tem mais nada a perder no sentido em que o mundo entende a perda. <strong style="color:var(--gold-light)">O tesouro está onde ninguém pode roubar.</strong></div>
         </div>
         <div style="background:var(--navy-card);padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">O paradoxo</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">O consagrado é livre de si mesmo. Livre do peso de gerir seus próprios méritos, de calcular suas próprias graças, de depender de sua própria constância. Tudo está nas mãos de Maria.</p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">§ 169 · Livre das opiniões</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;"><em>"A alma que se consagra inteiramente a Maria não se preocupa com os julgamentos dos homens."</em> Não porque seja insensível — mas porque não depende deles para se manter de pé.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">Livre de quê?</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">Do maior peso que existe: a responsabilidade de salvar-se pelas próprias forças. Maria carrega o que ele não pode carregar. E ela nunca perde o que lhe é confiado.</p>
+          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:8px;">
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">Livre de quê, concretamente?</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;">De administrar a própria imagem. De calcular o próprio interesse. De negociar os próprios limites. De guardar o que não se deveria querer guardar. Pode simplesmente ser instrumento nas mãos de Maria — e descansar nessa entrega.</p>
           </div>
-          <div style="border-bottom:1px solid rgba(201,168,76,0.08);padding-bottom:6px;">
-            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:2px;">✝ A entrega final</span>
-            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;"><em>"Dai tudo a Maria — ela o dará a Cristo, e Cristo o dará ao Pai."</em> A cadeia completa. A liberdade perfeita.</p>
+          <div>
+            <span style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:4px;">✝ A cadeia completa</span>
+            <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.5;margin:0;"><em>"Dai tudo a Maria — ela o dará a Cristo, e Cristo o dará ao Pai."</em> Essa é a liberdade que São Luís promete: não a liberdade de fazer o que se quer, mas a liberdade de não precisar fazer o que não se deveria querer.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CHAVES ESPIRITUAIS ══ -->
+  <section class="content-section" id="s-chaves">
+    <div class="container">
+      <p class="section-label reveal">Aplicação · Encontro 3</p>
+      <h2 class="section-title reveal">Chaves <em>Espirituais</em></h2>
+
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);overflow:hidden;max-width:1060px;margin:0 auto 1px;">
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">I</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Renovar o Batismo</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Estudar as promessas batismais antes da consagração, vivê-las como realidade presente — não como memória distante.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">II</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Radicalidade</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">A consagração transforma trabalho, família, estudos em missão — santidade no ordinário. Nada fica de fora da entrega.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">III</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Humildade</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Renunciar ao orgulho de fazer sozinho — alegrar-se na dependência filial. Quem precisa de Maria é mais espiritual, não menos.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">IV</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Liberdade</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">A escravidão de amor à Virgem Santíssima é o caminho mais rápido, curto e eficaz para termos a Deus o amor e o carinho de filhos.</p>
+        </div>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.12);border-top:none;overflow:hidden;max-width:1060px;margin:0 auto;">
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">V</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Segurança</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;"><em>"Tudo hoje, Mãe, é seu"</em> — o que está com Maria não se perde. Ela é o cofre inviolável das graças.
+          </p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">VI</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Cruz</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">A consagração não elimina a cruz — torna-a mais suave e meritória. Maria esteve no Calvário; ela sabe carregar com o Filho.</p>
+        </div>
+        <div style="background:var(--navy-card);padding:14px 16px;">
+          <span style="font-family:'Cinzel',serif;font-size:1.5rem;color:rgba(201,168,76,0.6);display:block;margin-bottom:6px;">VII</span>
+          <p style="font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Glória de Deus</p>
+          <p style="font-size:1.0rem;font-weight:300;color:var(--text-body);line-height:1.6;">Maria garante que nossas obras glorifiquem a Deus, não a nós. A consagração é o antídoto ao vaidade espiritual.</p>
         </div>
       </div>
     </div>
@@ -408,8 +464,8 @@ section {
   const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), {threshold:.08,rootMargin:'0px 0px -30px 0px'});
   reveals.forEach(el => obs.observe(el));
   document.querySelectorAll('.sintese-item,.entrega-card,.caminho-card').forEach((el,i) => { el.style.transitionDelay = i*0.06+'s'; });
-  const _ids = ['s-hero','s-sintese','s-consagracao','s-entrega','s-entrega-2','s-caminho','s-caminho-2'];
-  const _labels = ['Início','Síntese','Consagração','Entrega I','Renovação','Caminho','Liberdade'];
+  const _ids = ['s-hero','s-sintese','s-consagracao','s-entrega','s-entrega-2','s-caminho','s-caminho-2','s-chaves'];
+  const _labels = ['Início','Síntese','Consagração','Entrega I','Renovação','Caminho','Liberdade','Chaves'];
   let _cur=0,_scrolling=false;
   const _dots=document.getElementById('sideNavDots'),_btnUp=document.getElementById('btnUp'),_btnDown=document.getElementById('btnDown');
   _ids.forEach((id,i)=>{ const d=document.createElement('span');d.className='side-dot'+(i===0?' active':'');d.title=_labels[i];d.addEventListener('click',()=>sideNavGoto(i));_dots.appendChild(d); });

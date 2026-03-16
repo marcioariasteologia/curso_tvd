@@ -34,7 +34,7 @@ nav.site-nav { position:fixed;top:0;left:0;right:0;z-index:200;display:flex;alig
 .side-dot:hover { background:rgba(201,168,76,0.5); }
 @media(max-width:700px){ .side-nav{display:none;} }
 .leitura-section { position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;
-  justify-content:center;padding:90px 60px 60px;border-top:1px solid rgba(201,168,76,0.1); }
+  justify-content:center;padding:70px 48px 40px;border-top:1px solid rgba(201,168,76,0.1); }
 .leitura-section:first-of-type { border-top:none; }
 .leitura-header { margin-bottom:32px; }
 .leitura-num { font-family:'Cinzel',serif;font-size: 0.922rem;letter-spacing:0.5em;color:rgba(201,168,76,0.4);text-transform:uppercase;margin-bottom:6px; }
@@ -58,14 +58,14 @@ nav.site-nav { position:fixed;top:0;left:0;right:0;z-index:200;display:flex;alig
 .versiculo:last-child { border-bottom:none; }
 .versiculo:hover { background:rgba(201,168,76,0.05); }
 .v-num { font-family:'Cinzel',serif;font-size: 0.998rem;letter-spacing:0.08em;color:rgba(201,168,76,0.38);
-  min-width:52px;padding:18px 0 18px 20px;line-height:2.2;flex-shrink:0;user-select:none; }
-.v-text { font-size:clamp(1.664rem, 1.9vw, 2.048rem);font-weight:300;color:var(--cream);line-height:1.85;
-  padding:18px 32px 18px 10px;font-style:italic; }
+  min-width:52px;padding:10px 0 10px 16px;line-height:2.0;flex-shrink:0;user-select:none; }
+.v-text { font-size:clamp(1.1rem, 1.3vw, 1.35rem);font-weight:300;color:var(--cream);line-height:1.65;
+  padding:10px 24px 10px 8px;font-style:italic; }
 .versiculo.destaque { background:rgba(201,168,76,0.04);position:relative; }
 .versiculo.destaque::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold); }
 .versiculo.destaque .v-text { color:var(--gold-light); }
 /* cols-2 handled by base .versiculos */
-@media(max-width:600px){ .leitura-section{padding:80px 24px 48px;} .v-text{font-size: 1.536rem;} }
+@media(max-width:600px){ .leitura-section{padding:70px 20px 32px;} .v-text{font-size: 1.05rem;} }
 .page-footer { position:relative;z-index:1;border-top:1px solid rgba(201,168,76,0.15);padding:56px 24px;text-align:center; }
 .pf-cross { color:var(--gold);font-size: 1.28rem;display:block;margin-bottom:20px; }
 .pf-nav { display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap; }
@@ -145,24 +145,11 @@ nav.site-nav { position:fixed;top:0;left:0;right:0;z-index:200;display:flex;alig
     <div class="versiculo"><span class="v-num">29</span><p class="v-text">Ela ficou perturbada com esta palavra e pensava o que poderia significar tal saudação.</p></div>
     <div class="versiculo"><span class="v-num">30</span><p class="v-text">O anjo lhe disse: "Não temas, Maria! Encontraste graça diante de Deus.</p></div>
     <div class="versiculo"><span class="v-num">31</span><p class="v-text">Eis que conceberás e darás à luz um filho, e lhe porás o nome de Jesus.</p></div>
-  </div>
-</section>
-
-<!-- I-b — ANUNCIAÇÃO continuação -->
-<section class="leitura-section" id="s-anunciacao-2">
-  <div class="leitura-header reveal">
-    <p class="leitura-num">Leitura I · continuação</p>
-    <p class="leitura-ref">Lucas 1,32–38</p>
-    <h2 class="leitura-titulo">A Anunciação do Senhor</h2>
-    <div class="leitura-divider"></div>
-  </div>
-  <div class="versiculos cols-2 reveal">
     <div class="versiculo"><span class="v-num">32</span><p class="v-text">Ele será grande e será chamado Filho do Altíssimo; o Senhor Deus lhe dará o trono de seu pai Davi.</p></div>
     <div class="versiculo"><span class="v-num">33</span><p class="v-text">Reinará eternamente sobre a casa de Jacó, e o seu reino não terá fim."</p></div>
     <div class="versiculo"><span class="v-num">34</span><p class="v-text">Maria disse ao anjo: "Como se fará isso, pois não conheço homem algum?"</p></div>
     <div class="versiculo"><span class="v-num">35</span><p class="v-text">O anjo respondeu: "O Espírito Santo descerá sobre ti, e o poder do Altíssimo te cobrirá com a sua sombra. Por isso, o que vai nascer será chamado Santo, Filho de Deus.</p></div>
-    <div class="versiculo"><span class="v-num">36</span><p class="v-text">E Isabel, tua parenta, também concebeu um filho na sua velhice, e este já é o sexto mês para aquela que chamavam estéril,</p></div>
-    <div class="versiculo"><span class="v-num">37</span><p class="v-text">porque nada é impossível a Deus."</p></div>
+    <div class="versiculo"><span class="v-num">36–37</span><p class="v-text">E Isabel, tua parenta, também concebeu um filho na sua velhice, e este já é o sexto mês para aquela que chamavam estéril, porque nada é impossível a Deus."</p></div>
     <div class="versiculo destaque"><span class="v-num">38</span><p class="v-text">Então Maria disse: "Eis aqui a serva do Senhor. Faça-se em mim segundo a tua palavra." E o anjo a deixou.</p></div>
   </div>
 </section>
@@ -252,8 +239,8 @@ nav.site-nav { position:fixed;top:0;left:0;right:0;z-index:200;display:flex;alig
 </footer>
 
 <script>
-const _ids    = ['s-anunciacao','s-anunciacao-2','s-visitacao','s-magnificat','s-apocalipse','s-joao'];
-const _labels = ['Anunciação I','Anunciação II','Visitação','Magnificat','Apocalipse','Eis Teu Filho'];
+const _ids    = ['s-anunciacao','s-visitacao','s-magnificat','s-apocalipse','s-joao'];
+const _labels = ['Anunciação','Visitação','Magnificat','Mulher Vestida de Sol','Eis Teu Filho'];
 let _cur = 0, _scrolling = false;
 
 function _updateNav() {
